@@ -77,4 +77,4 @@ const userInfoController = {
 
 };
 
-module.exports = userInfoController:
+module.exports = userInfoController;
