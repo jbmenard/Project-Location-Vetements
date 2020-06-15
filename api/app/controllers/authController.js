@@ -59,20 +59,15 @@ const authController = {
     
         }).catch( err => {
           console.trace(err);
-          res.redirect('/notfound')
+          res.status(500).send(err)
         });
         
       },
-    
-    
-      // montrer le formulaire de connexion
-      showLoginForm: (req, res, next) => {
-        res.render('login');
-      },
-    
+      
       // traiter le submit du formulaire de connexion
       loginAction: (req, res, next) => {
         // 1. tenter de récupérer un User via email 
+        let errors = [];
         User.findOne({
           where: {
             email: req.body.email
@@ -80,36 +75,34 @@ const authController = {
         }).then( user => {
           //  - si il n'existe pas => erreur
           if (!user) {
-            return res.render('login', {
-              error : "Cet email n'existe pas"
-            });
+            errors.push("Cet email n'existe pas");         
+            return res.send(errors);
           }
     
           // 2. comparer le mot de passe fournie au Hash stocké dans la BDD
           const validPassword = bcrypt.compareSync(req.body.password, user.password);
           //  - si c'est pas bon => erreur
           if (!validPassword) {
-            return res.render('login', {
-              error : "Le mot de passe n'est pas valide"
-            });
+            errors.push("Cet email ou le mot de passe n'existe pas");
+            return res.send(errors);
           }
     
           // 3. si tout va bien (email et pwd correct) => on enregistre l'utilisateur dans la session
           req.session.user = user;
     
           // et pour finir, on redirige vers la page d'acceuil
-          res.redirect('/');
+          res.send(user)
     
         }).catch( err => {
           console.trace(err);
-          res.render('error', {err});
+          res.status(500).send(err);
         });
     
       },
     
       logout: (req, res, next) => {
         delete req.session.user;
-        res.redirect('/');
+        res.send('Vous êtes déconnecté');
       }
     
 };
