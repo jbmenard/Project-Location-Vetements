@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const client = require('../database');
 
-class Comment extends Sequelize.model {
+class Comment extends Sequelize.Model {
 
 
 

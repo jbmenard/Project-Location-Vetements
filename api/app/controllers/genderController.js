@@ -41,7 +41,7 @@ const genderController = {
         }
     },
 
-    update : async (req, req, next) => {
+    update : async (req, res, next) => {
         try{
             const genderId = req.params.id;
             const targetGender = await Gender.findByPk(genderId);

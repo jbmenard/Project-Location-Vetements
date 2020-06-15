@@ -14,7 +14,7 @@ const app = express();
 
 app.use(morgan('dev'));
 
-app.use('cors');
+app.use(cors());
 
 app.use(expressSession({
     resave: true,

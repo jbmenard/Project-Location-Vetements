@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+const authController = require('./controllers/authController');
 const userController = require('./controllers/userController');
 const userInfoController = require('./controllers/userInfoController');
 const categoryController = require('./controllers/categoryController');
@@ -9,10 +10,9 @@ const productController = require('./controllers/productController');
 const subCategoryController = require('./controllers/subCategoryController');
 const commentController = require ('./controllers/commentController');
 
-
 router.get('/user', userController.getAll);
 router.get('/user/:id', userController.getOne );
-router.post('/user', userController.create);
+router.post('/user', authController.signupAction);
 router.patch('/user/:id', userController.update);
 router.delete('/user/:id', userController.delete);
 
