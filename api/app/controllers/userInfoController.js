@@ -1,4 +1,4 @@
-const UserInfo = require('../models/user_info');
+const UserInfos = require('../models/user_info');
 
 const userInfoController = {
 
@@ -8,9 +8,9 @@ const userInfoController = {
                 include: [{all: true,  nested: true}]
             });
 
-            res.send(userInfos)
+            res.send(usersInfos)
         } catch (error) {
-            race(error);
+            console.trace(error);
             res.status(500).send(error);
         }
     },
@@ -77,4 +77,4 @@ const userInfoController = {
 
 };
 
-module.exports = userInfoController:
+module.exports = userInfoController;

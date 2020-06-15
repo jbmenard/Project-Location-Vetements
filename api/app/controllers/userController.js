@@ -11,6 +11,7 @@ const userController = {
             });
 
             //2. renvoyer le resultat
+            console.log(req.session)
             res.send(users);
             
         } catch (error) {
@@ -38,33 +39,6 @@ const userController = {
     
             
             
-        } catch (error) {
-            console.trace(error);
-            res.status(500).send(error);
-        }
-    },
-
-    create: async ( req, res, next) => {
-        try {
-      //1. on récupère les infos du body
-      // const title = req.body.title;
-      // const position = req.body.position;
-      // const color = req.body.color;
-
-      // 1bis : plutôt que d'écrire 3 lignes, on peut déconstruire l'objet
-      //const { title, position, color } = req.body;  
-
-      //2. on crée une liste (+save)
-      // const newList = await List.create({title, position, color});
-
-      // 2bis. si on déconstruit req.body pour le reconstruire tel quel juste après, autant passer directement req.body lui meme !!
-      // à ce moment là, c'est Sequelize (et la BDD) qui vont faire les vérif (en fait, grace au NOT NULL, on récupèrera une erreur !)
-         
-      const newUser = await User.create(req.body);
-
-      //3. on envoie la nouvelle liste
-
-      res.send(newUser)
         } catch (error) {
             console.trace(error);
             res.status(500).send(error);
@@ -131,3 +105,4 @@ const userController = {
 };
 
 module.exports = userController; 
+

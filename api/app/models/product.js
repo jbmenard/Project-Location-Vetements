@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const client = require('../database');
 
-class Product extends Sequelize.model {
+class Product extends Sequelize.Model {
 
 
 
