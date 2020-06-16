@@ -1,24 +1,51 @@
 .productpage {
-  margin-top: 3em;
+
+  &-photo {
+    box-shadow: 2px 5px 12px #ccc;
+  }
 
   &-header {
-    color: green;
+    background-color: #e9ebed;
+    height: 5em;
+    margin-bottom: 2em;
   }
 
   &-infos {
-    margin: 1.5em 0;
+    border-top: 1px solid #ccc;
+    padding: 1em 2em;
+    margin: 2em 3em;
+    font-size: 0.9em;
+    text-align: left;
+    justify-content: space-between;
 
+    &--title {
+      color: red;
+      font-weight: 500;
+    }
+  
     &--item {
-      margin-top: 0.5em;
-
+      font-weight: 300;
+    }
+  
+    &--price {
+      font-weight: 700;
     }
   }
 
-  &-infos {
-    justify-content: space-between;
+  &-user {
+    margin: 1em 5em;
+    text-align: left;
   }
+
+
 
   &-button {
     margin: 1.5em 0;
+  }
+
+  &-footer {
+    background-color: #e9ebed;
+    height: 5em;
+    margin-bottom: 2em;
   }
 }
