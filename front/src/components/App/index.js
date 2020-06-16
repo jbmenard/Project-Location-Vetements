@@ -1,19 +1,21 @@
 // == Import npm
 import React from 'react';
 
-// == Import components
-import Button from 'src/components/Button';
-
+import ProductCategory from 'src/components/productCategory';
 // == Import
 import CardDesign from 'src/components/CardDesign';
 import './styles.scss';
 
+
 // == Composant
 const App = () => (
+  // <Button value="Envoyer" size="medium" />
+  // <Avatar size="large" />
   <div className="app">
-    <h1>Composant : CardDesign</h1>
+    <ProductCategory />
     <CardDesign />
   </div>
+
 );
 
 // == Export
