@@ -4,8 +4,9 @@ import React from 'react';
 import ProductCategory from 'src/components/productCategory';
 // == Import
 import CardDesign from 'src/components/CardDesign';
+import Footer from 'src/components/Footer';
 
-import './styles.css';
+import './styles.scss';
 
 // == Composant
 const App = () => (
@@ -14,6 +15,7 @@ const App = () => (
   <div className="app">
     <ProductCategory />
     <CardDesign />
+    <Footer />
   </div>
 
 );
