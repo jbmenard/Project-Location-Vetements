@@ -16,6 +16,9 @@ router.post('/user', authController.signupAction);
 router.patch('/user/:id', userController.update);
 router.delete('/user/:id', userController.delete);
 
+router.post('/signin', authController.loginAction);
+router.get('/logout', authController.logout);
+
 router.get('/userinfo', userInfoController.getAll);
 router.get('/userinfo/:userInfosId', userInfoController.getOne );
 router.post('/userinfo', userInfoController.create);
