@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import Button from 'src/components/Button';
 
 // == Import
 import './styles.scss';
@@ -15,7 +16,7 @@ const CardDesign = () => (
       <img className="card-body-image" src="https://img5.onthesnow.com/image/sm/52/caract%C3%A9ristiques_dune_bonne_tenue_de_ski_1_521068.jpg" alt="ski" />
     </body>
     <footer className="card-footer">
-      <button className="card-footer-description">Description de l'article</button>
+      <Button size="small" value="Description" />
     </footer>
   </div>
 );
