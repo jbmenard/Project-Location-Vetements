@@ -8,6 +8,7 @@ import CardDesign from 'src/components/CardDesign';
 import Footer from 'src/components/Footer';
 
 import UserPage from 'src/components/UserPage';
+import ProductFrom from '../ProdcutForm';
 
 
 import './styles.scss';
@@ -18,10 +19,7 @@ const App = () => (
   // <Button value="Envoyer" size="medium" />
   // <Avatar size="large" />
   <>
-    <ProductCategory />
-    <CardDesign />
     <Footer />
-    <UserPage />
   </>
 
 );
