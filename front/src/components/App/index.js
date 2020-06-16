@@ -9,10 +9,13 @@ import './styles.css';
 
 // == Composant
 const App = () => (
+  // <Button value="Envoyer" size="medium" />
+  // <Avatar size="large" />
   <div className="app">
     <ProductCategory />
     <CardDesign />
   </div>
+
 );
 
 // == Export
