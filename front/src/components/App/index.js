@@ -6,11 +6,12 @@ import Button from 'src/components/Button';
 
 // == Import
 import CardDesign from 'src/components/CardDesign';
-import './styles.css';
+import './styles.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
+    <h1>Composant : CardDesign</h1>
     <CardDesign />
   </div>
 );
