@@ -1,0 +1,24 @@
+.productpage {
+  margin-top: 3em;
+
+  &-header {
+    color: green;
+  }
+
+  &-infos {
+    margin: 1.5em 0;
+
+    &--item {
+      margin-top: 0.5em;
+
+    }
+  }
+
+  &-infos {
+    justify-content: space-between;
+  }
+
+  &-button {
+    margin: 1.5em 0;
+  }
+}
