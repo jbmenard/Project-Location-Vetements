@@ -45,18 +45,16 @@
   
 }
 .product-article1{
-  border: 1px solid black;
-  margin-bottom: 2em;
-  height:20em;
-  margin-right:1em;
-  margin-left:1em;
+  display: flex;
+  justify-content: center;
+
+  
+  
 }
 .product-article2{
-  border: 1px solid black;
-  height:20em;
-  margin-bottom: 2em;
-  margin-right:1em;
-  margin-left:1em;
+  display: flex;
+  justify-content: center;
+  
 }
 
 
@@ -66,9 +64,8 @@
   display: flex;
   justify-content: center;
   margin-top:2em;
-  border:1px solid black;
-  margin-right:1em;
-  margin-left:1em;
+  
+  
   height: 3em;
 
 }

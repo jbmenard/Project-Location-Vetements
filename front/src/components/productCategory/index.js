@@ -1,5 +1,6 @@
 import React from 'react';
 import CardDesign from 'src/components/CardDesign';
+import Footer from 'src/components/Footer';
 import './style.scss';
 
 const ProductCategory = () => (
@@ -9,19 +10,35 @@ const ProductCategory = () => (
       <p className="header">header</p>
     </div>
     <div className="product-event">
-      <p className="event">event</p>
-      <p className="deguisement">deguisement</p>
+      <label htmlFor="subCategory">
+        Catégory :
+        <select name="subCategory" id="subCategory">
+          <option value="sport">sport</option>
+          <option value="évènement">évènement</option>
+          <option value="Accessoires">Accessoires</option>
+
+        </select>
+      </label>
+      <label htmlFor="subCategory">
+        Sous-Catégory :
+        <select name="subCategory" id="subCategory">
+          <option value="sportDeGlisse">sportDeGlisse</option>
+          <option value="soireeEtFete">soireeEtFete</option>
+          <option value="mariage">mariage</option>
+          <option value="maroquinerie">maroquinerie</option>
+        </select>
+      </label>
     </div>
     <section className="product-section">
       <article className="product-article1">
         <CardDesign />
       </article>
       <article className="product-article2">
-        <p>pantalon</p>
+        <CardDesign />
       </article>
     </section>
     <footer className="product-footer">
-      <p className="footer">footer</p>
+      <Footer />
     </footer>
   </div>
 );

@@ -19,12 +19,6 @@ const App = () => (
   // <Avatar size="large" />
   <>
     <ProductCategory />
-<<<<<<< HEAD
-=======
-    <CardDesign />
-    <Footer />
-    <UserPage />
->>>>>>> 493a67c8af511432bc4cd0c89223949f2ab602df
   </>
 );
 
