@@ -1,15 +1,14 @@
 // == Import npm
 import React from 'react';
-
+import ProductCategory from 'src/components/productCategory';
 // == Import
-import reactLogo from './react-logo.svg';
 import './styles.css';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
+    <ProductCategory />
+
   </div>
 );
 
