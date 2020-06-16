@@ -46,6 +46,7 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "lodash": "^4.17.15",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*"

@@ -23,7 +23,7 @@ const UserPage = () => (
             06 87 54 12 65
           </li>
         </ul>
-        <Button className="button-style" size="small" value="Modifier mon profil" />
+        <Button color="eggshell" size="small" value="Modifier mon profil" />
       </div>
     </div>
     <h2 className="title-user-page">
