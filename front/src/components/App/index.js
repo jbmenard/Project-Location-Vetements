@@ -11,7 +11,7 @@ import './styles.css';
 const App = () => (
   <div className="app">
     <ProductCategory />
-    <CardDesign />
+
   </div>
 );
 
