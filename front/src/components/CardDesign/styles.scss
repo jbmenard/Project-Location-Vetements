@@ -1,19 +1,21 @@
 .card {
+  box-shadow: 2px 5px 12px #ccc;
+  margin-top: 3em;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
-  height: 15em;
+  height: 23em;
   width: 15em;
-  
+  margin: 1.5em;
+
   &-header {
     display: flex;
     padding: 1em 0;
     background-color: #fff;
-    opacity: 0.6;
 
     &-disponibility {
       width: 50%;
-      color: red;  
+      color: green;  
     }
 
     &-price {
@@ -23,11 +25,22 @@
     }
   }
 
+  &-body {
+    width: 100%;
+
+    &-image {
+      width: 100%;
+
+    }
+  }
+
   &-footer {
-    margin-top: 60%;
     padding: 1em 0;
     background-color: #fff;
-    opacity: 0.6;
+
+    &-description {
+      color: black;
+    }
   }
 
 }

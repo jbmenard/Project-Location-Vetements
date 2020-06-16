@@ -1,5 +1,5 @@
 import React from 'react';
-
+import CardDesign from 'src/components/CardDesign';
 import './style.scss';
 
 const ProductCategory = () => (
@@ -14,7 +14,7 @@ const ProductCategory = () => (
     </div>
     <section className="product-section">
       <article className="product-article1">
-        <p>pull</p>
+        <CardDesign />
       </article>
       <article className="product-article2">
         <p>pantalon</p>
