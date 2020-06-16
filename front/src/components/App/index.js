@@ -5,11 +5,14 @@ import React from 'react';
 import Button from 'src/components/Button';
 
 // == Import
-import './styles.scss';
+import CardDesign from 'src/components/CardDesign';
+import './styles.css';
 
 // == Composant
 const App = () => (
-  <Button value="Envoyer" size="medium" />
+  <div className="app">
+    <CardDesign />
+  </div>
 );
 
 // == Export
