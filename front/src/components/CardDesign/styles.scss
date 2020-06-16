@@ -1,16 +1,16 @@
 .card {
+  margin-top: 3em;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
-  height: 15em;
+  height: 21.5em;
   width: 15em;
-  background-image: url('https://img5.onthesnow.com/image/sm/52/caract%C3%A9ristiques_dune_bonne_tenue_de_ski_1_521068.jpg');
 
   &-header {
     display: flex;
     padding: 1em 0;
     background-color: #fff;
-    opacity: 0.6;
 
     &-disponibility {
       width: 50%;
@@ -24,11 +24,22 @@
     }
   }
 
+  &-body {
+    width: 100%;
+
+    &-image {
+      width: 100%;
+
+    }
+  }
+
   &-footer {
-    margin-top: 60%;
     padding: 1em 0;
     background-color: #fff;
-    opacity: 0.6;
+
+    &-description {
+      color: black;
+    }
   }
 
 }
