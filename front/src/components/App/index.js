@@ -16,6 +16,7 @@ import './styles.scss';
 const App = () => (
 
   <>
+
     {/* <Navbar /> */}
     <Switch>
       <Route exact path="/">
@@ -29,8 +30,8 @@ const App = () => (
       </Route>
     </Switch>
     <Footer />
-  </>
 
+  </>
 );
 
 // == Export
