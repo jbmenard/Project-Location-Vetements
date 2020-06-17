@@ -10,49 +10,49 @@ UserInfo.init({
     first_name : {
         type : Sequelize.TEXT,
         allowNull : false,
-        validates : {
+        validate : {
             notEmpty : true
         }
     },
     last_name : {
         type : Sequelize.TEXT,
         allowNull : true,
-        validates : {
+        validate : {
             notEmpty : false
         }
     },
     address : {
         type : Sequelize.TEXT,
         allowNull : true,
-        validates : {
+        validate : {
             notEmpty : false
         }
     },
     mobile : {
         type : Sequelize.TEXT,
         allowNull : true,
-        validates : {
+        validate : {
             notEmpty : false
         }
     },
     avatar : {
         type : Sequelize.TEXT,
         allowNull : true,
-        validates : {
+        validate : {
             notEmpty : false
         }
     },
     certified : {
         type : Sequelize.BOOLEAN,
         allowNull : false,  
-        validates : {
+        validate : {
             notEmpty : true  
         }
     },
     role : {
         type : Sequelize.TEXT,
         allowNull : false,
-        validates : {
+        validate : {
             notEmpty : true
         }
     }

@@ -11,52 +11,73 @@ Product.init({
     name: {
         type: Sequelize.TEXT,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: true,
         }
     },
     description: {
         type: Sequelize.TEXT,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: true,
         }
     },
     image: {
         type: Sequelize.TEXT,
-        allowNull: false,
-        validates: {
-            notEmpty: true,
+        allowNull: true,
+        validate: {
+            notEmpty: false,
         }
     },
     size: {
         type: Sequelize.TEXT,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: false,
         }
     },
     price: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: true,
         }
     },
     mark: {
         type: Sequelize.TEXT,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: false,
         }
     },
     status: {
         type: Sequelize.TEXT,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: true,
         }
     },
+    user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        }
+    }, 
+    gender_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        }
+    }, 
+    sub_category_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        }
+    }, 
 }, {
     sequelize: client,
     tableName: "product",

@@ -33,7 +33,20 @@ const productController = {
 
     create : async (req, res, next) => {
         try{
-            const newProduct = await Product.create(req.body);
+            
+            const newProduct = await Product.create({
+                id: Number(req.body.id),
+                name: req.body.name,
+                description: req.body.description,
+                gender_id: Number(req.body.gender_id),
+                image: req.body.image,
+                size: req.body.size,
+                price: req.body.price,
+                mark: req.body.mark,
+                status: req.body.status,
+                user_id: Number(req.body.user_id),
+                sub_category_id: Number(req.body.sub_category_id),
+            });
             res.send(newProduct)
         } catch (error) {
             console.trace(error);

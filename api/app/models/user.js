@@ -11,14 +11,14 @@ User.init({
     email: {
         type: Sequelize.TEXT,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: true,
         }
     },
     password: {
         type: Sequelize.TEXT,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: true,
         }
     }
