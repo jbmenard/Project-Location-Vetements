@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import ProductForm from 'src/components/ProductForm';
+import AddProduct from 'src/components/AddProduct';
 import { createProduct } from 'src/actions/product';
 
 const mapStateToProps = (state) => ({});
@@ -38,4 +38,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ProductForm);
+)(AddProduct);

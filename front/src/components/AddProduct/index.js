@@ -3,7 +3,7 @@ import React from 'react';
 
 import './style.scss';
 
-const ProductFrom = ({ createProduct, onChangeName, onSelectGender, onChangePrice, onSelectorSize, onSelectorState, onSelectSubCategory }) => {
+const AddProduct = ({ createProduct, onChangeName, onSelectGender, onChangePrice, onSelectorSize, onSelectorState, onSelectSubCategory }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     createProduct(event);
@@ -82,4 +82,4 @@ const ProductFrom = ({ createProduct, onChangeName, onSelectGender, onChangePric
     </div>
   )
 };
-export default ProductFrom;
+export default AddProduct;

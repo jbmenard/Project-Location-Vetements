@@ -10,7 +10,7 @@ import UserPage from 'src/components/UserPage';
 import Footer from 'src/components/Footer';
 
 // == Import containers
-import ProductForm from 'src/containers/Product';
+import AddProduct from 'src/containers/Product';
 
 // == Immport styles
 import './styles.scss';
@@ -28,7 +28,7 @@ const App = () => (
         <UserPage />
       </Route>
       <Route exact path="/newproduct"> {/* Form to create a new product */}
-        <ProductForm />
+        <AddProduct />
       </Route>
     </Switch>
     <Footer />
