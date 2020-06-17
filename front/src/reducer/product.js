@@ -1,7 +1,18 @@
-import { SAVE_PRODUCTS } from 'src/actions/product';
+import { SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE } from 'src/actions/product';
 
 export const initialState = {
   listProducts: [],
+  id: 10,
+  name: '',
+  description: '',
+  image: '',
+  size: '',
+  price: 0,
+  mark: '',
+  status: '',
+  user_id: 3,
+  sub_category_id: 2,
+  gender_id: 1,
 };
 
 const productReducer = (state = initialState, action = {}) => {
@@ -10,6 +21,13 @@ const productReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         listProducts: action.products,
+      };
+    case ADD_PRODUCT_IN_STATE:
+      console.log(action.value, action.name);
+      
+      return {
+        ...state,
+        [action.name]: action.value,
       };
     default:
       return state;
