@@ -5,8 +5,12 @@ import { Route, Switch } from 'react-router-dom';
 // == Import components
 import UserPage from 'src/components/UserPage';
 import Footer from 'src/components/Footer';
+import Page404 from 'src/components/Page404';
 import ProductPage from 'src/components/ProductPage';
+
 import ConnexionInscription from 'src/components/Connexion_Inscription';
+import AddUserInfos from 'src/components/AddUserInfos';
+
 
 // == Import containers
 import Navbar from 'src/containers/Navbar';
@@ -38,8 +42,14 @@ const App = () => (
       <Route exact path="/newproduct"> {/* Form to create a new product */}
         <AddProduct />
       </Route>
+      <Route exact path="/newuserinfos"> {/* Form to create new user infos */}
+        <AddUserInfos />
+      </Route>
       <Route exact path="/inscription"> {/* Form to create a new user */}
         <ConnexionInscription />
+      </Route>
+      <Route>
+        <Page404 />
       </Route>
     </Switch>
     <Footer />
