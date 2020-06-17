@@ -6,9 +6,12 @@ import { Route, Switch } from 'react-router-dom';
 // import Navbar from 'src/components/Navbar';
 import ProductCategory from 'src/components/productCategory';
 import UserPage from 'src/components/UserPage';
-import ProductFrom from 'src/components/ProdcutForm';
+// import ProductFrom from 'src/components/ProductForm';
 import Footer from 'src/components/Footer';
 import ProductPage from 'src/components/ProductPage';
+
+// == Import containers
+import AddProduct from 'src/containers/Product';
 
 // == Immport styles
 import './styles.scss';
@@ -30,7 +33,7 @@ const App = () => (
         <UserPage />
       </Route>
       <Route exact path="/newproduct"> {/* Form to create a new product */}
-        <ProductFrom />
+        <AddProduct />
       </Route>
     </Switch>
     <Footer />
