@@ -1,77 +1,16 @@
-
-.product-header {
-  display: flex;
-  justify-content:space-around;
-  background-color: #B8F2E6;
-  height:15vh;
-  
-
- 
-}
-.burger{
-  margin:auto 0;
-  font-size:1em;
-}
-.header{
-  border:1px solid black;
-  margin:auto 0;
-  width: 6em;
-  text-align: center;
-  font-size:2em;
-  
-}
-.event{
-  border:1px solid black;
-  background-color: #FAF3DD;
-  font-size:1.5em;
-}
-.deguisement{
-  border:1px solid black;
-  background-color: #FAF3DD;
-  font-size:1.5em;
-}
 .product-event {
   display: flex;
-  justify-content:space-around;
-  margin-top:3em;
+  justify-content: space-around;
+  margin: 1em auto;
 }
-.product-section {
+
+.product-article{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.label {
+  display:flex;
   flex-direction: column;
-  text-align: center;
-  margin-top: 3em;
-  margin-right:1em;
-  margin-left:1em;
-  
 }
-.product-article1{
-  display: flex;
-  justify-content: center;
-
-  
-  
-}
-.product-article2{
-  display: flex;
-  justify-content: center;
-  
-}
-
-
-
-
-.product-footer {
-  display: flex;
-  justify-content: center;
-  margin-top:2em;
-  
-  
-  height: 3em;
-
-}
-.footer{
-  width: 100%;
-  margin: auto;
-  text-align: center;
-}
-

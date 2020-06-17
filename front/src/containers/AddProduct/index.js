@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import AddProduct from 'src/components/AddProduct';
 import { createProduct } from 'src/actions/product';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  listProducts: state.product.listProducts,
+});
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
 const mapDispatchToProps = (dispatch) => ({
