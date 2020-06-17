@@ -1,8 +1,15 @@
 import React from 'react';
 import './styles.scss';
+import { NavLink } from 'react-router-dom';
 
 
-const Navbar = ({ toggleMenu }) => (
+const Navbar = ({ toggleMenu, toggleNavbar }) => {
+  // const handleClick = () => {
+  //   console.log("oui")
+  // }
+  console.log(toggleMenu);
+  
+  return (
   <>
     <div className={`${toggleMenu ? 'liens liens--open' : 'liens'}`}>
       <h3 className="liens-title">Login</h3>
@@ -17,17 +24,18 @@ const Navbar = ({ toggleMenu }) => (
         </label>
       </div>
 
-      <ul className="liens-items">
+      <div className="liens-items">
         <label className="item--title" htmlFor="search">
           Rechercher
           <input className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
         </label>
-        <li className="item"><a href="#"> Accueil</a> </li>
-        <li className="item"><a href="#"> Parcourir</a> </li>
-        <li className="item"><a href="#"> Comment ça marche ?</a> </li>
-      </ul>
+        <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
+        <NavLink to="/ailleurs" className="item">Parcourir</NavLink>
+        <NavLink to="/ailleurs" className="item"> Comment ça marche ?</NavLink>
+      </div>
     </div>
   </>
-);
+  );
+};
 
 export default Navbar;
