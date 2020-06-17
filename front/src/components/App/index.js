@@ -33,7 +33,7 @@ const App = () => (
       <Route exact path="/">
         <ProductCategory />
       </Route>
-      <Route exact path="/product">
+      <Route exact path="/product/:slug">
         <ProductPage />
       </Route>
       <Route exact path="/user"> {/* user page */}
