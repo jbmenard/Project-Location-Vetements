@@ -16,7 +16,7 @@ const CardDesign = () => (
       <img className="card-body-image" src="https://img5.onthesnow.com/image/sm/52/caract%C3%A9ristiques_dune_bonne_tenue_de_ski_1_521068.jpg" alt="ski" />
     </section>
     <footer className="card-footer">
-      <Button size="small" value="Description" />
+      <Button size="x-large" color="aero-blue" value="Description" />
     </footer>
   </div>
 );
