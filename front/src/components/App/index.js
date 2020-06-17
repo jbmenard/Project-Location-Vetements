@@ -11,10 +11,11 @@ import Footer from 'src/components/Footer';
 import ProductPage from 'src/components/ProductPage';
 
 // == Import containers
-import AddProduct from 'src/containers/Product';
+import AddProduct from 'src/containers/AddProduct';
 
 // == Immport styles
 import './styles.scss';
+import ConnexionInscription from '../Connexion_Inscription';
 
 // == Composant
 const App = () => (
@@ -34,6 +35,9 @@ const App = () => (
       </Route>
       <Route exact path="/newproduct"> {/* Form to create a new product */}
         <AddProduct />
+      </Route>
+      <Route exact path="/inscription"> {/* Form to create a new product */}
+        <ConnexionInscription />
       </Route>
     </Switch>
     <Footer />
