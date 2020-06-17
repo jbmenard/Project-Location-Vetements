@@ -1,39 +1,57 @@
 import { connect } from 'react-redux';
 
 import AddProduct from 'src/components/AddProduct';
-import { createProduct } from 'src/actions/product';
+import { createProduct, addProductInState } from 'src/actions/product';
 
 const mapStateToProps = (state) => ({
-  listProducts: state.product.listProducts,
+  id: state.productReducer.id,
+  name: state.productReducer.name,
+  description: state.productReducer.description,
+  gender_id: state.productReducer.gender_id,
+  image: state.productReducer.image,
+  size: state.productReducer.size,
+  price: state.productReducer.price,
+  mark: state.productReducer.mark,
+  status: state.productReducer.status,
+  user_id: state.productReducer.user_id,
+  sub_category_id: state.productReducer.sub_category_id,
 });
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
 const mapDispatchToProps = (dispatch) => ({
-  createProduct: (event) => {
-    console.log(event.target);
+  createProduct: () => {
+    dispatch(createProduct());
   },
-  onChangeName: (event) => {
-    console.log(event);
-  },
-
-  onSelectGender: (event) => {
-    console.log(event);
+  onChangeName: (value, name) => {
+    dispatch(addProductInState(value, name));
   },
 
-  onSelectorSize: (event) => {
-    console.log(event);
+  onSelectGender: (value, name) => {
+    dispatch(addProductInState(value, name));
   },
 
-  onSelectorState: (event) => {
-    console.log(event);
+  onSelectorSize: (value, name) => {
+    dispatch(addProductInState(value, name));
   },
 
-  onChangePrice: (event) => {
-    console.log(event);
+  onSelectorState: (value, name) => {
+    dispatch(addProductInState(value, name));
   },
 
-  onSelectSubCategory: (event) => {
-    console.log(event);
+  onChangePrice: (value, name) => {
+    dispatch(addProductInState(value, name));
+  },
+
+  onSelectSubCategory: (value, name) => {
+    dispatch(addProductInState(value, name));
+  },
+
+  onSelectMark: (value, name) => {
+    dispatch(addProductInState(value, name));
+  },
+
+  onChangeDescription: (value, name) => {
+    dispatch(addProductInState(value, name));
   },
 });
 

@@ -3,62 +3,81 @@ import React from 'react';
 
 import './style.scss';
 
-const AddProduct = ({ createProduct, onChangeName, onSelectGender, onChangePrice, onSelectorSize, onSelectorState, onSelectSubCategory }) => {
-
+const AddProduct = ({
+  createProduct,
+  onChangeName,
+  onSelectGender,
+  onChangePrice,
+  onSelectorSize,
+  onSelectorState,
+  onSelectSubCategory,
+  onSelectMark,
+  onChangeDescription,
+}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    createProduct(event);
+    createProduct();
   };
 
   const handleChangeName = (event) => {
-    onChangeName(event.target.value);
+    onChangeName(event.target.value, event.target.name);
   };
 
   const handleSelectGender = (event) => {
-    onSelectGender(event.target.value);
+    onSelectGender(event.target.value, event.target.name);
+  };
+
+  const handleSelectMark = (event) => {
+    onSelectMark(event.target.value, event.target.name);
   };
 
   const handleSelectSize = (event) => {
-    onSelectorSize(event.target.value);
+    onSelectorSize(event.target.value, event.target.name);
   };
 
   const handleSelectState = (event) => {
-    onSelectorState(event.target.value);
+    onSelectorState(event.target.value, event.target.name);
   };
 
   const handleChangePrice = (event) => {
-    onChangePrice(event.target.value);
+    onChangePrice(event.target.value, event.target.name);
   };
 
   const handleSelectSubCategory = (event) => {
-    onSelectSubCategory(event.target.value);
+    onSelectSubCategory(event.target.value, event.target.name);
+  };
+
+  const handleChangeDescription = (event) => {
+    onChangeDescription(event.target.value, event.target.name);
   };
   return (
- <div className="add-product">
+    <div className="add-product">
       <h1 className="add-product--title">Ajouter un produit</h1>
-      <form className="add-product--form" method="post" onSubmit={(event) => handleSubmit(event)}>
+      <form className="add-product--form" onSubmit={(event) => handleSubmit(event)}>
         <label htmlFor="name">
           Nom du produit :
-          <input className="add-product--input" type="text" name="name" onChange={handleChangeName} />
+          <input className="add-product--input" type="text" name="name" id="name" onChange={handleChangeName} />
         </label>
-        <label htmlFor="subCategory">
+        <label htmlFor="sub_category_id">
           Catégorie :
-          <select className="add-product--select" name="subCategory" id="subCategory">
-            <option value="sportDeGlisse">Sports de Glisse</option>
-            <option value="soireeEtFete">Soirées et Fêtes</option>
-            <option value="mariage">Mariages</option>
-            <option value="maroquinerie">Maroquinerie</option>
+          <select className="add-product--select" name="sub_category_id" id="sub_category_id" onChange={handleSelectSubCategory}>
+            <option value="0">Sports de Glisse</option>
+            <option value="7">Soirées et Fêtes</option>
+            <option value="6">Mariages</option>
+            <option value="11">Maroquinerie</option>
           </select>
         </label>
-        <label htmlFor="name">Marque :
-          <input onChange={handleSelectGender} className="add-product--input" type="text" name="name" />
+        <label htmlFor="mark">
+          Marque :
+          <input onChange={handleSelectMark} className="add-product--input" type="text" name="mark" id="mark" />
         </label>
-        <label htmlFor="gender">
+        <label htmlFor="gender_id">
           Genre
-          <select className="add-product--select" name="gender" id="gender">
-            <option value="homme">Homme</option>
-            <option value="femme">Femme</option>
-            <option value="femme">Enfant</option>
+          <select className="add-product--select" name="gender_id" id="gender_id" onChange={handleSelectGender}>
+            <option value="0">Homme</option>
+            <option value="2">Femme</option>
+            <option value="3">Enfant</option>
+            <option value="4">Bébé</option>
           </select>
         </label>
         <label htmlFor="size">
@@ -73,14 +92,18 @@ const AddProduct = ({ createProduct, onChangeName, onSelectGender, onChangePrice
             <option value="3xlarge">3XL</option>
           </select>
         </label>
-        <label htmlFor="state">
+        <label htmlFor="status">
           Etat du produit :
-          <select className="add-product--select" name="state" id="state" onChange={handleSelectState}>
+          <select className="add-product--select" name="status" id="status" onChange={handleSelectState}>
             <option value="neverUsed">Jamais porté</option>
             <option value="likeNew">Comme neuf</option>
             <option value="used">Usé</option>
             <option value="toGive">A donner</option>
           </select>
+        </label>
+        <label htmlFor="description">
+          Description :
+          <input onChange={handleChangeDescription} className="add-product--input" type="textarea" name="description" id="description" onChange={handleChangeName} />
         </label>
         <label htmlFor="price">
           Prix :

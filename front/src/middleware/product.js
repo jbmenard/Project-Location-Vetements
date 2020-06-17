@@ -5,25 +5,30 @@ import { CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts } from 'src/actions/produc
 const api = (store) => (next) => (action) => {
   switch (action.type) {
     case CREATE_PRODUCT: {
-      const state = store.getState();
-      axios.post('http://localhost:5050/product', {
-        name: state.product.name,
-        description: state.product.description,
-        gender_id: state.product.gender,
-        image: state.product.image,
-        price: state.product.price,
-        size: state.product.size,
-        mark: state.product.mark,
-        user_id: state.product.userID,
-        sub_category_id: state.product.subCategoryID,
+      const state = store.getState().productReducer;
+      // console.log(state);
+      const data = new FormData();
+      data.set('id', state.id);
+      data.set('name', state.name);
+      data.set('description', state.description);
+      data.set('gender_id', state.gender_id);
+      data.set('size', state.size);
+      data.set('price', state.price);
+      data.set('mark', state.mark);
+      data.set('status', state.status);
+      data.set('user_id', state.user_id);
+      data.set('sub_category_id', state.sub_category_id);
+      axios({
+        method: 'post',
+        url: 'http://localhost:5050/product',
+        data: data,
       })
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
         })
-        .cacth((error) => {
+        .catch((error) => {
           console.trace(error);
         });
-      next(action);
       break;
     }
     case FETCH_PRODUCTS:
