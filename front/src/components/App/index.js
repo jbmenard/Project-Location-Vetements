@@ -3,15 +3,18 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // == Import components
-// import Navbar from 'src/components/Navbar';;
 import UserPage from 'src/components/UserPage';
 import Footer from 'src/components/Footer';
 import Page404 from 'src/components/Page404';
 import ProductPage from 'src/components/ProductPage';
-import ConnexionInscription from '../Connexion_Inscription';
+
+import ConnexionInscription from 'src/components/Connexion_Inscription';
 import AddUserInfos from 'src/components/AddUserInfos';
 
+
 // == Import containers
+import Navbar from 'src/containers/Navbar';
+import Header from 'src/containers/Header';
 import AddProduct from 'src/containers/AddProduct';
 import ProductCategory from 'src/containers/ProductCategory';
 
@@ -24,8 +27,8 @@ import './styles.scss';
 const App = () => (
 
   <>
-
-    {/* <Navbar /> */}
+    <Navbar />
+    <Header />
     <Switch>
       <Route exact path="/">
         <ProductCategory />

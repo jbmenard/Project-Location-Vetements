@@ -4,7 +4,7 @@ export const initialState = {
   listProducts: [],
 };
 
-const reducer = (state = initialState, action = {}) => {
+const productReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_PRODUCTS:
       return {
@@ -16,4 +16,4 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 
-export default reducer;
+export default productReducer;

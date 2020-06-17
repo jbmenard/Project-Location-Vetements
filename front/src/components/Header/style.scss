@@ -1,0 +1,25 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  transform: translateX(0%);
+  transition: transform 0.8s;
+
+  &-toggle {
+  max-width: 50%;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-bottom: 1em;
+  color: black;
+  cursor: pointer;
+  }
+
+  
+  &-img{
+  width: 12em;
+  height: auto;
+  }
+
+  &--open {
+    transform: translateX(70%);
+  }
+}

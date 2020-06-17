@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 
-import ProductCategory from 'src/components/productCategory';
-import { fetchProducts } from 'src/actions/product';
+import Header from 'src/components/Header';
+import { toggleNavbar } from 'src/actions/style';
 
 const mapStateToProps = (state) => ({
-  listProducts: state.productReducer.listProducts,
+  toggleMenu: state.styleReducer.toggleNavbar,
 });
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
 const mapDispatchToProps = (dispatch) => ({
-  fetchProducts: () => {
-    const action = fetchProducts();
+  toggleNavbar: () => {
+    const action = toggleNavbar();
     dispatch(action);
   },
 });
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ProductCategory);
+)(Header);
