@@ -2,7 +2,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 
 // == Import : local
 import rootReducer from 'src/reducer';
-import api from 'src/reducer/product';
+import api from 'src/middleware/product';
 
 // == Enhancers
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -2,8 +2,9 @@
 
 .footer {
   display: flex;
- flex-direction: column;
- font-family: 'Nanum Gothic', sans-serif;
+  flex-direction: column;
+  font-family: 'Nanum Gothic', sans-serif;
+  text-align: center;
  
     &-icons {
       padding: 1rem;

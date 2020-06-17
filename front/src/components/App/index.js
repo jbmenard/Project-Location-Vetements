@@ -3,15 +3,15 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // == Import components
-// import Navbar from 'src/components/Navbar';
-import ProductCategory from 'src/components/productCategory';
+// import Navbar from 'src/components/Navbar';;
 import UserPage from 'src/components/UserPage';
 // import ProductFrom from 'src/components/ProductForm';
 import Footer from 'src/components/Footer';
 import ProductPage from 'src/components/ProductPage';
 
 // == Import containers
-import AddProduct from 'src/containers/Product';
+import AddProduct from 'src/containers/AddProduct';
+import ProductCategory from 'src/containers/ProductCategory';
 
 // == Immport styles
 import './styles.scss';
