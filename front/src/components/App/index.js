@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import UserPage from 'src/components/UserPage';
 import AddProduct from 'src/components/AddProduct';
 import Footer from 'src/components/Footer';
+import Page404 from 'src/components/Page404';
 import ProductPage from 'src/components/ProductPage';
 import ConnexionInscription from '../Connexion_Inscription';
 
@@ -40,6 +41,9 @@ const App = () => (
       </Route>
       <Route exact path="/inscription"> {/* Form to create a new user */}
         <ConnexionInscription />
+      </Route>
+      <Route>
+        <Page404 />
       </Route>
     </Switch>
     <Footer />
