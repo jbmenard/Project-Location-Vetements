@@ -26,6 +26,8 @@ app.use(expressSession({
     }
 }))
 
+app.use(cors());
+
 // Traduite les données récupérer dans le body en multipart
 
 const bodyparser = multer();

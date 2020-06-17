@@ -11,7 +11,7 @@ Comment.init({
     content: {
         type: Sequelize.TEXT,
         allowNull: false,
-        validates: {
+        validate: {
             notEmpty: true,
         }
     },
