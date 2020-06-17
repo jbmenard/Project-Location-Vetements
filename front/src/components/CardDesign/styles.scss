@@ -10,7 +10,6 @@
 
   &-header {
     display: flex;
-    padding: 1em 0;
     background-color: #fff;
 
     &-disponibility {
@@ -35,13 +34,8 @@
     }
   }
 
-  &-footer {
-    margin: 1em auto;
-    background-color: #fff;
-
-    &-description {
-      color: black;
-    }
+  &-button{
+    margin: auto;
   }
 
 }
