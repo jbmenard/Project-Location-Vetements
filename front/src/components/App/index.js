@@ -10,6 +10,9 @@ import AddProduct from 'src/components/AddProduct';
 import Footer from 'src/components/Footer';
 import ProductPage from 'src/components/ProductPage';
 
+// == Import containers
+import AddProduct from 'src/containers/Product';
+
 // == Immport styles
 import './styles.scss';
 
