@@ -5,16 +5,19 @@ import { Route, Switch } from 'react-router-dom';
 // == Import components
 // import Navbar from 'src/components/Navbar';;
 import UserPage from 'src/components/UserPage';
-// import ProductFrom from 'src/components/ProductForm';
+import AddProduct from 'src/components/AddProduct';
 import Footer from 'src/components/Footer';
 import ProductPage from 'src/components/ProductPage';
+import ConnexionInscription from '../Connexion_Inscription';
 
 // == Import containers
 import AddProduct from 'src/containers/AddProduct';
 import ProductCategory from 'src/containers/ProductCategory';
 
+
 // == Immport styles
 import './styles.scss';
+
 
 // == Composant
 const App = () => (
@@ -34,6 +37,9 @@ const App = () => (
       </Route>
       <Route exact path="/newproduct"> {/* Form to create a new product */}
         <AddProduct />
+      </Route>
+      <Route exact path="/inscription"> {/* Form to create a new user */}
+        <ConnexionInscription />
       </Route>
     </Switch>
     <Footer />
