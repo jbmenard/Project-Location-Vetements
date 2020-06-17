@@ -8,6 +8,7 @@ import ProductCategory from 'src/components/productCategory';
 import UserPage from 'src/components/UserPage';
 import ProductFrom from 'src/components/ProdcutForm';
 import Footer from 'src/components/Footer';
+import Page404 from 'src/components/Page404';
 
 // == Immport styles
 import './styles.scss';
@@ -27,6 +28,9 @@ const App = () => (
       </Route>
       <Route exact path="/newproduct"> {/* Form to create a new product */}
         <ProductFrom />
+      </Route>
+      <Route>
+        <Page404 />
       </Route>
     </Switch>
     <Footer />

@@ -1,0 +1,148 @@
+
+.title{
+  
+  &-logo{
+    display: inline-block;
+    margin-top:1em;
+    margin-left: 1em;
+  }
+    
+
+    &-oloc{
+      text-align: center;
+      display: inline-block;
+      margin-left: 5em;
+      margin-top:1em;
+      
+    }
+
+    &-error{
+      
+      margin-top:8em;
+      text-align: center;
+      margin-bottom:11em;
+
+    
+        &-404{
+          border:1px solid black;
+          width: 100%;
+          font-size: 0.5em;
+          width: 140px;
+          margin-left:auto;
+          margin-right:auto;
+          margin-top:-2em;
+          position: relative;
+          z-index:100;
+          background-color: white;
+          color:grey;
+          padding:0.4em;
+
+          
+        }
+
+        &-oops{
+          font-size:3em;
+          position: relative;
+          z-index:1;
+        
+            &-span{
+              font-style: italic;
+            }
+        
+        }
+
+    }
+
+}
+button{
+  color:white;
+  font-size: 10px;
+  margin-top:2em;
+}
+
+body{
+  background-color: #f8f9ef;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .page404 {
+//   display: flex;
+//   justify-content:space-evenly;
+  
+    
+ 
+//   &-title{
+//     display: flex;
+//     margin-top: 2rem;
+//     margin-bottom: 2rem;
+//     margin-left: 15px;
+//     margin-right: 15px;
+//     direction: column;
+//     align-items: center;
+//   }
+
+//   &-soustitle{
+//     display: block;
+//   }
+
+//   &-subtitle{
+//     font-size: 3em;
+//     letter-spacing: 2px;
+//   }
+
+//   &-italic{
+//     font-style:italic ;
+//   }
+
+//   &-comment-title {
+//     display: block
+//   }
+
+//   &-comment{
+//     display: block;
+//     margin-top: 1rem;
+//     border:1px solid black;
+//     font-size:0.6em;
+//     text-align: left;
+//     // margin-bottom: 1em;
+//     position: relative;
+//     background-color: white;
+//     color:grey;
+//     width: max-content;
+//   }
+// }
+// .page404-title-button{
+//   display: flex;
+//   justify-content: center;
+//   margin-top:2em;
+  
+
+// }
+// button{
+//   color:white;
+//   font-size: 10px;
+  
+// }
+// body{
+//   background-color: #f8f9ef;
+// }
+
+// .page404-comment-title{
+//   width: 100%;
+ 
+// }
