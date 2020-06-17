@@ -8,6 +8,7 @@ import ProductCategory from 'src/components/productCategory';
 import UserPage from 'src/components/UserPage';
 import ProductFrom from 'src/components/ProdcutForm';
 import Footer from 'src/components/Footer';
+import ProductPage from 'src/components/ProductPage';
 
 // == Immport styles
 import './styles.scss';
@@ -21,6 +22,9 @@ const App = () => (
     <Switch>
       <Route exact path="/">
         <ProductCategory />
+      </Route>
+      <Route exact path="/product">
+        <ProductPage />
       </Route>
       <Route exact path="/user"> {/* user page */}
         <UserPage />

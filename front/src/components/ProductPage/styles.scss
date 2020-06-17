@@ -1,0 +1,77 @@
+.productpage {
+  font-size: 1.2em;
+
+  &-photo {
+    box-shadow: 2px 5px 12px #ccc;
+  }
+
+  &-header {
+    background-color: #e9ebed;
+    height: 5em;
+    margin-bottom: 2em;
+  }
+
+  &-user {
+    display: flex;
+    margin: 2em 0 1em 4em;
+    text-align: left;
+
+      &--photo {
+        width: 3em;
+        margin-right: 1em;
+      }
+
+      &--name {
+        font-weight: 700;
+      }
+
+      &--note {
+        margin-top: 0.2em;
+        font-weight: 500;
+        color: #5E6472;
+      }
+  }
+
+  &-infos {
+    border-top: 1px solid #ccc;
+    padding: 1em 0 0 4em;
+    text-align: left;
+
+      &--title {
+        font-weight: 700;
+      }
+
+      &--item {
+        font-weight: 300;
+      }
+
+      &--price {
+        font-weight: 500;
+      }
+
+  }
+
+  &-button {
+    margin: 1.5em 0;
+  }
+
+  &-suggest {
+    width: auto;
+    justify-content: space-evenly;
+    display: flex;
+    margin: 2em 0;
+
+      &--item {
+        border: 1px solid black;
+        width: 12em;
+        height: 12em;
+      }
+
+  }
+
+  &-footer {
+    background-color: #e9ebed;
+    height: 5em;
+    margin-bottom: 2em;
+  }
+}

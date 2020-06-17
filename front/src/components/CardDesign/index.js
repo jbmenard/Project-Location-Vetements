@@ -12,9 +12,9 @@ const CardDesign = () => (
       <p className="card-header-disponibility">Disponible</p>
       <p className="card-header-price">Price</p>
     </header>
-    <body>
+    <section>
       <img className="card-body-image" src="https://img5.onthesnow.com/image/sm/52/caract%C3%A9ristiques_dune_bonne_tenue_de_ski_1_521068.jpg" alt="ski" />
-    </body>
+    </section>
     <footer className="card-footer">
       <Button size="x-large" color="aero-blue" value="Description" />
     </footer>
