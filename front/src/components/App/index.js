@@ -7,7 +7,6 @@ import UserPage from 'src/components/UserPage';
 import Footer from 'src/components/Footer';
 import Page404 from 'src/components/Page404';
 
-import ConnexionInscription from 'src/components/Connexion_Inscription';
 import AddUserInfos from 'src/components/AddUserInfos';
 
 
@@ -17,6 +16,7 @@ import Navbar from 'src/containers/Navbar';
 import Header from 'src/containers/Header';
 import AddProduct from 'src/containers/AddProduct';
 import ProductCategory from 'src/containers/ProductCategory';
+import Inscription from 'src/containers/Inscription';
 
 
 // == Immport styles
@@ -46,7 +46,7 @@ const App = () => (
         <AddUserInfos />
       </Route>
       <Route exact path="/inscription"> {/* Form to create a new user */}
-        <ConnexionInscription />
+        <Inscription />
       </Route>
       <Route>
         <Page404 />
