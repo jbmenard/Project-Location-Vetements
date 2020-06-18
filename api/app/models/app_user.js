@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize');
 const client = require('../database');
 
-class User extends Sequelize.Model {
+class AppUser extends Sequelize.Model {
 
 
 
 };
 
-User.init({
+AppUser.init({
     email: {
         type: Sequelize.TEXT,
         allowNull: false,
@@ -24,11 +24,11 @@ User.init({
     }
 }, {
     sequelize: client,
-    tableName: "user",
+    tableName: "app_user",
     underscored: true
 });
 
-module.exports = User;
+module.exports = AppUser;
 
 
 

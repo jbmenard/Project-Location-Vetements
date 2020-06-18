@@ -2,28 +2,28 @@ const express = require('express');
 const router = express.Router();
 
 const authController = require('./controllers/authController');
-const userController = require('./controllers/userController');
-const userInfoController = require('./controllers/userInfoController');
+const appUserController = require('./controllers/appUserController');
+const appUserInfoController = require('./controllers/appUserInfoController');
 const categoryController = require('./controllers/categoryController');
 const genderController = require('./controllers/genderController');
 const productController = require('./controllers/productController');
 const subCategoryController = require('./controllers/subCategoryController');
 const commentController = require ('./controllers/commentController');
 
-router.get('/user', userController.getAll);
-router.get('/user/:id', userController.getOne );
+router.get('/user', appUserController.getAll);
+router.get('/user/:id', appUserController.getOne );
 router.post('/user', authController.signupAction);
-router.patch('/user/:id', userController.update);
-router.delete('/user/:id', userController.delete);
+router.patch('/user/:id', appUserController.update);
+router.delete('/user/:id', appUserController.delete);
 
 router.post('/signin', authController.loginAction);
 router.get('/logout', authController.logout);
 
-router.get('/userinfo', userInfoController.getAll);
-router.get('/userinfo/:userInfosId', userInfoController.getOne );
-router.post('/userinfo', userInfoController.create);
-router.patch('/userinfo/:userInfosId', userInfoController.update);
-router.delete('/userinfo/:userInfosId', userInfoController.delete);
+router.get('/userinfo', appUserInfoController.getAll);
+router.get('/userinfo/:userInfosId', appUserInfoController.getOne );
+router.post('/userinfo', appUserInfoController.create);
+router.patch('/userinfo/:userInfosId', appUserInfoController.update);
+router.delete('/userinfo/:userInfosId', appUserInfoController.delete);
 
 router.get('/category', categoryController.getAll);
 router.get('/category/:Id', categoryController.getOne );

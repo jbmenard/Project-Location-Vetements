@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
 const client = require('../database');
 
-class UserInfo extends Sequelize.Model {
+class AppUserInfo extends Sequelize.Model {
 
 
 };
 
-UserInfo.init({
+AppUserInfo.init({
     first_name : {
         type : Sequelize.TEXT,
         allowNull : false,
@@ -55,11 +55,18 @@ UserInfo.init({
         validate : {
             notEmpty : true
         }
-    }
+    },
+    app_user_id: {
+        type : Sequelize.INTEGER,
+        allowNull : false,
+        validate : {
+            notEmpty : true
+        }
+    },
 },{
     sequelize: client,
-    tableName: "user_info",
+    tableName: "app_user_info",
     underscored : true,
 });
 
-module.exports = UserInfo;
+module.exports = AppUserInfo;

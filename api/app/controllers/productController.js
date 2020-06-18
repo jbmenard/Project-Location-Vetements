@@ -1,10 +1,10 @@
-const Product = require('../models/product');
+const {Product} = require('../models');
 
 const productController = {
     getAll : async (req, res, next) => {
         try {
             const products = await Product.findAll({
-                include : [{ all: true , nested: true}]
+                include: [{all: true, nested: true}]
             });
 
             res.send(products);
@@ -16,7 +16,7 @@ const productController = {
 
     getOne : async (req,res,next) => {
         try {
-            const productId = red.params.id;
+            const productId = req.params.id;
             const product = await Product.findByPk(productId,{
                 include : [{all:true, nested:true}]
             });
@@ -44,7 +44,7 @@ const productController = {
                 price: req.body.price,
                 mark: req.body.mark,
                 status: req.body.status,
-                user_id: Number(req.body.user_id),
+                app_user_id: Number(req.body.user_id),
                 sub_category_id: Number(req.body.sub_category_id),
             });
             res.send(newProduct)

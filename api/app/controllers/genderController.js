@@ -16,7 +16,7 @@ const genderController = {
 
     getOne : async (req, res, next) => {
         try {
-            const genderId = red.params.id;
+            const genderId = req.params.id;
             const gender = await Gender.findByPk(genderId,{
                 inclue : [{all:true , nested:true}]
             });

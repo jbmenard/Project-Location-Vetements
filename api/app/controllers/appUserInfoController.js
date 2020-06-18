@@ -1,14 +1,14 @@
-const UserInfos = require('../models/user_info');
+const AppUserInfos = require('../models/app_user_info');
 
-const userInfoController = {
+const appUserInfoController = {
 
     getAll: async (req, res, next) => {
         try {
-            const usersInfos = await UserInfos.findAll({
+            const appUsersInfos = await AppUserInfos.findAll({
                 include: [{all: true,  nested: true}]
             });
 
-            res.send(usersInfos)
+            res.send(appUsersInfos)
         } catch (error) {
             console.trace(error);
             res.status(500).send(error);
@@ -17,13 +17,13 @@ const userInfoController = {
 
     getOne: async (req, res, next) => {
         try {
-            const { userInfosId } = req.params
-            const userInfo = await UserInfos.findByPk(userInfosId, {
+            const { appUserInfosId } = req.params
+            const appUserInfo = await AppUserInfos.findByPk(appUserInfosId, {
                 include: [{all: true,  nested: true}]
             });
 
-        if (userInfo) {
-            return res.send(userInfo);
+        if (appUserInfo) {
+            return res.send(appUserInfo);
         }
         next();
         } catch (error) {
@@ -34,8 +34,8 @@ const userInfoController = {
 
     create: async (req, res, next) => {
         try {
-            const newUserInfos = await UserInfo.create(req.body);
-            res.send(newUserInfos);
+            const newAppUserInfos = await AppUserInfo.create(req.body);
+            res.send(newAppUserInfos);
         } catch (error) {
             console.trace(error);
             res.status(500).send(error)
@@ -44,12 +44,12 @@ const userInfoController = {
 
     update: async (req, res, next) => {
         try {
-            const { userInfosId } = req.params;
-            const userInfo = await UserInfos.findByPk( userInfosId );
+            const { appUserInfosId } = req.params;
+            const appUserInfo = await AppUserInfos.findByPk( appUserInfosId );
 
-            if(userInfo) {
-                await userInfo.update(req.body);
-                return res.send(userInfo)            
+            if(appUserInfo) {
+                await appUserInfo.update(req.body);
+                return res.send(appUserInfo)            
             }
             next()
         } catch (error) {
@@ -60,10 +60,10 @@ const userInfoController = {
 
     delete: async (req, res, next) => {
         try {
-            const { userInfosId } = req.params;
-            const userInfo = await UserInfos.findByPk( userInfosId );
-            if(userInfo) {
-                await userInfo.destroy();
+            const { appUserInfosId } = req.params;
+            const appUserInfo = await AppUserInfos.findByPk( AppUserInfosId );
+            if(appUserInfo) {
+                await appUserInfo.destroy();
                 return res.send('Element supprimé')
             }
             next();
@@ -73,8 +73,6 @@ const userInfoController = {
         }
     }
 
-
-
 };
 
-module.exports = userInfoController;
+module.exports = appUserInfoController;

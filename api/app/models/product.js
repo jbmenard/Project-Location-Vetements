@@ -57,7 +57,7 @@ Product.init({
             notEmpty: true,
         }
     },
-    user_id: {
+    app_user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         validate: {

@@ -1,26 +1,26 @@
-const User = require('./user');
+const AppUser = require('./app_user');
 const Product = require('./product');
 const Category = require('./category');
 const Gender = require('./gender');
 const Comment = require('./comment');
 const SubCategory = require('./sub_category');
-const UserInfo = require('./user_info');
+const AppUserInfo = require('./app_user_info');
 
 // User <-> Product
-User.hasMany(Product, {
-    foreignKey: "user_id",
+AppUser.hasMany(Product, {
+    foreignKey: "app_user_id",
     as: "products"
 });
 
-Product.belongsTo(User, {
-    foreignKey: "user_id",
-    as: "user"
+Product.belongsTo(AppUser, {
+    foreignKey: "app_user_id",
+    as: "owner"
 });
 
 // Gender <-> Product
 Gender.hasMany(Product, {
     foreignKey: "gender_id",
-    as: "products"
+    as: "genderProducts"
 });
 
 Product.belongsTo(Gender, {
@@ -31,7 +31,7 @@ Product.belongsTo(Gender, {
 // Sub_category <-> Product
 SubCategory.hasMany(Product, {
     foreignKey: "sub_category_id",
-    as: "products"
+    as: "productsSubCategories"
 });
 
 Product.belongsTo(SubCategory, {
@@ -51,17 +51,27 @@ SubCategory.belongsTo(Category, {
 })
 
 // User <-> Comment
-User.hasMany(Comment, {
-    foreignKey: "user_id",
-    as: "comments"
-});
+// User.hasMany(Comment, {
+//     foreignKey: "user_id",
+//     as: "comments"
+// });
 
-Comment.belongsTo(User, {
-    foreignKey: "user_id",
-    as: "user"
-});
+// Comment.belongsTo(User, {
+//     foreignKey: "user_id",
+//     as: "user"
+// });
 
 // User <-> UserInfo
-User.hasOne(UserInfo);
+AppUser.hasOne(AppUserInfo);
 
-UserInfo.belongsTo(User);
+AppUserInfo.belongsTo(AppUser);
+
+module.exports = {
+    Product,
+    Comment,
+    AppUser,
+    AppUserInfo,
+    SubCategory,
+    Category,
+    Gender,
+}
