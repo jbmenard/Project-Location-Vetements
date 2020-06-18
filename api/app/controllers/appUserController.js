@@ -1,18 +1,18 @@
 
-const User = require('../models/user');
+const AppUser = require('../models/app_user');
 
-const userController = {
+const appUserController = {
     getAll: async (req, res, next) => {
         try {
 
             //1. récupérer mes users
-            const users = await User.findAll({
+            const appUsers = await AppUser.findAll({
                 include: [{all: true, nested: true}]
             });
 
             //2. renvoyer le resultat
             console.log(req.session)
-            res.send(users);
+            res.send(appUsers);
             
         } catch (error) {
             console.trace(error);
@@ -24,14 +24,14 @@ const userController = {
     getOne: async (req, res, next) => {
         try {
             //1. récupérer le bon user
-            const userId = req.params.id;
-            const user = await User.findByPk(userId, {
+            const appUserId = req.params.id;
+            const appUser = await AppUser.findByPk(appUserId, {
                 include: [{all: true, nested: true}]
             });
 
             //2. la renvoyer si elle existe
-            if (user) {
-                return res.send(user);
+            if (appUser) {
+                return res.send(appUser);
             }
             next();
 
@@ -49,13 +49,13 @@ const userController = {
         try {
             //1. trouver le bon user via son id
 
-            const userId = req.params.id;
-            const targetUser = await User.findByPk(userId);
+            const appUserId = req.params.id;
+            const targetAppUser = await AppUser.findByPk(appUserId);
 
             //2. si il existe => mise à jour
 
-            if (targetUser) {
-                await targetUser.update(req.body);
+            if (targetAppUser) {
+                await targetAppUser.update(req.body);
             /* Versions alternatives */
             // ALT1 : utiliser .set() PUIS .save()
             // targetList.set(req.body);
@@ -69,7 +69,7 @@ const userController = {
 
             
             // 3. renvoyer la liste mise à jour
-            res.send(targetUser);
+            res.send(targetAppUser);
             }
             //2bis. sinon => 404
             else {
@@ -85,12 +85,12 @@ const userController = {
     delete: async (req, res, next) => {
         try {
             //1. trouver le bon user via son ID
-            const userId = req.params.id;
-            const targetUser = await User.findByPk(userId);
+            const appUserId = req.params.id;
+            const targetAppUser = await AppUser.findByPk(appUserId);
 
             // 2. si elle existe on supprime, sinon 404
-            if (targetUser) {
-                await targetUser.destroy();
+            if (targetAppUser) {
+                await targetAppUser.destroy();
                 //3. renvoyer un message simple pour dire que l'opération a reussi
                 res.send("ok");
             }else {
@@ -104,5 +104,5 @@ const userController = {
     }
 };
 
-module.exports = userController; 
+module.exports = appUserController; 
 

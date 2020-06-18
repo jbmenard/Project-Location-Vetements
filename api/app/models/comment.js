@@ -15,6 +15,20 @@ Comment.init({
             notEmpty: true,
         }
     },
+    app_user_id: {
+        type : Sequelize.INTEGER,
+        allowNull : false,
+        validate : {
+            notEmpty : true
+        }
+    },
+    product_id: {
+        type : Sequelize.INTEGER,
+        allowNull : false,
+        validate : {
+            notEmpty : true
+        }
+    },
     
 }, {
     sequelize: client,

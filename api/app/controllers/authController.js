@@ -1,8 +1,7 @@
 const emailValidator = require('email-validator');
 const bcrypt = require('bcrypt');
 
-const user = require('../models/user');
-const User = require('../models/user');
+const AppUser = require('../models/app_user');
 
 const authController = {
     
@@ -29,13 +28,13 @@ const authController = {
         }
 
         // 2. Vérifier si un utilisateur similaire (via son email) existe déjà en bdd (si oui, on redirige avec une erreur)
-        User.findOne({
+        AppUser.findOne({
           where: {
             email: req.body.email
           }
-        }).then( user => {
+        }).then( appUser => {
     
-          if (user) {
+          if (appUser) {
             // si on a trouvé un utilisateur avec cet email
             // (return pour arrêter la fonction)
             errors.push('Un utilisateur existe déjà avec cet email');
@@ -46,10 +45,10 @@ const authController = {
           // 3. si tout va bien, on enregistre le nouvel utilisateur en BDD (et on va hasher son mot de passe !)
           const hashedPassword = bcrypt.hashSync(req.body.password , 10);
 
-          User.create({
+          AppUser.create({
             email: req.body.email,
             password: hashedPassword
-          }).then( user => {
+          }).then( appUser => {
             // console.log(user);
             // 4. soit on redirige vers /login
             res.redirect('/product');
@@ -68,19 +67,19 @@ const authController = {
       loginAction: (req, res, next) => {
         // 1. tenter de récupérer un User via email 
         let errors = [];
-        User.findOne({
+        AppUser.findOne({
           where: {
             email: req.body.email
           }
-        }).then( user => {
+        }).then( appUser => {
           //  - si il n'existe pas => erreur
-          if (!user) {
+          if (!appUser) {
             errors.push("Cet email n'existe pas");         
             return res.send(errors);
           }
     
           // 2. comparer le mot de passe fournie au Hash stocké dans la BDD
-          const validPassword = bcrypt.compareSync(req.body.password, user.password);
+          const validPassword = bcrypt.compareSync(req.body.password, appUser.password);
           //  - si c'est pas bon => erreur
           if (!validPassword) {
             errors.push("Cet email ou le mot de passe n'existe pas");
@@ -88,10 +87,10 @@ const authController = {
           }
     
           // 3. si tout va bien (email et pwd correct) => on enregistre l'utilisateur dans la session
-          req.session.user = user;
+          req.session.appUser = appUser;
     
           // et pour finir, on redirige vers la page d'acceuil
-          res.send(user)
+          res.send(appUser)
     
         }).catch( err => {
           console.trace(err);
@@ -101,7 +100,7 @@ const authController = {
       },
     
       logout: (req, res, next) => {
-        delete req.session.user;
+        delete req.session.appUser;
         res.send('Vous êtes déconnecté');
       }
     

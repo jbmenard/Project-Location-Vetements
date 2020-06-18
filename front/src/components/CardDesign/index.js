@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 // == Import
 import './styles.scss';
+import { getUrlByName } from '../../selectors/product';
 
 // == Composant
 const CardDesign = ({ list }) => (
@@ -18,7 +19,7 @@ const CardDesign = ({ list }) => (
     </section>
     <div className="card-button">
       <NavLink
-        to={`/product/${list.id}`}
+        to={getUrlByName(list.name)}
         key={list.id}
       >
         <Button size="x-large" color="aero-blue" value="Description" />
