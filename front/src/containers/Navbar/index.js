@@ -14,7 +14,6 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(toggleNavbar());
   },
   handleLogout: () => {
-    console.log('je passe par le bouton');
     dispatch(logout());
   },
 });

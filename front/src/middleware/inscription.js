@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { CREATE_USER } from 'src/actions/inscription';
-import { LOGOUT } from 'src/actions/user';
+import { LOGOUT, saveLogout } from 'src/actions/user';
 
 const apiUser = (store) => (next) => (action) => {
   switch (action.type) {
@@ -32,7 +32,8 @@ const apiUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log('vous êtes déconnecté');
-          store.dispatch(MaNouvelleAction)
+          const saveLogoutAction = saveLogout(response.data);
+          store.dispatch(saveLogoutAction);
         });
       break;
     default:
