@@ -2,34 +2,34 @@ import React from 'react';
 import './styles.scss';
 
 import Cards from './Cards';
-// import Maldives from '../../assets/images/maldives.jpg';
-// import Montagne from '../../assets/images/montagne.jpeg';
-// import Fleur from '../../assets/images/fleur.jpg';
+import Maldives from '../../assets/images/maldives.jpg';
+import Montagne from '../../assets/images/montagne.jpeg';
+import Fleur from '../../assets/images/fleur.jpg';
 
 const Home = () => (
   // --------------- carousel ---------------
   <>
-    {/* <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
     <div className="carousel-inner">
       <div className="carousel-item active">
         <img className="d-block w-100" src={Maldives} alt="First slide"/>
         <div className="carousel-caption d-md-block">
-          <h5>Salut les amis !</h5>
-          <p>C'est moi la plage</p>
+          <h5>TITLE</h5>
+          <p>PHRASE D'ACCROCHE</p>
         </div>
       </div>
       <div className="carousel-item">
         <img className="d-block w-100" src={Montagne} alt="Second slide"/>
-        <div className="carousel-caption d-none d-md-block">
-          <h5>.grggrgrgr</h5>
-          <p>...</p>
+        <div className="carousel-caption  d-md-block">
+        <h5>TITLE</h5>
+          <p>PHRASE D'ACCROCHE</p>
         </div>
       </div>
       <div className="carousel-item">
         <img className="d-block w-100" src={Fleur} alt="Third slide"/>
-        <div className="carousel-caption d-none d-md-block">
-          <h5>.grggrgrgr</h5>
-          <p>...</p>
+        <div className="carousel-caption  d-md-block">
+        <h5>TITLE</h5>
+          <p>PHRASE D'ACCROCHE</p>
         </div>
       </div>
     </div>
@@ -40,14 +40,32 @@ const Home = () => (
     <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
       <span className="carousel-control-next-icon" aria-hidden="true"></span>
       <span className="sr-only">Next</span>
-    </a>
-  </div> */}
+    </a> 
+  </div> 
+  <section>
+  <h2 className="cards-title"> Comment ça marche ?</h2>
     <div className="container-cards">
       <Cards title={"JE LOUE"}/>
       <Cards title={"JE RECOIS"}/>
       <Cards title={"JE RENDS"}/>
     </div>
-
+   </section>
+   <section className="container-temoignages ">
+     <h2 className="cards-title"> Temoignages </h2>
+     <div className="temoignages ">
+       <h3 className="temoignages-title"> Heading</h3>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus.</p>
+     </div>
+     <div className="temoignages">
+       <h3 className="temoignages-title"> Heading</h3>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quidem vero dolores sequi unde, consequuntur iusto qui voluptatibus delectus blanditiis cumque voluptatem esse adipisci fuga accusantium et at quasi voluptas?</p>
+     </div>
+     <div className="temoignages">
+       <h3 className="temoignages-title">Heading</h3>
+       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores nostrum soluta quasi adipisci temporibus facere nulla. Consectetur, quasi esse quos magni ut maxime aut libero rem voluptas! Nostrum, iste dolorum?</p>
+     </div>
+   </section>
+  
   </>
 
 );
