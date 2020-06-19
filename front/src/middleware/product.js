@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts } from 'src/actions/product';
+import { CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError } from 'src/actions/product';
 
 const api = (store) => (next) => (action) => {
   switch (action.type) {
@@ -26,12 +26,15 @@ const api = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response.data);
         })
-        .catch((error) => {
-          console.trace(error);
+        .catch((err) => {
+          console.trace(err);
         });
       break;
     }
-    case FETCH_PRODUCTS:
+    case FETCH_PRODUCTS: {
+      const state = store.getState().productReducer;
+      state.loading = false;
+
       axios.get('http://localhost:5050/product')
         .then((response) => {
           const saveProductsAction = saveProducts(response.data);
@@ -39,8 +42,10 @@ const api = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.error(error);
+          store.dispatch(getError());
         });
       break;
+    }
     default:
       next(action);
   }

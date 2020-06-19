@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, {useEffect } from 'react';
 import CardDesign from 'src/components/CardDesign';
-import Footer from 'src/components/Footer';
+
 import './style.scss';
 
-const ProductCategory = ({ listProducts, fetchProducts }) => {
+const ProductCategory = ({ loading, error, listProducts,fetchProducts }) => { 
   useEffect(fetchProducts, []);
   return (
     <>
@@ -27,13 +27,25 @@ const ProductCategory = ({ listProducts, fetchProducts }) => {
           </select>
         </label>
       </div>
-      <article className="product-article">
+      <>
+        {!loading && error && (
+          <p className="loading-error">Une erreur s'est produite.Veuillez réessayer plus tard.</p>
+        )}
         {
-          listProducts.map((list) => (
-            <CardDesign list={list} />
-          ))
+          !loading && !error && (
+          <article className="product-article">
+            {
+            listProducts.map((list) => (
+              <CardDesign list={list} />
+            ))
+          }
+          </article>
+          )
         }
-      </article>
+        {loading && (
+          <p className="loading">Veuillez patientez. Les articles chargent.</p>
+        )}
+      </>
     </>
   );
 };
