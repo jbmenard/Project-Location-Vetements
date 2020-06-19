@@ -2,20 +2,19 @@ import axios from 'axios';
 
 import { CREATE_USER } from 'src/actions/inscription';
 
-
-
 const apiUser = (store) => (next) => (action) => {
   switch (action.type) {
     case CREATE_USER: {
-      const state = store.getState().UserCreateReducer;
-      // console.log(state);
+      const state = store.getState().userReducer;
+      console.log(state);
       const data = new FormData();
-      data.set('id', state.id);
-      data.set('password', state.password);
       data.set('email', state.email);
+      data.set('password', state.password);
+      data.set('passwordConfirm', state.confirmPassword);
+
       axios({
         method: 'post',
-        url: 'http://localhost:5050/inscription',
+        url: 'http://localhost:5050/user',
         data,
       })
         .then((response) => {
