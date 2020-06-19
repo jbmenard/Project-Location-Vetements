@@ -2,9 +2,9 @@ import React from 'react';
 import './styles.scss';
 import Button from 'src/components/Button';
 
-
-const Inscription = ({onChangeEmail, onChangePassword, onChangeConfirmPassword}) => {
-
+const Inscription = ({
+  onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser,
+}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     createUser();
@@ -23,24 +23,26 @@ const Inscription = ({onChangeEmail, onChangePassword, onChangeConfirmPassword})
   };
 
   return (
-  <form className="form" action="" onSubmit={(event)=> handleSubmit(event)}>
-    <h2 className="form-t"> Creer un compte </h2>
-    <span className="form-invider"> </span>
-    <div className="form-infos">
-      <label className="form-title">Email</label>
-      <input className="form-input" type="email" name="email" placeholder="exemple@gmail.com" onChange={handleChangeEmail}/>
-       <label className="form-title">Mot de Passe</label>
-      <input className="form-input" type="password" name="password" onChange={handleChangePassword} />
-      <label className="form-title">Confirmer le Mot de Passe</label>
-      <input className="form-input" type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} />
-      <div className="form-button">
-        <Button size="small" value="Envoyer" color="orange" />
+    <form className="form" action="" onSubmit={handleSubmit}>
+      <h2 className="form-t"> Creer un compte </h2>
+      <span className="form-invider"> </span>
+      <div className="form-infos">
+        <label className="form-title">Email</label>
+        <input className="form-input" type="email" name="email" placeholder="exemple@gmail.com" onChange={handleChangeEmail} />
+        <label className="form-title">Mot de Passe</label>
+        <input className="form-input" type="password" name="password" onChange={handleChangePassword} />
+        <label className="form-title">Confirmer le Mot de Passe</label>
+        <input className="form-input" type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} />
+        <div className="form-button">
+          <button className="button-input" type="submit">
+            <Button size="small" value="Envoyer" color="orange" />
+          </button>
+
+        </div>
       </div>
-    </div>
 
-  </form>
-  )
-
-}; 
+    </form>
+  );
+};
 
 export default Inscription;

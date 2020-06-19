@@ -6,7 +6,7 @@ export const initialState = {
   confirmPassword: '',
 };
 
-const createUserReducer = (state = initialState, action = {}) => {
+const userReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CREATE_USER:
       console.log("non");
@@ -25,4 +25,4 @@ const createUserReducer = (state = initialState, action = {}) => {
   }
 };
 
-export default createUserReducer;
+export default userReducer;
