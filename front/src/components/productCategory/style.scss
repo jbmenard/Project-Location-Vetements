@@ -1,3 +1,12 @@
+@keyframes error {
+  0%, 100% {
+    opacity: .4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .product-event {
   display: flex;
   justify-content: space-around;
@@ -13,4 +22,10 @@
 .label {
   display:flex;
   flex-direction: column;
+}
+
+.loading-error {
+  color: red;
+  animation: error 1s infinite;
+  text-align: center;
 }
