@@ -1,0 +1,63 @@
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nanum Gothic', sans-serif;
+  text-align: center;
+ 
+    &-icons {
+      padding: 1rem;
+      width: 100%;
+      background-image: url('../../assets/images/brushed-alum.png');
+      background-color: #5E6472;
+    }
+    &-title {
+      color: #fff;
+      padding: 1rem;  
+      font-weight: 700;
+    }
+
+    &-invider {
+      border-bottom: 1px white solid;
+      display: block;
+      width: 50%;
+      margin: auto;
+    }
+
+    &-infos{
+      background-color: #A9A9A9;
+      color: #fff;
+    }
+
+    &-info{
+      padding: 1rem;
+      &-title {
+        margin: 0.5rem;
+        font-weight: 700;
+      }
+    }
+
+    &-mentions{
+      background-color: #F0fff0;
+      &-infos{
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+      }
+      &-info{
+        font-weight: 700;
+        margin: 0.5rem;
+      }
+    }
+    i {
+      margin: 1rem;
+      margin-top :1rem;
+      border: 1px solid blanchedalmond;
+      padding: 1rem;
+      
+      color: blanchedalmond;
+    }
+}

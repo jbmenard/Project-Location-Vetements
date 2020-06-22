@@ -1,0 +1,36 @@
+
+.card {
+  margin : auto;
+  font-family: 'Indie Flower', cursive;
+  background-color: palegoldenrod;
+  // margin-left: 40px;
+  margin-bottom: 50px;
+  width: 90%;
+  &-title{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    color: grey;
+  }
+  &-body {
+    box-shadow: 0 0 20px 7px rgba(0,0,0,0.1);
+  }
+  &-number {
+    font-size: 120px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    
+  }
+}
+
+.text-number {
+//   text-shadow: -1px 0 wheat, 0 2px wheat, 1px 0 wheat, 0 -1px wheat;
+// color: orangered;
+color: orange; 
+font-weight: bold;
+text-shadow: -1px 1px 0 whitesmoke, 
+              1px 1px 0 whitesmoke, 
+             1px -1px 0 whitesmoke,
+            -1px -1px 0 whitesmoke; 
+}

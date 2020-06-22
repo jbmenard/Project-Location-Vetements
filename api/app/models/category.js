@@ -14,8 +14,9 @@ Category.init({
         }
     },
 }, {
-    Sequelize: client,
+    sequelize: client,
     tableName: "category",
-    underscored: true
-    
-})
+    underscored: true 
+});
+
+module.exports = Category;

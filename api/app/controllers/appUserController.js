@@ -1,17 +1,18 @@
 
-const User = require('../models/user');
+const AppUser = require('../models/app_user');
 
-const userController = {
+const appUserController = {
     getAll: async (req, res, next) => {
         try {
 
             //1. récupérer mes users
-            const users = await User.findAll({
+            const appUsers = await AppUser.findAll({
                 include: [{all: true, nested: true}]
             });
 
             //2. renvoyer le resultat
-            res.send(users);
+            console.log(req.session)
+            res.send(appUsers);
             
         } catch (error) {
             console.trace(error);
@@ -23,14 +24,14 @@ const userController = {
     getOne: async (req, res, next) => {
         try {
             //1. récupérer le bon user
-            const userId = req.params.id;
-            const user = await User.findByPk(userId, {
+            const appUserId = req.params.id;
+            const appUser = await AppUser.findByPk(appUserId, {
                 include: [{all: true, nested: true}]
             });
 
             //2. la renvoyer si elle existe
-            if (user) {
-                return res.send(user);
+            if (appUser) {
+                return res.send(appUser);
             }
             next();
 
@@ -44,44 +45,17 @@ const userController = {
         }
     },
 
-    create: async ( req, res, next) => {
-        try {
-      //1. on récupère les infos du body
-      // const title = req.body.title;
-      // const position = req.body.position;
-      // const color = req.body.color;
-
-      // 1bis : plutôt que d'écrire 3 lignes, on peut déconstruire l'objet
-      //const { title, position, color } = req.body;  
-
-      //2. on crée une liste (+save)
-      // const newList = await List.create({title, position, color});
-
-      // 2bis. si on déconstruit req.body pour le reconstruire tel quel juste après, autant passer directement req.body lui meme !!
-      // à ce moment là, c'est Sequelize (et la BDD) qui vont faire les vérif (en fait, grace au NOT NULL, on récupèrera une erreur !)
-         
-      const newUser = await User.create(req.body);
-
-      //3. on envoie la nouvelle liste
-
-      res.send(newUser)
-        } catch (error) {
-            console.trace(error);
-            res.status(500).send(error);
-        }
-    },
-
     update: async ( req, res, next) => {
         try {
             //1. trouver le bon user via son id
 
-            const userId = req.params.id;
-            const targetUser = await User.findByPk(userId);
+            const appUserId = req.params.id;
+            const targetAppUser = await AppUser.findByPk(appUserId);
 
             //2. si il existe => mise à jour
 
-            if (targetUser) {
-                await targetUser.update(req.body);
+            if (targetAppUser) {
+                await targetAppUser.update(req.body);
             /* Versions alternatives */
             // ALT1 : utiliser .set() PUIS .save()
             // targetList.set(req.body);
@@ -95,7 +69,7 @@ const userController = {
 
             
             // 3. renvoyer la liste mise à jour
-            res.send(targetUser);
+            res.send(targetAppUser);
             }
             //2bis. sinon => 404
             else {
@@ -111,12 +85,12 @@ const userController = {
     delete: async (req, res, next) => {
         try {
             //1. trouver le bon user via son ID
-            const userId = req.params.id;
-            const targetUser = await User.findByPk(userId);
+            const appUserId = req.params.id;
+            const targetAppUser = await AppUser.findByPk(appUserId);
 
             // 2. si elle existe on supprime, sinon 404
-            if (targetUser) {
-                await targetUser.destroy();
+            if (targetAppUser) {
+                await targetAppUser.destroy();
                 //3. renvoyer un message simple pour dire que l'opération a reussi
                 res.send("ok");
             }else {
@@ -130,4 +104,5 @@ const userController = {
     }
 };
 
-module.exports = userController; 
+module.exports = appUserController; 
+

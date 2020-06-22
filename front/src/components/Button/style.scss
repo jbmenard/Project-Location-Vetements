@@ -1,0 +1,47 @@
+.button{
+  background-color: #b8f2e6;
+  border: none;
+  border-radius: 4px;
+
+  &-small {
+    padding: 0.5em 1em;
+  }
+
+  &-medium {
+    padding: 1em 1.5em;
+  }
+
+  &-large {
+    padding: 1em 2em;
+  }
+
+  &-x-large {
+    padding: 1em 4.5em;
+    font-size: 0.9em;
+  }
+
+  &-eggshell {
+    background-color: #faf3dd;
+  }
+  &-orange {
+    background-color:  #f0693d ;
+    color: #fff;
+  }
+
+  &-melon {
+    background-color: #FFA69E;
+  }
+  
+  &-aero-blue{
+    background-color: #b8f2e6;
+  }
+
+  &-powder-blue{
+    background-color: #aed9e0;
+  }
+
+  &-black {
+    background-color: #5e6472;
+  }
+
+}

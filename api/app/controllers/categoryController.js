@@ -48,7 +48,7 @@ const categoryController = {
     update: async (req, res, next) => {
         try {
             const categoryId = req.params.id;
-            const targetCategory = await Category.findByPb(categoryId);
+            const targetCategory = await Category.findByPk(categoryId);
 
             if (targetCategory) {
                 await targetCategory.update(req.body);

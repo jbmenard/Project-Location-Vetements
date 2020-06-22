@@ -1,65 +1,72 @@
 const Sequelize = require('sequelize');
 const client = require('../database');
 
-class UserInfo extends Sequelize.Model {
+class AppUserInfo extends Sequelize.Model {
 
 
 };
 
-UserInfo.init({
+AppUserInfo.init({
     first_name : {
         type : Sequelize.TEXT,
         allowNull : false,
-        validates : {
+        validate : {
             notEmpty : true
         }
     },
     last_name : {
         type : Sequelize.TEXT,
         allowNull : true,
-        validates : {
+        validate : {
             notEmpty : false
         }
     },
     address : {
         type : Sequelize.TEXT,
         allowNull : true,
-        validates : {
+        validate : {
             notEmpty : false
         }
     },
     mobile : {
         type : Sequelize.TEXT,
         allowNull : true,
-        validates : {
+        validate : {
             notEmpty : false
         }
     },
     avatar : {
         type : Sequelize.TEXT,
         allowNull : true,
-        validates : {
-            notEmpty : false
+        validate : {
+            notEmpty : true
         }
     },
     certified : {
         type : Sequelize.BOOLEAN,
         allowNull : false,  
-        validates : {
-            notEmpty : true  
+        validate : {
+            notEmpty : false  
         }
     },
     role : {
         type : Sequelize.TEXT,
         allowNull : false,
-        validates : {
+        validate : {
+            notEmpty : false
+        }
+    },
+    app_user_id: {
+        type : Sequelize.INTEGER,
+        allowNull : false,
+        validate : {
             notEmpty : true
         }
-    }
+    },
 },{
     sequelize: client,
-    tableName: "user_info",
+    tableName: "app_user_info",
     underscored : true,
 });
 
-module.exports = UserInfo;
+module.exports = AppUserInfo;

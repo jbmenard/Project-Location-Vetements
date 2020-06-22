@@ -1,0 +1,31 @@
+@keyframes error {
+  0%, 100% {
+    opacity: .4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.product-event {
+  display: flex;
+  justify-content: space-around;
+  margin: 1em auto;
+}
+
+.product-article{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.label {
+  display:flex;
+  flex-direction: column;
+}
+
+.loading-error {
+  color: red;
+  animation: error 1s infinite;
+  text-align: center;
+}
