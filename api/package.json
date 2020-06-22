@@ -1,5 +1,9 @@
 {
   "name": "apotheose",
+  "engines": {
+    "npm": "5.7.1",
+    "node": "9.5.0"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
