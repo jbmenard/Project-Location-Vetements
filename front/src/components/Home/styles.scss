@@ -5,12 +5,12 @@
 }
 
 .row {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .invider {
-  border-bottom: 2px orange solid;
+  border-bottom: 2px #EEAC80 solid;
       display: block;
       width: 200px;
       margin: auto;
@@ -37,7 +37,7 @@
 
 
 .temoignages {
-  margin: 10px;
+  margin-bottom: 5px;
   padding-top: 10px;
   text-align: center;
   font-size: 18px;
@@ -46,9 +46,20 @@
 .temoignages-title{
   font-weight: 700;
   margin-bottom: 10px;
-  color: #F0693D;
+  color: #EEAC80;
   text-transform: uppercase;
   text-align: center;
   font-size: 1rem;
 }
 
+.carousel-caption {
+  z-index : inherit;
+}
+
+.carousel-controle-next {
+  z-index : inherit;
+}
+
+.carousel-control-prev {
+  z-index: inherit;
+}

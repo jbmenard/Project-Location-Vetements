@@ -34,7 +34,7 @@ const Inscription = ({
         <label className="form-title">Confirmer le Mot de Passe</label>
         <input className="form-input" type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} />
         <div className="form-button">
-          <Button type="submit" size="small" value="Envoyer" color="orange" />
+          <Button type="submit" size="large" value="Envoyer" color="orange"/>
 
         </div>
       </div>
