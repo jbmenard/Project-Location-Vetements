@@ -30,13 +30,13 @@ app.use(cors());
 
 // Traduite les données récupérer dans le body en multipart
 
-const bodyparser = multer();
+// const bodyparser = multer();
 
 // Récuperer les données pour les méthodes post et patch dans le body (req.body.)
 app.use( express.urlencoded({extended: true}) );
 
 // Informe multer de ne prendre que les données dans les input texte
-app.use(bodyparser.none());
+// app.use(bodyparser.none());
 
 app.use(express.static('public'));
 

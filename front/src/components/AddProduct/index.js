@@ -13,6 +13,7 @@ const AddProduct = ({
   onSelectSubCategory,
   onSelectMark,
   onChangeDescription,
+  onChangeImage,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,6 +50,12 @@ const AddProduct = ({
 
   const handleChangeDescription = (event) => {
     onChangeDescription(event.target.value, event.target.name);
+  };
+
+  const handleChangeImage = (event) => {
+    console.log(event.target.files[0]);
+    
+    onChangeImage(event.target.files[0], event.target.name);
   };
   return (
     <div className="add-product">
@@ -108,6 +115,10 @@ const AddProduct = ({
         <label htmlFor="price">
           Prix :
           <input className="add-product--input" type="number" name="price" id="price" onChange={handleChangePrice} />
+        </label>
+        <label htmlFor="price">
+          Image :
+          <input className="add-product--input" multiple="multiple" type="file" name="image" id="image" onChange={handleChangeImage} />
         </label>
         <div className="add-product-submit">
           <input className="add-product-submit--input" type="submit" value="Créer produit" />
