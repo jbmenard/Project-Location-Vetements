@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import { NavLink } from 'react-router-dom';
-import Button from 'src/components/button';
+import Button from 'src/components/Button';
 
 const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
   // const handleClick = () => {
