@@ -17,6 +17,7 @@ import Header from 'src/containers/Header';
 import AddProduct from 'src/containers/AddProduct';
 import ProductCategory from 'src/containers/ProductCategory';
 import Inscription from 'src/containers/Inscription';
+import Information from 'src/components/information';
 
 
 // == Immport styles
@@ -47,6 +48,9 @@ const App = () => (
       </Route>
       <Route exact path="/inscription"> {/* Form to create a new user */}
         <Inscription />
+      </Route>
+      <Route exact path="/information">
+        <Information />
       </Route>
       <Route>
         <Page404 />
