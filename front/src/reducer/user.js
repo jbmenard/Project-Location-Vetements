@@ -1,6 +1,6 @@
-
 import { CREATE_USER, CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS } from 'src/actions/inscription';
 import { LOGOUT } from 'src/actions/user';
+
 
 
 export const initialState = {
@@ -15,6 +15,7 @@ export const initialState = {
   avatar: '',
   app_user_id: 1,
   logged: false,
+  toggleInformation: false,
 };
 
 const userReducer = (state = initialState, action = {}) => {
@@ -41,6 +42,16 @@ const userReducer = (state = initialState, action = {}) => {
         password: '',
         logged: false,
       };
+    case SAVE_LOGOUT:
+      return {
+        ...state,
+      };
+    case TOGGLE_INFORMATION:
+      return {
+        ...state,
+        toggleInformation: !state.toggleInformation,
+      };
+
     default:
       return {
         ...state,

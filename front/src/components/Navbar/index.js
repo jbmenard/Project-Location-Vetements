@@ -32,7 +32,7 @@ const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
           </label>
           <NavLink to="/" className="item" onClick={toggleNavbar} >Accueil</NavLink>
           <NavLink to="/ailleurs" className="item">Parcourir</NavLink>
-          <NavLink to="/ailleurs" className="item"> Comment ça marche ?</NavLink>
+          <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink>
           <div onClick={handleLogout}>
             <Button type="button" size="x-large" value="déconnection" color="orangelight" />
           </div>

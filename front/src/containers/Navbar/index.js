@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
   handleLogout: () => {
     dispatch(logout());
   },
+
 });
 
 export default connect(
