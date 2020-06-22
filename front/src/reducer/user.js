@@ -1,9 +1,20 @@
-import { CREATE_USER, CHANGE_VALUE_STATE_USER } from 'src/actions/inscription';
+
+import { CREATE_USER, CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS } from 'src/actions/inscription';
+import { LOGOUT } from 'src/actions/user';
+
 
 export const initialState = {
   password: '',
   email: '',
   confirmPassword: '',
+
+  first_name: '',
+  last_name: '',
+  address: '',
+  mobile: '',
+  avatar: '',
+  app_user_id: 1,
+  logged: false,
 };
 
 const userReducer = (state = initialState, action = {}) => {
@@ -12,12 +23,24 @@ const userReducer = (state = initialState, action = {}) => {
       console.log("non");
       break;
     case CHANGE_VALUE_STATE_USER: {
-      console.log(action.name, action.value);
       return {
         ...state,
         [action.name]: action.value,
       };
     }
+    case CHANGE_VALUE_STATE_USER_INFORMATIONS: {
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    }
+    case LOGOUT:
+      return {
+        ...state,
+        email: '',
+        password: '',
+        logged: false,
+      };
     default:
       return {
         ...state,

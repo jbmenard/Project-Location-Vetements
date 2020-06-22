@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS "app_user_info" (
     "address" VARCHAR (255) NOT NULL,
     "mobile" VARCHAR(255) ,
     "avatar" TEXT,
-    "certified" BOOLEAN DEFAULT FALSE,
-    "role" VARCHAR(255) NOT NULL DEFAULT 'user',
+    "certified" BOOLEAN DEFAULT false,
+    "role" VARCHAR(255) DEFAULT 'user',
     "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP NULL,
     "app_user_id" INT NOT NULL REFERENCES "app_user"("id")

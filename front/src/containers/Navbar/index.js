@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import Navbar from 'src/components/Navbar';
 import { toggleNavbar } from 'src/actions/style';
+import { logout } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   toggleMenu: state.styleReducer.toggleNavbar,
@@ -11,6 +12,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   toggleNavbar: (event) => {
     dispatch(toggleNavbar());
+  },
+  handleLogout: () => {
+    dispatch(logout());
   },
 });
 

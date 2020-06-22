@@ -34,7 +34,7 @@ const appUserInfoController = {
 
     create: async (req, res, next) => {
         try {
-            const newAppUserInfos = await AppUserInfo.create(req.body);
+            const newAppUserInfos = await AppUserInfos.create(req.body);
             res.send(newAppUserInfos);
         } catch (error) {
             console.trace(error);

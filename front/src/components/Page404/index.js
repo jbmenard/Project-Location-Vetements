@@ -11,7 +11,7 @@ const Page404 = () => (
     <div className="title-error">
       <h2 className="title-error-oops">OOPS <span className="title-error-oops-span">!</span></h2>
       <p className="title-error-404">404 - THE PAGE CAN'T BE FOUND</p>
-      <Button size="small" color="orange" value="Go to Home" />
+      <Button type="button" size="small" color="orange" value="Go to Home" />
     </div>
   </>
 );

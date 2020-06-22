@@ -9,6 +9,7 @@ import Page404 from 'src/components/Page404';
 import AddUserInfos from 'src/components/AddUserInfos';
 import Home from 'src/components/Home';
 
+
 // == Import containers
 import ProductPage from 'src/containers/ProductPage';
 import Navbar from 'src/containers/Navbar';
@@ -16,7 +17,7 @@ import Header from 'src/containers/Header';
 import AddProduct from 'src/containers/AddProduct';
 import ProductCategory from 'src/containers/ProductCategory';
 import Inscription from 'src/containers/Inscription';
-
+import AddUserInfos from 'src/containers/AddUserInfos';
 
 // == Immport styles
 import './styles.scss';
