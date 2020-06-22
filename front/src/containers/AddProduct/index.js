@@ -53,6 +53,10 @@ const mapDispatchToProps = (dispatch) => ({
   onChangeDescription: (value, name) => {
     dispatch(addProductInState(value, name));
   },
+
+  onChangeImage: (value, name) => {
+    dispatch(addProductInState(value, name));
+  },
 });
 
 export default connect(
