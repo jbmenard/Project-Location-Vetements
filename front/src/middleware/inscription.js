@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { CREATE_USER } from 'src/actions/inscription';
+import { LOGOUT, saveLogout } from 'src/actions/user';
 
 const apiUser = (store) => (next) => (action) => {
   switch (action.type) {
@@ -25,7 +26,16 @@ const apiUser = (store) => (next) => (action) => {
         });
       break;
     }
-    
+    case LOGOUT:
+      axios.get('http://localhost:5050/logout', {
+
+      })
+        .then((response) => {
+          console.log('vous êtes déconnecté');
+          const saveLogoutAction = saveLogout(response.data);
+          store.dispatch(saveLogoutAction);
+        });
+      break;
     default:
       next(action);
   }

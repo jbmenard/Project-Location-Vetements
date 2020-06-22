@@ -22,7 +22,7 @@ const CardDesign = ({ list }) => (
         to={getUrlByName(list.name)}
         key={list.id}
       >
-        <Button size="x-large" color="aero-blue" value="Description" />
+        <Button type="button" size="x-large" color="aero-blue" value="Description" />
       </NavLink>
     </div>
 

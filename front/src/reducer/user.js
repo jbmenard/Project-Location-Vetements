@@ -1,9 +1,11 @@
 import { CREATE_USER, CHANGE_VALUE_STATE_USER } from 'src/actions/inscription';
+import { LOGOUT } from 'src/actions/user';
 
 export const initialState = {
   password: '',
   email: '',
   confirmPassword: '',
+  logged: false,
 };
 
 const userReducer = (state = initialState, action = {}) => {
@@ -18,6 +20,13 @@ const userReducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     }
+    case LOGOUT:
+      return {
+        ...state,
+        email: '',
+        password: '',
+        logged: false,
+      };
     default:
       return {
         ...state,
