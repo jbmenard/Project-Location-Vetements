@@ -7,6 +7,7 @@ import UserPage from 'src/components/UserPage';
 import Footer from 'src/components/Footer';
 import Page404 from 'src/components/Page404';
 // import AddUserInfos from 'src/components/AddUserInfos';
+
 import Home from 'src/components/Home';
 
 

@@ -26,7 +26,7 @@ Product.init({
         type: Sequelize.TEXT,
         allowNull: true,
         validate: {
-            notEmpty: false,
+            notEmpty: true,
         }
     },
     size: {
