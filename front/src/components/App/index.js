@@ -7,8 +7,8 @@ import UserPage from 'src/components/UserPage';
 import Footer from 'src/components/Footer';
 import Page404 from 'src/components/Page404';
 
-import AddUserInfos from 'src/components/AddUserInfos';
-
+import Home from 'src/components/Home';
+import Information from 'src/components/information';
 
 // == Import containers
 import ProductPage from 'src/containers/ProductPage';
@@ -17,12 +17,11 @@ import Header from 'src/containers/Header';
 import AddProduct from 'src/containers/AddProduct';
 import ProductCategory from 'src/containers/ProductCategory';
 import Inscription from 'src/containers/Inscription';
-import Information from 'src/components/information';
+import AddUserInfos from 'src/containers/AddUserInfos';
 
 
 // == Immport styles
 import './styles.scss';
-
 
 // == Composant
 const App = () => (
@@ -32,6 +31,9 @@ const App = () => (
     <Header />
     <Switch>
       <Route exact path="/">
+        <Home />
+      </Route>
+      <Route exact path="/products">
         <ProductCategory />
       </Route>
       <Route exact path="/product/:slug">

@@ -24,7 +24,7 @@
 
     
         &-404{
-          border:1px solid black;
+          border:1px solid #f2eeed;
           width: 100%;
           font-size: 0.5em;
           width: 140px;
@@ -33,7 +33,7 @@
           margin-top:-2em;
           position: relative;
           background-color: white;
-          color:grey;
+          color:#cfcece;
           padding:0.4em;
 
           
@@ -42,7 +42,6 @@
         &-oops{
           font-size:3em;
           position: relative;
-          
         
             &-span{
               font-style: italic;

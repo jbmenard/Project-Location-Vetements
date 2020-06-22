@@ -1,6 +1,7 @@
+@import 'src/styles/vars';
 
 .liens {
-  background-color: cadetblue;
+  background-color: $burger;
   width: 70%;
   position: fixed;
   height: 200vh;
@@ -35,19 +36,27 @@
     margin: auto;
     width: 80%;
     border: none;
+    padding : 5px;
     }
     &--label{
     display: flex;
     flex-direction: column;
     padding-bottom: 1em;
     padding-top: 1em;
+    
+   
 
     &, span {
-      margin-left: 1.4em;
+      margin-left: 2.4em;
+      text-align: center;
+      margin-bottom: 10px;
     }
+
+    
     }
     &--items{
     margin-top: 1em;
+    
     }
 
 }
@@ -58,14 +67,35 @@
   margin-bottom: 10px;
   margin-top: 30px;
   font-weight: bold;
-  cursor: pointer;
+  &:hover{
+    color: $navbar-hover;
+  }
+  &:link {
+    text-decoration: none;
+  }
   padding: 10px;
+ 
   &--input{
   border: none;
   margin-top: 0.5em;
+  padding : 5px;
+  
+  
   }
   &--title{
   margin:10px;
+  display: flex;
+  flex-direction: column;
   }
+  
   }
+
+  .search {
+    margin-left: 2.4em;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  
+  
 

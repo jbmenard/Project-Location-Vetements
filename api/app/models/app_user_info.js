@@ -39,21 +39,21 @@ AppUserInfo.init({
         type : Sequelize.TEXT,
         allowNull : true,
         validate : {
-            notEmpty : false
+            notEmpty : true
         }
     },
     certified : {
         type : Sequelize.BOOLEAN,
         allowNull : false,  
         validate : {
-            notEmpty : true  
+            notEmpty : false  
         }
     },
     role : {
         type : Sequelize.TEXT,
         allowNull : false,
         validate : {
-            notEmpty : true
+            notEmpty : false
         }
     },
     app_user_id: {
