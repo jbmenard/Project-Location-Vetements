@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import { NavLink } from 'react-router-dom';
-import Button from 'src/components/button';
+import Button from 'src/components/Button';
 
 const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
   // const handleClick = () => {
@@ -27,14 +27,14 @@ const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
 
         <div className="liens-items">
           <label className="item--title" htmlFor="search">
-            Rechercher
+            <span className="search"> Rechercher</span> 
             <input className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
           </label>
-          <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
+          <NavLink to="/" className="item" onClick={toggleNavbar} >Accueil</NavLink>
           <NavLink to="/ailleurs" className="item">Parcourir</NavLink>
           <NavLink to="/ailleurs" className="item"> Comment ça marche ?</NavLink>
           <div onClick={handleLogout}>
-            <Button type="button" size="x-large" color="aero-blue" value="déconnection" />
+            <Button type="button" size="x-large" value="déconnection" color="orangelight" />
           </div>
         </div>
       </div>
