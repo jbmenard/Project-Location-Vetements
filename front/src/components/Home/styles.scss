@@ -1,3 +1,5 @@
+@import 'src/styles/vars';
+
 * {
   margin : 0px;
   padding: 0px;
@@ -10,9 +12,9 @@
 }
 
 .invider {
-  border-bottom: 2px #EEAC80 solid;
+  border-bottom: 1px $jewelry double;
       display: block;
-      width: 200px;
+      width: 300px;
       margin: auto;
       margin-bottom: 40px;
 }
@@ -32,6 +34,7 @@
   font-size: 1.1rem;
   padding-top: 30px;
   padding-bottom: 30px;
+  color : $footer-background;
   
 }
 
@@ -42,14 +45,17 @@
   text-align: center;
   font-size: 18px;
   text-align: justify;
-}
-.temoignages-title{
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #EEAC80;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1rem;
+  &-text {
+    padding: 30px;
+  }
+  &-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #EEAC80;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+  }
 }
 
 .carousel-caption {
@@ -62,4 +68,23 @@
 
 .carousel-control-prev {
   z-index: inherit;
+}
+
+// .carousel{
+//   margin-top: -8.5em;
+//   z-index: 0;
+// }
+.fa {
+  margin: auto;
+  font-size : 30px;
+  border: 1px thick double $burger;
+  border-radius: 100px;
+  padding : 15px;
+  margin-left: 140px;
+  margin-bottom: 10px;
+}
+
+.icon-star {
+  margin-left: 130px;
+  color : #ffd700
 }

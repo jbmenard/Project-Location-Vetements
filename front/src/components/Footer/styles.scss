@@ -52,12 +52,13 @@
         margin: 0.5rem;
       }
     }
-    i {
+    .fa {
       
       margin-top :1rem;
       border: 1px solid blanchedalmond;
       padding: 1rem;
-      
+      border-radius: 0px;
+      margin-left: 1em;
       color: blanchedalmond;
     }
 }
@@ -79,15 +80,15 @@
 .card-team {
   position: relative;
   border-radius: 0;
-  box-shadow: 5px 5px 15px $general-button-opacity;
+  box-shadow: 5px 5px 15px lightgrey;
   transition: all 0.3s ease-in;
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
   width: 80%;
   margin: 30px;
   &:hover {
-    background: $burial;
-    color: #fff;
+    background: whitesmoke;
+    color : $burger;
     border-radius: 5px;
     border: none;
     box-shadow: 5px 5px 10px $burger;
@@ -123,14 +124,17 @@
   left: 70px;
   
   
+  
+  
 }
 
-#icon {
+.p-4 .fa {
   color : $general-button-opacity;
-  border: grey;
-  box-shadow: 5px 5px 15px grey;
-  border-radius: 20px;
-  &:hover{
-    background-color: #fff;
-  }
+  font-size: 30px;
+  border : none;
+  margin : 0px;
+  // border: grey;
+  // box-shadow: 2px 2px 2px white;
+  // border-radius: 20px;
+  
 }
