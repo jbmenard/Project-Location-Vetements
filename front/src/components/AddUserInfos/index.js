@@ -12,6 +12,7 @@ const AddUserInfos = ({
   onChangeCertified,
   onChangeRole,
   onChangeAvatar,
+  userData,
 }) => (
   <div className="adduserinfos">
     <h1 className="adduserinfos--title">Modifier mes infos personnelles</h1>
@@ -32,17 +33,12 @@ const AddUserInfos = ({
         Numéro de téléphone :
         <input className="adduserinfos--input" type="text" name="mobile" id="mobile" onChange={(event) => onChangeMobile(event)} />
       </label>
-      <label htmlFor="certified">
-        Certified :
-        <input className="adduserinfos--input" type="text" name="certified" id="certified" onChange={(event) => onChangeCertified(event)} />
-      </label>
-      <label htmlFor="role">
-        Role :
-        <input className="adduserinfos--input" type="text" name="role" id="role" onChange={(event) => onChangeRole(event)} />
+      <label htmlFor="app_user_id">
+        <input className="adduserinfos--input" value={userData.id} type="hidden" name="app_user_id" id="app_user_id" onChange={(event) => onChangeRole(event)} />
       </label>
       <label htmlFor="avatar">
         Avatar :
-        <input className="adduserinfos--input" type="text" name="avatar" id="avatar" onChange={(event) => onChangeAvatar(event)} />
+        <input className="adduserinfos--input" type="file" name="avatar" id="avatar" onChange={(event) => onChangeAvatar(event)} />
       </label>
       <div className="adduserinfos-submit">
         <input className="adduserinfos-submit--input" type="submit" value="Soumettre" />

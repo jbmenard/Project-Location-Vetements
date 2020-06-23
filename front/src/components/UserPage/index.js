@@ -7,12 +7,12 @@ import './style.scss';
 import { NavLink } from 'react-router-dom';
 
 const UserPage = ({
-  userData, userInfo, products, loading, error,
+  userData, loading, error,
 }) => (
   <>
     <div className="header-background">
       <div className="header-avatar">
-        <Avatar size="large" avatar={userInfo ? userInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
+        <Avatar size="large" avatar={userData.AppUserInfo.avatar ? userData.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
         <div className="avatar-add">
           +
         </div>
@@ -20,13 +20,13 @@ const UserPage = ({
       <div className="header-informations">
         <ul className="header-informations-ul">
           <li className="header-informations-fullname">
-            {userInfo || 'Mon Nom'}
+            {userData.AppUserInfo.first_name || 'Mon Nom'}
           </li>
           <li>
             {userData.email || 'Email'}
           </li>
           <li>
-            {userInfo ? userInfo.mobile : 'Mobile'}
+            {userData.AppUserInfo ? userData.AppUserInfo.mobile : 'Mobile'}
           </li>
         </ul>
         <NavLink to="/newuserinfos">
@@ -35,7 +35,7 @@ const UserPage = ({
       </div>
     </div>
     <h2 className="title-user-page">
-      Produits de {userInfo ? userInfo.first_name : userData.email}
+      Produits de {userData.AppUserInfo ? userData.AppUserInfo.first_name : userData.email}
     </h2>
     <div className="card-list">
       {!loading && error && (

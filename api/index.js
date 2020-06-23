@@ -21,7 +21,7 @@ app.use(cors({
 }));
 
 app.use(expressSession({
-    resave: true,
+    resave: false,
     secret: "projetapotheoseoloc",
     saveUninitialized: true,
     cookie: {
@@ -44,8 +44,7 @@ app.use( express.urlencoded({extended: true}) );
 
 app.use(express.static('public'));
 
-const isConnect = require('./app/middleware/isConnect');
-app.use(isConnect);
+
 
 const router = require('./app/router');
 app.use(router);

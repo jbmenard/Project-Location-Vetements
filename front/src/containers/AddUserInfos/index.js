@@ -6,7 +6,8 @@ import { createUserInformations, changeValueStateUserInformations } from 'src/ac
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-  createUserInformations: () => {
+  createUserInformations: (event) => {
+    event.preventDefault();
     dispatch(createUserInformations());
   },
   onChangeFirstName: (event) => {
