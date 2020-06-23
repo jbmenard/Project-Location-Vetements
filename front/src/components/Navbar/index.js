@@ -13,7 +13,7 @@ const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
   return (
     <>
       <div className={`${toggleMenu ? 'liens liens--open' : 'liens'}`}>
-        <h3 className="liens-title">Login</h3>
+        <h3 className="liens-title">Menu</h3>
         <div className="liens-inputs">
           <label className="liens--label" htmlFor="email">
             <span>Email</span>
@@ -31,11 +31,12 @@ const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
             <input className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
           </label>
           <NavLink to="/" className="item" onClick={toggleNavbar} >Accueil</NavLink>
-          <NavLink to="/ailleurs" className="item">Parcourir</NavLink>
+          <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
+          <NavLink to="/ailleurs" onClick={toggleNavbar} className="item">Parcourir</NavLink>
           <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink>
-          <div onClick={handleLogout}>
+          {/* <div onClick={handleLogout}>
             <Button type="button" size="x-large" value="déconnection" color="orangelight" />
-          </div>
+          </div> */}
         </div>
       </div>
     </>
