@@ -7,6 +7,7 @@ export const initialState = {
   password: '',
   email: '',
   confirmPassword: '',
+  info: {},
 
   first_name: '',
   last_name: '',
