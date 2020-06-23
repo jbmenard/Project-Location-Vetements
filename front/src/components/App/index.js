@@ -24,7 +24,7 @@ import AddUserInfos from 'src/containers/AddUserInfos';
 import './styles.scss';
 
 // == Composant
-const App = ({oneUser, info, listCard, loading, error, fetchProducts}) => {
+const App = ({ info, listCard, loading, error, fetchProducts, appUser}) => {
   useEffect(fetchProducts, []);
   return (
 
@@ -42,7 +42,7 @@ const App = ({oneUser, info, listCard, loading, error, fetchProducts}) => {
           <ProductPage />
         </Route>
         <Route exact path="/user"> {/* user page */}
-          <UserPage user={oneUser} userInfo={info} products={listCard} loading={loading} error={error} />
+          <UserPage user={appUser.appUser} userInfo={info} products={listCard} loading={loading} error={error} />
         </Route>
         <Route exact path="/newproduct"> {/* Form to create a new product */}
           <AddProduct />

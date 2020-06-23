@@ -37,7 +37,7 @@ const ProductCategory = ({ loading, error, listProducts }) => {
           <article className="product-article">
             {
             listProducts.map((list) => (
-              <CardDesign key={list.id} list={list} />
+              <CardDesign list={list} />
 
             ))
           }
