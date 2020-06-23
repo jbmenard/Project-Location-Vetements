@@ -53,11 +53,84 @@
       }
     }
     i {
-      margin: 1rem;
+      
       margin-top :1rem;
       border: 1px solid blanchedalmond;
       padding: 1rem;
       
       color: blanchedalmond;
     }
+}
+
+// --------------------our team --------------
+
+.title-team {
+  font-size: 30px;
+  font-weight: 700;
+  color: grey;
+  text-align: center;
+  margin: 20px;
+  
+}
+
+.container-text {
+  padding-top: 150px;
+}
+.card-team {
+  position: relative;
+  border-radius: 0;
+  box-shadow: 5px 5px 15px $general-button-opacity;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  width: 80%;
+  margin: 30px;
+  &:hover {
+    background: $burial;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px $burger;
+  }
+  &-title {
+    font-size: 24px;
+    color: $footer-background;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+   
+    &:hover{
+      color: #fff;
+    }
+  }
+  &-text {
+    font-weight: 500;
+    text-justify: auto;
+    margin-top: 10px;
+    
+  }
+  &-subtitle{
+    color: $burger;
+    text-align: center;
+  }
+  
+}
+
+.img-fluid {
+  margin-top: 70px;
+  position: absolute;
+  bottom: 250px;
+  left: 70px;
+  
+  
+}
+
+#icon {
+  color : $general-button-opacity;
+  border: grey;
+  box-shadow: 5px 5px 15px grey;
+  border-radius: 20px;
+  &:hover{
+    background-color: #fff;
+  }
 }

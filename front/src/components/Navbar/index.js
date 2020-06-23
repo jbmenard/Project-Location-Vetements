@@ -7,13 +7,15 @@ const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
   // const handleClick = () => {
   //   console.log("oui")
   // }
-  
+
   console.log(toggleMenu);
 
   return (
     <>
       <div className={`${toggleMenu ? 'liens liens--open' : 'liens'}`}>
-        <h3 className="liens-title">Menu</h3>
+        <div className="container-menu">
+          <h3 className="liens-title">Menu</h3>
+        </div>
         <div className="liens-inputs">
           <label className="liens--label" htmlFor="email">
             <span>Email</span>
@@ -27,10 +29,10 @@ const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
 
         <div className="liens-items">
           <label className="item--title" htmlFor="search">
-            <span className="search"> Rechercher</span> 
+            <span className="search"> Rechercher</span>
             <input className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
           </label>
-          <NavLink to="/" className="item" onClick={toggleNavbar} >Accueil</NavLink>
+          <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
           <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
           <NavLink to="/ailleurs" onClick={toggleNavbar} className="item">Parcourir</NavLink>
           <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink>
