@@ -96,7 +96,9 @@ const authController = {
             req.session.appUser = appUser;
       
             // et pour finir, on redirige vers la page d'acceuil
-            res.send(appUser)
+            res.status(200).send({
+              appUser: req.session.appUser
+            })
 
           }).catch( err => {
             console.trace(err);

@@ -9,6 +9,7 @@ const genderController = require('./controllers/genderController');
 const productController = require('./controllers/productController');
 const subCategoryController = require('./controllers/subCategoryController');
 const commentController = require ('./controllers/commentController');
+const isConnect = require ('./middleware/isConnect')
 
 router.get('/user', appUserController.getAll);
 router.get('/user/:id', appUserController.getOne );
@@ -39,7 +40,7 @@ router.delete('/gender/:id', genderController.delete);
 
 router.get('/product', productController.getAll);
 router.get('/product/:id', productController.getOne );
-router.post('/product', productController.create);
+router.post('/product', isConnect, productController.create);
 router.patch('/product/:id', productController.update);
 router.delete('/product/:id', productController.delete);
 

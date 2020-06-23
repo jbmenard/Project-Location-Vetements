@@ -11,7 +11,7 @@ const UserPage = ({ user, userInfo, products, loading, error }) => {
     <>
       <div className="header-background">
         <div className="header-avatar">
-          <Avatar size="large" avatar={userInfo.avatar} />
+          <Avatar size="large" avatar={userInfo ? userInfo.avatar : "http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png"} />
           <div className="avatar-add">
             +
           </div>
@@ -19,13 +19,13 @@ const UserPage = ({ user, userInfo, products, loading, error }) => {
         <div className="header-informations">
           <ul className="header-informations-ul">
             <li className="header-informations-fullname">
-              {userInfo.first_name ? userInfo : 'Mon Nom'}
+              {userInfo ? userInfo : 'Mon Nom'}
             </li>
             <li>
               {user.email ? user.email : 'Email'}
             </li>
             <li>
-              {user.mobile ? user.mobile : 'Mobile'}
+              {userInfo.mobile ? user.mobile : 'Mobile'}
             </li>
           </ul>
           <NavLink to="/newuserinfos">
@@ -34,7 +34,7 @@ const UserPage = ({ user, userInfo, products, loading, error }) => {
         </div>
       </div>
       <h2 className="title-user-page">
-        Produits de {userInfo.first_name ? userInfo.first_name : 'Mon nom'}
+        Produits de {userInfo ? userInfo.first_name : user.email}
       </h2>
       <div className="card-list">
         {!loading && error && (

@@ -1,4 +1,4 @@
-import { CREATE_USER, CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS } from 'src/actions/inscription';
+import { CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS, LOG_USER } from 'src/actions/inscription';
 import { LOGOUT } from 'src/actions/user';
 
 
@@ -7,7 +7,7 @@ export const initialState = {
   password: '',
   email: '',
   confirmPassword: '',
-  info: {},
+  appUser: {},
 
   id: 10,
   first_name: '',
@@ -22,10 +22,8 @@ export const initialState = {
 
 const userReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CREATE_USER:
-      console.log("non");
-      break;
     case CHANGE_VALUE_STATE_USER: {
+      console.log(action.value);
       return {
         ...state,
         [action.name]: action.value,
@@ -44,6 +42,12 @@ const userReducer = (state = initialState, action = {}) => {
         password: '',
         logged: false,
       };
+    case LOG_USER: {
+      return {
+        ...state,
+        appUser: action.userData,
+      };
+    }
 
     default:
       return {
