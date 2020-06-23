@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 // == Import components
@@ -24,44 +24,46 @@ import AddUserInfos from 'src/containers/AddUserInfos';
 import './styles.scss';
 
 // == Composant
-const App = () => (
+const App = ({oneUser, info, listCard, loading, error, fetchProducts}) => {
+  useEffect(fetchProducts, []);
+  return (
 
-  <>
-    <Navbar />
-    <Header />
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/products">
-        <ProductCategory />
-      </Route>
-      <Route exact path="/product/:slug">
-        <ProductPage />
-      </Route>
-      <Route exact path="/user"> {/* user page */}
-        <UserPage />
-      </Route>
-      <Route exact path="/newproduct"> {/* Form to create a new product */}
-        <AddProduct />
-      </Route>
-      <Route exact path="/newuserinfos"> {/* Form to create new user infos */}
-        <AddUserInfos />
-      </Route>
-      <Route exact path="/inscription"> {/* Form to create a new user */}
-        <Inscription />
-      </Route>
-      <Route exact path="/information">
-        <Information />
-      </Route>
-      <Route>
-        <Page404 />
-      </Route>
-    </Switch>
-    <Footer />
+    <>
+      <Navbar />
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/products">
+          <ProductCategory />
+        </Route>
+        <Route exact path="/product/:slug">
+          <ProductPage />
+        </Route>
+        <Route exact path="/user"> {/* user page */}
+          <UserPage user={oneUser} userInfo={info} products={listCard} loading={loading} error={error} />
+        </Route>
+        <Route exact path="/newproduct"> {/* Form to create a new product */}
+          <AddProduct />
+        </Route>
+        <Route exact path="/newuserinfos"> {/* Form to create new user infos */}
+          <AddUserInfos />
+        </Route>
+        <Route exact path="/inscription"> {/* Form to create a new user */}
+          <Inscription />
+        </Route>
+        <Route exact path="/information">
+          <Information />
+        </Route>
+        <Route>
+          <Page404 />
+        </Route>
+      </Switch>
+      <Footer />
 
-  </>
-);
-
+    </>
+  );
+}
 // == Export
 export default App;
