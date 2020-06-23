@@ -2,6 +2,7 @@ import React from 'react';
 // import _ from 'lodash';
 
 import './style.scss';
+import { NavLink } from 'react-router-dom';
 
 const AddProduct = ({
   createProduct,
@@ -54,7 +55,7 @@ const AddProduct = ({
 
   const handleChangeImage = (event) => {
     console.log(event.target.files[0]);
-    
+
     onChangeImage(event.target.files[0], event.target.name);
   };
   return (
@@ -121,7 +122,9 @@ const AddProduct = ({
           <input className="add-product--input" multiple="multiple" type="file" name="image" id="image" onChange={handleChangeImage} />
         </label>
         <div className="add-product-submit">
-          <input className="add-product-submit--input" type="submit" value="Créer produit" />
+          {/* <NavLink to="/products"> */}
+            <input className="add-product-submit--input" type="submit" value="Créer produit" />
+          {/* </NavLink> */}
         </div>
       </form>
     </div>

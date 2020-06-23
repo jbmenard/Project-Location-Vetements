@@ -2,7 +2,7 @@
 
 .liens {
   background-color: $burger;
-  width: 70%;
+  // width: 70%;
   position: fixed;
   height: 200vh;
   transform: translateX(-100%);
@@ -47,7 +47,7 @@
    
 
     &, span {
-      margin-left: 2.4em;
+      // margin-left: 2.4em;
       text-align: center;
       margin-bottom: 10px;
     }
@@ -91,7 +91,7 @@
   }
 
   .search {
-    margin-left: 2.4em;
+    // margin-left: 2.4em;
     text-align: center;
     margin-bottom: 10px;
   }
