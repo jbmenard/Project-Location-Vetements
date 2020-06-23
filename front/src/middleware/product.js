@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-import { CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError } from 'src/actions/product';
+import {
+  CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
+} from 'src/actions/product';
+import { SEND_MESSAGE } from 'src/actions/search';
 
 const api = (store) => (next) => (action) => {
   switch (action.type) {
@@ -44,6 +47,21 @@ const api = (store) => (next) => (action) => {
         .catch((error) => {
           console.error(error);
           store.dispatch(getError());
+        });
+      break;
+    }
+    case SEND_MESSAGE: {
+      console.log('message middleware');
+      const state = store.getstate().userReducer;
+      axios({
+        method: 'get',
+        url: `http://localhost:5050/${state.searchBar}`,
+      })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.trace(err);
         });
       break;
     }

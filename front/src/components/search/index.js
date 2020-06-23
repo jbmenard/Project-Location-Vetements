@@ -4,13 +4,11 @@ import './style.scss';
 
 const Search = ({ send, inputValue, changeText }) => {
   const handleSubmit = (event) => {
-    console.log('j\'envoie');
     event.preventDefault();
     send();
   };
 
   const handleChange = (event) => {
-    console.log('j\'écrit');
     changeText(event.target.value);
   };
 

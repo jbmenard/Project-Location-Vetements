@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import Search from 'src/components/Search';
+import Search from 'src/components/search';
 import { sendMessage, changeText } from 'src/actions/search'
 
 const mapStateToProps = (state) => ({
-  inputValue: state.text,
+  inputValue: state.userReducer.searchBar,
 });
 
 const mapDispatchToProps = (dispatch) => ({
