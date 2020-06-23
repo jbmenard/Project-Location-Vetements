@@ -20,10 +20,10 @@ router.post('/signin', authController.loginAction);
 router.get('/logout', authController.logout);
 
 router.get('/userinfo', appUserInfoController.getAll);
-router.get('/userinfo/:userInfosId', appUserInfoController.getOne );
+router.get('/userinfo/:id', appUserInfoController.getOne );
 router.post('/userinfo', appUserInfoController.create);
-router.patch('/userinfo/:userInfosId', appUserInfoController.update);
-router.delete('/userinfo/:userInfosId', appUserInfoController.delete);
+router.patch('/userinfo/:id', appUserInfoController.update);
+router.delete('/userinfo/:id', appUserInfoController.delete);
 
 router.get('/category', categoryController.getAll);
 router.get('/category/:Id', categoryController.getOne );

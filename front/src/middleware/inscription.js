@@ -50,6 +50,7 @@ const apiUser = (store) => (next) => (action) => {
         .catch((error) => {
           console.trace(error);
         });
+      break;
     }
     case LOGOUT:
       axios.get('http://localhost:5050/logout', {
