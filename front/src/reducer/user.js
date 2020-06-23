@@ -7,7 +7,7 @@ export const initialState = {
   password: '',
   email: '',
   confirmPassword: '',
-  appUser: {},
+  user: {},
 
   id: 10,
   first_name: '',
@@ -45,7 +45,8 @@ const userReducer = (state = initialState, action = {}) => {
     case LOG_USER: {
       return {
         ...state,
-        appUser: action.userData,
+        user: action.userData,
+        logged: true,
       };
     }
 

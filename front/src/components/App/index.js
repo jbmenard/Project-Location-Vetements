@@ -19,17 +19,22 @@ import ProductCategory from 'src/containers/ProductCategory';
 import Inscription from 'src/containers/Inscription';
 import AddUserInfos from 'src/containers/AddUserInfos';
 
-
 // == Immport styles
 import './styles.scss';
 
 // == Composant
-const App = ({ info, listCard, loading, error, fetchProducts, appUser}) => {
-  useEffect(fetchProducts, []);
+const App = ({
+  info, listCard, loading, error, fetchProducts, user, isLoggin
+}) => {
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  console.log(user);
+  
   return (
 
     <>
-      <Navbar />
+      <Navbar isLoggin={isLoggin} userData={user.data} />
       <Header />
       <Switch>
         <Route exact path="/">
@@ -41,9 +46,12 @@ const App = ({ info, listCard, loading, error, fetchProducts, appUser}) => {
         <Route exact path="/product/:slug">
           <ProductPage />
         </Route>
-        <Route exact path="/user"> {/* user page */}
-          <UserPage user={appUser.appUser} userInfo={info} products={listCard} loading={loading} error={error} />
-        </Route>
+        {isLoggin
+          && (
+          <Route exact path={`/user/${user.data.id}`}> {/* user page */}
+            <UserPage userData={user.data} userInfo={info} products={listCard} loading={loading} error={error} />
+          </Route>
+          )}
         <Route exact path="/newproduct"> {/* Form to create a new product */}
           <AddProduct />
         </Route>
@@ -64,6 +72,6 @@ const App = ({ info, listCard, loading, error, fetchProducts, appUser}) => {
 
     </>
   );
-}
+};
 // == Export
 export default App;
