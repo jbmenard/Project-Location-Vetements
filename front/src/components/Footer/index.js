@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import Clarisse from '../../assets/images/clarisse.jpeg';
-import Kevin from '../../assets/images/kevin.jpg';
+import Kevin from '../../assets/images/kevin.jpeg';
 import Roman from '../../assets/images/roman.jpg';
 import JB from '../../assets/images/jb.jpg';
 

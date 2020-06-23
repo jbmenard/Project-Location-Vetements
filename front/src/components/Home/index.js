@@ -7,6 +7,7 @@ import Ski from '../../assets/images/ski.jpg';
 import Wedding from '../../assets/images/wedding.jpg';
 import Loue from '../../assets/images/je-loue.PNG';
 import Reçois from '../../assets/images/je-recois.PNG';
+import Rends from '../../assets/images/je-rends.png';
 
 const Home = () => (
   // --------------- carousel ---------------
@@ -51,7 +52,7 @@ const Home = () => (
       <div className="row">
         <Cards title="JE LOUE" image={Loue} number={1} text="Créez votre profil et choisissez les produits qui vous interessent." />
         <Cards title="JE RECOIS" image={Reçois} number={2} text="Prenez contact avec le loueur et recevez votre produit." />
-        <Cards title="JE RENDS" text="Faut rendre les affaires " number={3} />
+        <Cards title="JE RENDS" image={Rends} text="Faut rendre les affaires " number={3} />
       </div>
     </section>
     <section className="container-temoignages">
