@@ -1,12 +1,14 @@
-const userMiddleware = (req, res, next) => {
-  if (req.session.appUser) {
-      console.log('ca marche');
-      
-    res.locals.appUser = req.session.appUser;
-  }
-  console.log('ca marche pas');
+const userMiddleware = {
 
-  next();
+  testSession: (req, res, next) => {
+    if (req.session.data) {
+        console.log('ca marche');
+        
+      return res.locals.data = req.session.data;
+    }
+    console.log('ca marche pas');
+
+  }
 
 };
 

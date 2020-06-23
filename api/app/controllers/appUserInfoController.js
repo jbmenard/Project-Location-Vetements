@@ -64,17 +64,19 @@ const appUserInfoController = {
                     
 
                     const newAppUserInfos = AppUserInfos.create({
-                        id: Number(fields.id),
-                        first_name: fields.name,
+                        first_name: fields.first_name,
                         last_name: fields.last_name,
-                        address: Number(fields.address),
+                        address: fields.address,
+                        mobile: fields.mobile,
                         if(files){
                             avatar: `/${files.image.name}`
                         },
-                        mobile: fields.size,
                         app_user_id: Number(fields.app_user_id),
                     });
-                    res.send(newAppUserInfos)
+                    res.status(200).send({
+                        info: newAppUserInfos,
+                    })
+
                 })
                 // console.log(req);
                 
@@ -110,7 +112,7 @@ const appUserInfoController = {
                         }
                         
     
-                        const newAppUserInfos = AppUserInfos.create({
+                        const newAppUserInfos = AppUserInfos.update({
                             id: Number(fields.id),
                             first_name: fields.name,
                             last_name: fields.last_name,
@@ -121,13 +123,15 @@ const appUserInfoController = {
                             mobile: fields.size,
                             app_user_id: Number(fields.app_user_id),
                         });
-                        res.send(newAppUserInfos)
+
+                        res.status(200).send({
+                            info: newAppUserInfos
+                          })
                     })
                     // console.log(req);
                     
                 })          
             }
-            next()
         } catch (error) {
             console.trace(error);
             res.status(500).send(error)
@@ -136,8 +140,8 @@ const appUserInfoController = {
 
     delete: async (req, res, next) => {
         try {
-            const { appUserInfosId } = req.params;
-            const appUserInfo = await AppUserInfos.findByPk( AppUserInfosId );
+            const { id } = req.params;
+            const appUserInfo = await AppUserInfos.findByPk( id );
             if(appUserInfo) {
                 await appUserInfo.destroy();
                 return res.send('Element supprimé')

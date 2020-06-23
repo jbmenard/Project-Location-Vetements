@@ -24,13 +24,14 @@ import './styles.scss';
 
 // == Composant
 const App = ({
-  info, listCard, loading, error, fetchProducts, user, isLoggin
+  listCard, loading, error, fetchProducts, user, isLoggin, checkIsLogged,
 }) => {
   useEffect(() => {
     fetchProducts();
+    checkIsLogged()
   }, []);
   console.log(user);
-  
+
   return (
 
     <>
@@ -49,15 +50,18 @@ const App = ({
         {isLoggin
           && (
           <Route exact path={`/user/${user.data.id}`}> {/* user page */}
-            <UserPage userData={user.data} userInfo={info} products={listCard} loading={loading} error={error} />
+            <UserPage userData={user.data} products={listCard} loading={loading} error={error} />
           </Route>
           )}
         <Route exact path="/newproduct"> {/* Form to create a new product */}
           <AddProduct />
         </Route>
-        <Route exact path="/newuserinfos"> {/* Form to create new user infos */}
-          <AddUserInfos />
-        </Route>
+        {isLoggin
+          && (
+          <Route exact path="/newuserinfos"> {/* Form to create new user infos */}
+            <AddUserInfos userData={user.data} />
+          </Route>
+          )}
         <Route exact path="/inscription"> {/* Form to create a new user */}
           <Inscription />
         </Route>
