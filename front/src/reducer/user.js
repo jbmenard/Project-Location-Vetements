@@ -9,12 +9,13 @@ export const initialState = {
   confirmPassword: '',
   info: {},
 
+  id: 10,
   first_name: '',
   last_name: '',
   address: '',
   mobile: '',
   avatar: '',
-  app_user_id: 1,
+  app_user_id: 5,
   logged: false,
   toggleInformation: false,
 };

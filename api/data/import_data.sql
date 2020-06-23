@@ -11,11 +11,11 @@ INSERT INTO "app_user" ("password", "email") VALUES
 ('1234', 'hirochi-nakamoto@gmail.com'),
 ('1234', 'lucie-gambino@gmail.com');
 
-INSERT INTO "app_user_info" ("first_name","last_name","address","mobile","avatar","role", "app_user_id") VALUES
-('Bertrand', 'Dupont', '12 rue Aristide', '0687629022', 'photo 1', 'user', 1 ),
-('Esteban', 'Cruz', '29 boulevard des Maréchaux', '0672849981', 'photo 2', 'user', 2),
-('Hirochi', 'Nakamoto', '72 avenue des Champs Élysées', '0645712390', 'photo 3', 'admin', 3),
-('Lucie', 'Gambino', '64 rue des Capucines', '0612784900', 'photo 4', 'user', 4);
+INSERT INTO "app_user_info" ("first_name","last_name","address","mobile","avatar", "app_user_id") VALUES
+('Bertrand', 'Dupont', '12 rue Aristide', '0687629022', 'photo 1', 1 ),
+('Esteban', 'Cruz', '29 boulevard des Maréchaux', '0672849981', 'photo 2', 2),
+('Hirochi', 'Nakamoto', '72 avenue des Champs Élysées', '0645712390', 'photo 3', 3),
+('Lucie', 'Gambino', '64 rue des Capucines', '0612784900', 'photo 4', 4);
 
 
 -- create genders
