@@ -17,16 +17,18 @@ const categoryController = {
 
     getOne: async (req, res, next) => {
         try {
-            const categoryId = req.params.id;
-            const category = await Category.findByPk(categoryId, {
-                include: [{all: true, nested: true}]
+            console.log('je suis ici')
+            const { category } = req.params;
+            const catchCategory = await Category.findOne({
+                where: {
+                    name: category
+                }
             });
 
-            if (category) {
-                res.send(category);
-            }else {
-                next();
+            if (catchCategory) {
+               return res.send(catchCategory);
             }
+            res.status(404).send('Votre recherche n\'a pas aboutie')
 
         } catch (error) {
             console.trace(error);

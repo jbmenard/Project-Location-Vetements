@@ -26,7 +26,7 @@ router.patch('/userinfo/:userInfosId', appUserInfoController.update);
 router.delete('/userinfo/:userInfosId', appUserInfoController.delete);
 
 router.get('/category', categoryController.getAll);
-router.get('/category/:Id', categoryController.getOne );
+router.get('/:category', categoryController.getOne );
 router.post('/category', categoryController.create);
 router.patch('/category/:Id', categoryController.update);
 router.delete('/category/:Id', categoryController.delete);
