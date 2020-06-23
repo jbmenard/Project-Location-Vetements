@@ -2,6 +2,8 @@ import React from 'react';
 import './styles.scss';
 import { NavLink } from 'react-router-dom';
 import Button from 'src/components/Button';
+import Search from 'src/components/search'
+import { changeText } from '../../actions/search';
 
 const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
   // const handleClick = () => {
@@ -26,11 +28,8 @@ const Navbar = ({ toggleMenu, toggleNavbar, handleLogout }) => {
         </div>
 
         <div className="liens-items">
-          <label className="item--title" htmlFor="search">
-            <span className="search"> Rechercher</span> 
-            <input className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
-          </label>
-          <NavLink to="/" className="item" onClick={toggleNavbar} >Accueil</NavLink>
+          <Search />
+          <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
           <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
           <NavLink to="/ailleurs" onClick={toggleNavbar} className="item">Parcourir</NavLink>
           <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink>
