@@ -78,7 +78,11 @@ const authController = {
           AppUser.findOne({
             where: {
               email: fields.email
-            }
+            },
+            include: [{
+             all: true,
+             nested: true,
+            }]
           }).then( appUser => {
             //  - si il n'existe pas => erreur
             if (!appUser) {
@@ -93,11 +97,11 @@ const authController = {
               return res.send(errors);
             }
             // 3. si tout va bien (email et pwd correct) => on enregistre l'utilisateur dans la session
-            req.session.appUser = appUser;
+            req.session.data = appUser;
       
             // et pour finir, on redirige vers la page d'acceuil
             res.status(200).send({
-              appUser: req.session.appUser
+              data: req.session.data
             })
 
           }).catch( err => {

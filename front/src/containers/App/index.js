@@ -5,7 +5,8 @@ import { fetchProducts } from 'src/actions/product';
 
 const mapStateToProps = (state) => ({
   // oneUser: state.userReducer.email,
-  appUser: state.userReducer.appUser,
+  user: state.userReducer.user,
+  isLoggin: state.userReducer.logged,
   listCard: state.productReducer.listProducts,
   loading: state.productReducer.loading,
   error: state.productReducer.error,
