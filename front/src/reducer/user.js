@@ -42,15 +42,6 @@ const userReducer = (state = initialState, action = {}) => {
         password: '',
         logged: false,
       };
-    case SAVE_LOGOUT:
-      return {
-        ...state,
-      };
-    case TOGGLE_INFORMATION:
-      return {
-        ...state,
-        toggleInformation: !state.toggleInformation,
-      };
 
     default:
       return {
