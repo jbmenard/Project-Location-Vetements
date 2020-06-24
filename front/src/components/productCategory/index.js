@@ -3,9 +3,10 @@ import CardDesign from 'src/components/CardDesign';
 
 import './style.scss';
 
-const ProductCategory = ({ loading, error, listProducts }) => { 
-  // useEffect(fetchProducts, []);
-  
+
+const ProductCategory = ({ loading, error, listProducts, fetchProducts }) => { 
+  useEffect(fetchProducts, []);
+
   return (
     <>
       <div className="product-event">
@@ -37,7 +38,7 @@ const ProductCategory = ({ loading, error, listProducts }) => {
           <article className="product-article">
             {
             listProducts.map((list) => (
-              <CardDesign list={list} />
+              <CardDesign object={list} />
 
             ))
           }

@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-import { CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError } from 'src/actions/product';
+import {
+  CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
+} from 'src/actions/product';
+import { SEND_MESSAGE } from 'src/actions/search';
+import { SAVE_PRODUCTS } from '../actions/product';
 
 const api = (store) => (next) => (action) => {
   switch (action.type) {
@@ -36,7 +40,7 @@ const api = (store) => (next) => (action) => {
       const state = store.getState().productReducer;
       state.loading = false;
 
-      axios.get('http://localhost:5050/product')
+      axios.get('http://localhost:5050/product/name/slip')
         .then((response) => {
           const saveProductsAction = saveProducts(response.data);
           store.dispatch(saveProductsAction);
@@ -44,6 +48,22 @@ const api = (store) => (next) => (action) => {
         .catch((error) => {
           console.error(error);
           store.dispatch(getError());
+        });
+      break;
+    }
+    case SEND_MESSAGE: {
+      console.log('message middleware');
+      const state = store.getState().userReducer;
+      console.log(state.searchBar);
+      axios({
+        method: 'get',
+        url: `http://localhost:5050/product/name/${state.searchBar}`,
+      })
+        .then((response) => {
+         store.dispatch(saveProducts(response.data));
+        })
+        .catch((err) => {
+          console.trace(err);
         });
       break;
     }

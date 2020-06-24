@@ -2,6 +2,8 @@ import React from 'react';
 import './styles.scss';
 import { NavLink } from 'react-router-dom';
 import Button from 'src/components/Button';
+import Search from 'src/containers/search'
+import { changeText } from '../../actions/search';
 
 const Navbar = ({
   toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, userData, connectUser, isLoggin,
@@ -36,10 +38,7 @@ const Navbar = ({
         </div>
 
         <div className="liens-items">
-          <label className="item--title" htmlFor="search">
-            <span className="search"> Rechercher</span>
-            <input className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
-          </label>
+          <Search />
           <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
           <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
           {isLoggin
