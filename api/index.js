@@ -4,7 +4,6 @@ const express = require('express');
 const expressSession = require('express-session');
 const morgan = require('morgan');
 const cors = require('cors');
-const multer = require('multer');
 
 /*
 npm install bcrypt express sequelize dotenv morgan router express-session email-validator pg express-fileupload momentjs browserify watchify multer cors 
@@ -14,19 +13,24 @@ const app = express();
 
 app.use(morgan('dev'));
 
-app.use(cors());
+
+app.use(cors({
+    origin:['http://localhost:8080'],
+    methods:['GET','POST'],
+    credentials: true // enable set cookie
+}));
 
 app.use(expressSession({
-    resave: true,
-    secret: "projet apothéose: o'loc",
+    resave: false,
+    secret: "projetapotheoseoloc",
     saveUninitialized: true,
     cookie: {
         secure: false,
-        maxAge: (1000 * 60 * 60)
+        maxAge: (1000 * 60 * 60),
+        httpOnly: true
     }
 }))
 
-app.use(cors());
 
 // Traduite les données récupérer dans le body en multipart
 
@@ -39,6 +43,8 @@ app.use( express.urlencoded({extended: true}) );
 // app.use(bodyparser.none());
 
 app.use(express.static('public'));
+
+
 
 const router = require('./app/router');
 app.use(router);
