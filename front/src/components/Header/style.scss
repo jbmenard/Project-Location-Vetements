@@ -1,4 +1,6 @@
 .header{
+  z-index: 1;
+  position: relative;
   display: flex;
   justify-content: space-between;
   transform: translateX(0%);

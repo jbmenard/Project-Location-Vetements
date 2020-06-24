@@ -1,3 +1,4 @@
+@import 'src/styles/vars';
 
 .card-menu {
   margin : auto;
@@ -9,9 +10,9 @@
   &-title{
     text-align: center;
     padding-top: 10px;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
-    color: white;
+    color: $burger;
     font-family: 'Indie Flower', cursive;
   }
   &-body {
@@ -25,13 +26,16 @@
     
   }
   &-text {
-    background-color: #6D7F87;
+    // background-color: whitesmoke;
     opacity: 0.8;
     padding-bottom: 15PX;
-    color : white;
+    color: grey;
     padding-top: 15px;
    
   }
+  
+  
+  
 }
 
 .text-number {
@@ -43,4 +47,16 @@ text-shadow: -1px 1px 0 whitesmoke,
               1px 1px 0 whitesmoke, 
              1px -1px 0 whitesmoke,
             -1px -1px 0 whitesmoke; 
+}
+
+.image{
+  width: 80%;
+  padding: 10px;
+  
+}
+
+.number{
+  font-size: 40px;
+  padding-right: 20px;
+  color: #5E6472;
 }

@@ -15,7 +15,9 @@ const Navbar = ({
   return (
     <>
       <div className={`${toggleMenu ? 'liens liens--open' : 'liens'}`}>
-        <h3 className="liens-title">Menu</h3>
+        <div className="container-menu">
+          <h3 className="liens-title">Menu</h3>
+        </div>
         <div className="liens-inputs">
           {!isLoggin
             && (
