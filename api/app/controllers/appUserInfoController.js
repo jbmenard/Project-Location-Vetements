@@ -62,20 +62,27 @@ const appUserInfoController = {
                         }) 
                     }
                     
-
-                    const newAppUserInfos = AppUserInfos.create({
+                    const userInfo = {
                         first_name: fields.first_name,
                         last_name: fields.last_name,
                         address: fields.address,
                         mobile: fields.mobile,
-                        if(files){
-                            avatar: `/${files.image.name}`
-                        },
                         app_user_id: Number(fields.app_user_id),
-                    });
+                    }
+                    if(!files.avatar){
+                        const newAppUserInfos = AppUserInfos.create(userInfo);
+                        return res.status(200).send({
+                            info: newAppUserInfos,
+                        })
+                    }
+                        
+                    userInfo.avatar = `/${files.avatar.name}`
+                    const newAppUserInfos = AppUserInfos.create(userInfo);
                     res.status(200).send({
                         info: newAppUserInfos,
                     })
+                    
+                    
 
                 })
                 // console.log(req);

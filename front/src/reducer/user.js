@@ -31,8 +31,6 @@ const userReducer = (state = initialState, action = {}) => {
       };
     }
     case CHANGE_VALUE_STATE_USER_INFORMATIONS: {
-      console.log(action.name, action.value);
-      
       return {
         ...state,
         [action.name]: action.value,
