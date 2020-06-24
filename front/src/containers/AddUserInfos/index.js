@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(changeValueStateUserInformations(event.target.value, event.target.name));
   },
   onChangeAvatar: (event) => {
-    dispatch(changeValueStateUserInformations(event.target.value, event.target.name));
+    dispatch(changeValueStateUserInformations(event.target.files[0], event.target.name));
   },
 });
 

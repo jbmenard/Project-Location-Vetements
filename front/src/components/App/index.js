@@ -24,11 +24,11 @@ import './styles.scss';
 
 // == Composant
 const App = ({
-  listCard, loading, error, fetchProducts, user, isLoggin, checkIsLogged,
+  listCard, loading, error, fetchProducts, user, isLoggin, checkIsLogged
 }) => {
   useEffect(() => {
     fetchProducts();
-    checkIsLogged()
+    checkIsLogged();
   }, []);
   console.log(user);
 

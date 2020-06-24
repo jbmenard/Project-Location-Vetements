@@ -12,7 +12,7 @@ const UserPage = ({
   <>
     <div className="header-background">
       <div className="header-avatar">
-        <Avatar size="large" avatar={userData.AppUserInfo.avatar ? userData.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
+        <Avatar size="large" avatar={userData.AppUserInfo ? userData.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
         <div className="avatar-add">
           +
         </div>
@@ -20,7 +20,7 @@ const UserPage = ({
       <div className="header-informations">
         <ul className="header-informations-ul">
           <li className="header-informations-fullname">
-            {userData.AppUserInfo.first_name || 'Mon Nom'}
+            {userData.AppUserInfo ? userData.AppUserInfo.first_name : 'Mon Nom'}
           </li>
           <li>
             {userData.email || 'Email'}
