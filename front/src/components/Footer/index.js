@@ -37,7 +37,7 @@ const Footer = () => (
               <h3 className="card-team-title">Roman</h3>
               <h5 className="card-team-subtitle"> Product Owner</h5>
               <p className="card-team-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam a odio fugit labore nihil alias ut deleniti quaerat! Nesciunt eligendi illo</p>
-              <div className="d-flex flex-row justify-content-center">
+              <div className="container-icon d-flex flex-row justify-content-center">
                 <div className="p-4">
                   <a href="#">
                     <i className="fa fa-facebook"  />
@@ -66,7 +66,7 @@ const Footer = () => (
               <h3 className="card-team-title">Jean-Baptiste</h3>
               <h5 className="card-team-subtitle"> Scrum Master & Developer</h5>
               <p className="card-team-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam a odio fugit labore nihil alias ut deleniti quaerat! Nesciunt eligendi illo</p>
-              <div className="d-flex flex-row justify-content-center ">
+              <div className="container-icon d-flex flex-row justify-content-center ">
                 <div className="p-4">
                   <a href="#">
                     <i className="fa fa-facebook" id="icon" />
@@ -96,7 +96,7 @@ const Footer = () => (
               <h3 className="card-team-title">Clarisse</h3>
               <h5 className="card-team-subtitle"> Lead Front</h5>
               <p className="card-team-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam a odio fugit labore nihil alias ut deleniti quaerat! Nesciunt eligendi illo</p>
-              <div className="d-flex flex-row justify-content-center">
+              <div className="container-icon d-flex flex-row justify-content-center">
                 <div className="p-4">
                   <a href="#">
                     <i className="fa fa-facebook" id="icon" />
@@ -126,7 +126,7 @@ const Footer = () => (
               <h3 className="card-team-title">Kevin</h3>
               <h5 className="card-team-subtitle"> Lead Back</h5>
               <p className="card-team-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam a odio fugit labore nihil alias ut deleniti quaerat! Nesciunt eligendi illo</p>
-              <div className="d-flex flex-row justify-content-center">
+              <div className="container-icon d-flex flex-row justify-content-center">
                 <div className="p-4">
                   <a href="#">
                     <i className="fa fa-facebook" id="icon" />

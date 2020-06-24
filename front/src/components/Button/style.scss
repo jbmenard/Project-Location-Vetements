@@ -24,9 +24,31 @@
   &-eggshell {
     background-color: #faf3dd;
   }
-  &-orange {
+  &-form {
+    background-color: #EEAC80 ;
+    color: #fff;
+    border-radius: 20px;
+    width: 80%;
+    font-size: 1em;
+    font-weight: 700;
+    &:hover{
+      background-color: #8FBC8F;
+    }
+  }
+
+  &-menu {
     background-color:  #f0693d ;
     color: #fff;
+    margin-left: 8em;
+    &:hover{
+      background-color: #8FBC8F;
+    }
+  }
+
+  &-orange{
+    background-color:  #f0693d ;
+    color: #fff;
+   
   }
 
   &-orangelight {

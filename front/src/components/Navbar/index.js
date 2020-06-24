@@ -18,21 +18,21 @@ const Navbar = ({
     <>
       <div className={`${toggleMenu ? 'liens liens--open' : 'liens'}`}>
         <div className="container-menu">
-          <h3 className="liens-title">Menu</h3>
+          <h3 className="liens-title">o'loc</h3>
         </div>
         <div className="liens-inputs">
           {!isLoggin
             && (
             <form onSubmit={connectUser}>
               <label className="liens--label" htmlFor="email">
-                <span>Email</span>
+                <span>Connexion</span>
                 <input className="liens--input" onChange={changeValueEmail} type="email" name="email" id="email" placeholder="Votre email" />
               </label>
               <label className="liens--label" htmlFor="password">
-                <span>Password</span>
+                
                 <input className="liens--input" onChange={changeValuePassword} name="password" id="password" type="password" placeholder="Votre password" />
               </label>
-              <Button type="submit" color="orange" value="Se connecter" size="medium" />
+              <Button type="submit" color="menu" value="Se connecter" size="medium" />
             </form>
             )}
         </div>
