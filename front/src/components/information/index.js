@@ -37,14 +37,6 @@ const Information = () => (
         </div>
       </article>
     </section>
-    <section className="faq">
-      <h1 className="faq-title">Foire aux questions</h1>
-      <div className="faq-item">
-        <article className="faq-item-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper ligula velit, vitae faucibus justo sagittis malesuada. Nam maximus laoreet orci, et tincidunt turpis eleifend eget. In placerat dignissim turpis id vestibulum. Nulla eget gravida ante. In eu vehicula tortor. Ut eros est, convallis nec rhoncus et, lacinia a magna. Pellentesque aliquam, metus et facilisis elementum, mauris nunc mattis justo, vel pellentesque ex magna vel risus. Phasellus pellentesque maximus dolor, sed suscipit dolor porttitor sed. Duis et pulvinar turpis. Donec vitae libero quis ex finibus hendrerit. Sed eu vehicula justo, vitae vehicula turpis. Aliquam dignissim leo blandit mattis bibendum. Cras ipsum risus, mattis cursus purus in, ornare mollis magna. Nulla non interdum nisl.</article>
-        <article className="faq-item-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper ligula velit, vitae faucibus justo sagittis malesuada. Nam maximus laoreet orci, et tincidunt turpis eleifend eget. In placerat dignissim turpis id vestibulum. Nulla eget gravida ante. In eu vehicula tortor. Ut eros est, convallis nec rhoncus et, lacinia a magna. Pellentesque aliquam, metus et facilisis elementum, mauris nunc mattis justo, vel pellentesque ex magna vel risus. Phasellus pellentesque maximus dolor, sed suscipit dolor porttitor sed. Duis et pulvinar turpis. Donec vitae libero quis ex finibus hendrerit. Sed eu vehicula justo, vitae vehicula turpis. Aliquam dignissim leo blandit mattis bibendum. Cras ipsum risus, mattis cursus purus in, ornare mollis magna. Nulla non interdum nisl.</article>
-        <article className="faq-item-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper ligula velit, vitae faucibus justo sagittis malesuada. Nam maximus laoreet orci, et tincidunt turpis eleifend eget. In placerat dignissim turpis id vestibulum. Nulla eget gravida ante. In eu vehicula tortor. Ut eros est, convallis nec rhoncus et, lacinia a magna. Pellentesque aliquam, metus et facilisis elementum, mauris nunc mattis justo, vel pellentesque ex magna vel risus. Phasellus pellentesque maximus dolor, sed suscipit dolor porttitor sed. Duis et pulvinar turpis. Donec vitae libero quis ex finibus hendrerit. Sed eu vehicula justo, vitae vehicula turpis. Aliquam dignissim leo blandit mattis bibendum. Cras ipsum risus, mattis cursus purus in, ornare mollis magna. Nulla non interdum nisl.</article>
-      </div>
-    </section>
   </div>
 );
 
