@@ -1,173 +1,70 @@
-.information{
+@import 'src/styles/index';
+@import 'src/styles/vars';
 
-  &-section{
-        display: flex;
-        margin: 0 1em;
-      }
-    
-        &-article1{
-          width: 50%;
-          margin-right: 0.5em;
-        }
-    
-          &-title{
-            font-weight: bold;
-            margin-bottom:1em;
-          }
-          &-description{
-                   margin-bottom: 1em;
-                   font-size: 0.8em;
-                   font-weight: 100;
-                  }
-          &-article2{
-            width: 50%;
-          }
-          &-photo{
-              width: 90%;
-            }
-
-          &-service{
-            display: flex;
-            flex-wrap: wrap;
-            
-            padding: 2em 0;
-            
-            
-          }
-          &-photodescription{
-            width: 100%;
-          }
-
-          &-article-description{
-            width: 45%;
-            margin:0.5em;
-            
-          }
-          &-para{
-            color:white;
-          }
-          &-finalphoto{
-            width: 100%;
-          }
-          
-          &-sectionservice{
-            background-color: #f6c0ae;
-          
-              &-title{
-                color:white;
-                text-align: center;
-                padding-top: 1em;
-              }
-          
-          }
-
-          
-
-
-          
+.information-page {
+  margin: 1em 0;
 }
 
+// PART 1
 
+.intro {
+  margin: 1em;
 
+  // &-left {
+  // }
 
+  // &-right {
+  // }
 
+  &-title {
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0;
+  }
 
+  &-text {
+    margin-top: 1em;
+  }
 
+  &-image {
+    width: 340px;
+    margin-top: 1em;
+  }
+}
 
+// PART 2
 
+.steps {
+  background-color: #FFDAB9;
 
+  &-title {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 1em 0;
+  }
 
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
 
+  &-item {
+    margin: 1em 1em;
+    box-shadow: 2px 5px 12px #ccc;
+    height: 24em;
+    width: 18em;
 
+    &-top {
+      background-color: #fff;
+      height: 18em;
+      width: 18em;
+    }
 
-
-
-
-
-
-
-
-
-
-
-// .information{
-
-//   width: 100%;
-//   &-para{
-//     width: 100%;
-//     background-color: white;
-//     margin-top: -0.3em;
-    
-    
-    
-//   }
-//   &-section{
-//     display: flex;
-//     margin: 0 1em;
-//   }
-
-//     &-article1{
-//       width: 50%;
-//       margin-right: 0.5em;
-//     }
-
-//       &-title{
-//         font-weight: bold;
-//         margin-bottom:1em;
-//       }
-//       &-description{
-//        margin-bottom: 1em;
-//       }
-//         &-article2{
-//           width: 50%;
-          
-          
-//         }
-//           &-photo{
-//             width: 90%;
-//           }
-//             &-section2{
-//               display: flex;
-//               margin-bottom: 1em;
-              
-              
-              
-//             }
-//               &-section3{
-//                 display: flex;
-            
-               
-//               }
-//             &-article3{
-//               width: 50%;
-              
-             
-              
-//             }
-//               &-photo1{
-//                 width: 100%;
-//               }
-//                 &-article4{
-//                   width: 50%;
-                  
-//                 }
-//                   &-photo2{
-//                     width: 100%;
-//                   }
-//                   &-article5{
-//                     width: 50%;
-//                   }
-//                     &-photo3{
-//                       width: 100%;
-//                     }
-//                       &-article6{
-//                         width: 50%;
-//                       }
-//                         &-photo4{
-//                           width: 100%;
-//                         }
-//                           &-service{
-//                             background-color:#F0693D;
-//                             padding:2em 0;
-//                           }
-// }
+    &-bottom {
+      background-color: #ccc;
+      height: 6em;
+      width: 18em;
+    }
+  }
+}

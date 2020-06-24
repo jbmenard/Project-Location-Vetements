@@ -3,9 +3,10 @@ import CardDesign from 'src/components/CardDesign';
 
 import './style.scss';
 
+
 const ProductCategory = ({ loading, error, listProducts, fetchProducts }) => { 
   useEffect(fetchProducts, []);
-  console.log(listProducts);
+
   return (
     <>
       <div className="product-event">

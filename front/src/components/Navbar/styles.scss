@@ -1,8 +1,15 @@
 @import 'src/styles/vars';
 
-.liens {
+.container-menu {
   background-color: $burger;
+  padding: 10px;
+  background-image: url('../../assets/images/bright-squares.png');
+}
+.liens {
+  
   // width: 70%;
+  background-color: rgba(255, 255, 255, 0.863);
+  
   position: fixed;
   height: 200vh;
   transform: translateX(-100%);
@@ -11,6 +18,7 @@
   
     &--open {
       transform: translateX(0%);
+      border: 1px double $burger;
     }
   z-index: 1;
     &-items {
@@ -28,15 +36,20 @@
     text-transform: uppercase;
     text-align: center;
     margin-top: 2em;
+    margin-bottom: 20px;
     }
     &-inputs{
     margin-top : 1em;
     }
     &--input{
+    border: 2px solid #f8f8ff;
     margin: auto;
     width: 80%;
-    border: none;
+    // border: none;
     padding : 5px;
+    &:hover {
+      border: 2px solid $general-button-opacity;
+    }
     }
     &--label{
     display: flex;
@@ -66,9 +79,10 @@
   .item {
   margin-bottom: 10px;
   margin-top: 30px;
-  font-weight: bold;
+  
   &:hover{
     color: $navbar-hover;
+    
   }
   &:link {
     text-decoration: none;
@@ -79,8 +93,10 @@
   border: none;
   margin-top: 0.5em;
   padding : 5px;
-  
-  
+  border: 2px solid #f8f8ff;
+    &:hover{
+      border: 2px solid $general-button-opacity;
+    }
   }
   &--title{
   margin:10px;

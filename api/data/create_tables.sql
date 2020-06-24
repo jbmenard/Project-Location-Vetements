@@ -14,12 +14,12 @@ CREATE TABLE IF NOT EXISTS "app_user" (
 
 CREATE TABLE IF NOT EXISTS "app_user_info" (
     "id" SERIAL PRIMARY KEY,
-    "first_name" VARCHAR(255) NOT NULL,
+    "first_name" VARCHAR(255),
     "last_name" VARCHAR(255),
-    "address" VARCHAR (255) NOT NULL,
+    "address" VARCHAR (255),
     "mobile" VARCHAR(255) ,
     "avatar" TEXT,
-    "certified" BOOLEAN DEFAULT false,
+    "certified" BOOLEAN DEFAULT 'false',
     "role" VARCHAR(255) DEFAULT 'user',
     "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP NULL,

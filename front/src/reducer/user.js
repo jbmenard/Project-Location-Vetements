@@ -1,18 +1,22 @@
-import { CREATE_USER, CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS } from 'src/actions/inscription';
-import { LOGOUT } from 'src/actions/user';
+import { CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS, INFO_USER, LOG_USER } from 'src/actions/inscription';
+import { SAVE_LOGOUT } from 'src/actions/user';
 import { CHANGE_SEARCH_BAR_VALUE, } from 'src/actions/search';
+
 
 export const initialState = {
   password: '',
   email: '',
   confirmPassword: '',
+  user: {},
+  userInfo: {},
 
+  id: 10,
   first_name: '',
   last_name: '',
   address: '',
   mobile: '',
   avatar: '',
-  app_user_id: 1,
+  app_user_id: 7,
   logged: false,
   toggleInformation: false,
   searchBar: '',
@@ -20,10 +24,8 @@ export const initialState = {
 
 const userReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CREATE_USER:
-      console.log('non');
-      break;
     case CHANGE_VALUE_STATE_USER: {
+      console.log(action.value);
       return {
         ...state,
         [action.name]: action.value,
@@ -35,17 +37,28 @@ const userReducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     }
-    case LOGOUT:
+    case SAVE_LOGOUT:
       return {
         ...state,
-        email: '',
-        password: '',
         logged: false,
       };
     case CHANGE_SEARCH_BAR_VALUE: {
       return {
         searchBar: action.value,
       };
+    }
+    case LOG_USER: {
+      return {
+        ...state,
+        user: action.userData,
+        logged: true,
+      };
+    }
+    case INFO_USER: {
+      return {
+        ...state,
+        userInfo: action.infoUser,
+      }
     }
     default:
       return {
