@@ -62,7 +62,7 @@
   z-index : inherit;
 }
 
-.carousel-controle-next {
+.carousel-control-next {
   z-index : inherit;
 }
 
@@ -70,10 +70,7 @@
   z-index: inherit;
 }
 
-// .carousel{
-//   margin-top: -8.5em;
-//   z-index: 0;
-// }
+
 .fa {
   margin: auto;
   font-size : 30px;
@@ -87,4 +84,14 @@
 .icon-star {
   margin-left: 130px;
   color : #ffd700
+}
+
+.img-fluid {
+  position: 0px;
+  height: 100vh;
+}
+
+.carousel {
+  margin-top: -8.5em;
+  z-index: 0;
 }

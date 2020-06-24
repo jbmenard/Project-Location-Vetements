@@ -28,11 +28,11 @@ const Footer = () => (
 
     {/* ----------------------- OUR TEAM -------------------------- */}
     <h1 className="title-team"> NOTRE TEAM </h1>
-    <div className="row">
+    <div className="container-team row">
       <div className="col-lg-3 col md-6">
         <div className="card-team">
           <div className="card-team-body">
-            <img src={Roman} alt="Roman" className="img-fluid rounded-circle w-50 mb-3" />
+            <img src={Roman} alt="Roman" className=" avatar img-fluid rounded-circle w-50 mb-3" />
             <div className="container-text">
               <h3 className="card-team-title">Roman</h3>
               <h5 className="card-team-subtitle"> Product Owner</h5>
@@ -61,7 +61,7 @@ const Footer = () => (
       <div className="col-lg-3 col-md-6">
         <div className="card-team">
           <div className="card-team-body">
-            <img src={JB} alt="JB" className="img-fluid rounded-circle w-50 mb-3" />
+            <img src={JB} alt="JB" className="avatar img-fluid rounded-circle w-50 mb-3" />
             <div className="container-text">
               <h3 className="card-team-title">Jean-Baptiste</h3>
               <h5 className="card-team-subtitle"> Scrum Master & Developer</h5>
@@ -91,7 +91,7 @@ const Footer = () => (
       <div className="col-lg-3 col-md-6">
         <div className="card-team">
           <div className="card-team-body">
-            <img src={Clarisse} alt="" className="img-fluid rounded-circle w-50 mb-3" />
+            <img src={Clarisse} alt="" className=" avatar img-fluid rounded-circle w-50 mb-3" />
             <div className="container-text">
               <h3 className="card-team-title">Clarisse</h3>
               <h5 className="card-team-subtitle"> Lead Front</h5>
@@ -121,7 +121,7 @@ const Footer = () => (
       <div className="col-lg-3 col-md-6">
         <div className="card-team">
           <div className="card-team-body">
-            <img src={Kevin} alt="" className="img-fluid rounded-circle w-50 mb-3" />
+            <img src={Kevin} alt="" className="avatar img-fluid rounded-circle w-50 mb-3" />
             <div className="container-text">
               <h3 className="card-team-title">Kevin</h3>
               <h5 className="card-team-subtitle"> Lead Back</h5>

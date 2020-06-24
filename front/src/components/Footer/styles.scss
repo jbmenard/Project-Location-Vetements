@@ -73,7 +73,9 @@
   margin: 20px;
   
 }
-
+.container-team {
+  margin-top: 20px ;
+}
 .container-text {
   padding-top: 150px;
 }
@@ -101,7 +103,7 @@
     margin-bottom: 5px;
    
     &:hover{
-      color: #fff;
+      color: $general-button-opacity;
     }
   }
   &-text {
@@ -117,22 +119,21 @@
   
 }
 
-.img-fluid {
+.avatar{
   margin-top: 70px;
   position: absolute;
-  bottom: 250px;
+  bottom: 220px;
   left: 70px;
-  
-  
-  
+  height: auto !important;
   
 }
 
 .p-4 .fa {
   color : $general-button-opacity;
-  font-size: 30px;
+  font-size: 23px;
   border : none;
   margin : 0px;
+  padding: 0px ;
   // border: grey;
   // box-shadow: 2px 2px 2px white;
   // border-radius: 20px;
