@@ -44,6 +44,7 @@ const userReducer = (state = initialState, action = {}) => {
       };
     case CHANGE_SEARCH_BAR_VALUE: {
       return {
+        ...state,
         searchBar: action.value,
       };
     }
@@ -58,7 +59,7 @@ const userReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         userInfo: action.infoUser,
-      }
+      };
     }
     default:
       return {
