@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import Button from 'src/components/Button';
+import Fond from '../../assets/images/fond-pastel-beige.PNG';
 
 const Inscription = ({
   onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser,
@@ -24,17 +25,21 @@ const Inscription = ({
 
   return (
     <form className="form" action="" onSubmit={handleSubmit}>
-      <h2 className="form-t"> Creer un compte </h2>
-      <span className="form-invider"> </span>
+     
+        <h2 className="form-t"> S'inscrire </h2>
+       
+      
+
+      {/* <span className="form-invider"> </span> */}
       <div className="form-infos">
-        <label className="form-title">Email</label>
-        <input className="form-input" type="email" name="email" placeholder="exemple@gmail.com" onChange={handleChangeEmail} />
-        <label className="form-title">Mot de Passe</label>
-        <input className="form-input" type="password" name="password" onChange={handleChangePassword} />
-        <label className="form-title">Confirmer le Mot de Passe</label>
-        <input className="form-input" type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} />
+        {/* <label className="form-title">Email</label> */}
+        <input className="form-input" type="email" name="email" placeholder="Adresse email" onChange={handleChangeEmail} />
+        {/* <label className="form-title">Mot de Passe</label> */}
+        <input className="form-input" type="password" name="password" onChange={handleChangePassword} placeholder="Mot de passe" />
+        {/* <label className="form-title">Confirmer le Mot de Passe</label> */}
+        <input className="form-input" type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} placeholder="Confirmation mot de passe " />
         <div className="form-button">
-          <Button type="submit" size="large" value="Envoyer" color="orange"/>
+          <Button type="submit" size="x-large" value="Envoyer" color="form" />
 
         </div>
       </div>

@@ -1,3 +1,5 @@
+@import 'src/styles/vars';
+
 body {
   
   background-color: #fff ;
@@ -5,8 +7,12 @@ body {
 }
 
 .form {
+  font-family: 'Comic Neue', cursive;
   
+  // box-shadow: 2px 2px 2px 2px lightgrey;
+  margin: 1em;
   padding: 3px;
+  height: 45em;
   background-color: #fff ;
   display: flex;
   flex-direction: column;
@@ -20,9 +26,9 @@ body {
     padding : 0.5rem
   }
   &-button{
-    margin-left: 5rem;
-    margin: 70px;
-    border-radius: 10px;
+    // margin-left: 5rem;
+    // margin: 70px;
+    border-radius: 50px;
     color: white;
     &-input{
       background-color: red
@@ -34,16 +40,21 @@ body {
     padding-top: 15px;
     display: flex;
     flex-direction: column;
+    margin : 2em;
 
   }
   &-t{
     
     margin-top: 1em;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2em;
     padding-bottom: 1em;
-    
-   
+  
+
+  }
+
+  &-img {
+    // position: relative;
   }
   &-invider{
     border-bottom: 1px solid #e9ebed;
@@ -53,17 +64,25 @@ body {
       margin-right: 10px;
   }
 
+  &-container {
+    position: absolute;
+  }
+
   &-input {
     margin-top: .5em;
     border: none;
-    background-color: #e9ebed;
-    padding: .3em;
-    margin : auto;
-    
+    padding: 0.8em;
+    margin : 1em;
+    width: 90%;
+    box-shadow: 0px 2px 10px lightgray;
+    border-radius: 30px;
     cursor: pointer;
     &::placeholder{
-      font-style: oblique;
-      color:#EBE7E4  ;
+      // font-style: oblique;
+      color: grey ;
+      padding: 1em;
+      
+      // font-weight: 700;
     }
   }
   

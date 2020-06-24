@@ -23,14 +23,14 @@ const Navbar = ({
             && (
             <form onSubmit={connectUser}>
               <label className="liens--label" htmlFor="email">
-                <span>Email</span>
+                <span>Connexion</span>
                 <input className="liens--input" onChange={changeValueEmail} type="email" name="email" id="email" placeholder="Votre email" />
               </label>
               <label className="liens--label" htmlFor="password">
-                <span>Password</span>
+                
                 <input className="liens--input" onChange={changeValuePassword} name="password" id="password" type="password" placeholder="Votre password" />
               </label>
-              <Button type="submit" color="orange" value="Se connecter" size="medium" />
+              <Button type="submit" color="menu" value="Se connecter" size="medium" />
             </form>
             )}
         </div>
