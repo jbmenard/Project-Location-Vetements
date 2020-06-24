@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'src/components/Button';
 import './style.scss';
 
-const Comment = () => (
+const Comment = ({handleComment}) => (
   <>
     <h3 className="comment-title">avis client</h3>
     <div className="comment">
@@ -18,7 +18,7 @@ const Comment = () => (
       <div className="comment-avis3">
         <p>Kévin le loueur est vraiment tres sympa, et le costume est cooool</p>
       </div>
-      <div className="comment-button">
+      <div onClick={handleComment} className="comment-button">
         <Button type="submit" size="large" value="nouveau commentaire" color="orange" />
       </div>
     </div>

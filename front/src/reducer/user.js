@@ -1,7 +1,6 @@
 import { CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS, INFO_USER, LOG_USER } from 'src/actions/inscription';
-import { SAVE_LOGOUT } from 'src/actions/user';
-import { CHANGE_SEARCH_BAR_VALUE, } from 'src/actions/search';
-
+import { SAVE_LOGOUT, COMMENTAIRE } from 'src/actions/user';
+import { CHANGE_SEARCH_BAR_VALUE } from 'src/actions/search';
 
 export const initialState = {
   password: '',
@@ -20,6 +19,7 @@ export const initialState = {
   logged: false,
   toggleInformation: false,
   searchBar: '',
+  commentMessage: true,
 };
 
 const userReducer = (state = initialState, action = {}) => {
@@ -59,6 +59,13 @@ const userReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         userInfo: action.infoUser,
+      };
+    }
+    case COMMENTAIRE: {
+      return {
+        ...state,
+        commentMessage: false,
+
       };
     }
     default:

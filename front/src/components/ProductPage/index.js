@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 import Button from 'src/components/Button';
-import Comment from 'src/components/Comment';
+import Comment from 'src/containers/Comment';
 // import image from '../../assets/images';
 
 // == Import
