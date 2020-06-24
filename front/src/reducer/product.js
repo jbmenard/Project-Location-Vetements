@@ -19,13 +19,14 @@ export const initialState = {
 
 const productReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SAVE_PRODUCTS:
+    case SAVE_PRODUCTS: {
       return {
         ...state,
         listProducts: action.products,
         loading: false,
 
       };
+    }
     case ADD_PRODUCT_IN_STATE:
       console.log(action.value, action.name);
 

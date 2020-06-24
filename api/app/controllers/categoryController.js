@@ -17,12 +17,16 @@ const categoryController = {
 
     getOne: async (req, res, next) => {
         try {
-            console.log('je suis ici')
+            
             const { category } = req.params;
             const catchCategory = await Category.findOne({
                 where: {
                     name: category
-                }
+                },
+                include: [{
+                    all: true,
+                    nested: true,
+                }]
             });
 
             if (catchCategory) {

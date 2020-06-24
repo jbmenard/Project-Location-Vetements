@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 
-const Search = ({ send, inputValue, changeText }) => {
+const Search = ({ send, inputValue, changeSearchValue }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     send();
   };
 
   const handleChange = (event) => {
-    changeText(event.target.value);
+    changeSearchValue(event.target.value);
   };
 
   return (
@@ -25,6 +25,6 @@ const Search = ({ send, inputValue, changeText }) => {
 Search.propTypes = {
   send: PropTypes.func.isRequired,
   inputValue: PropTypes.string.isRequired,
-  changeText: PropTypes.func.isRequired,
+  changeSearchValue: PropTypes.func.isRequired,
 };
 export default Search;

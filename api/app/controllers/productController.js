@@ -6,7 +6,11 @@ const path = require('path')
 const productController = {
     getAll : async (req, res, next) => {
         try {
+            const productName = req.params.product;
             const products = await Product.findAll({
+                where: {
+                    name: productName,
+                },
                 include: [{all: true, nested: true}]
             });
 

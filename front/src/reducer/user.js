@@ -1,6 +1,6 @@
 import { CREATE_USER, CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS } from 'src/actions/inscription';
 import { LOGOUT } from 'src/actions/user';
-import { CHANGE_TEXT, } from 'src/actions/search';
+import { CHANGE_SEARCH_BAR_VALUE, } from 'src/actions/search';
 
 export const initialState = {
   password: '',
@@ -42,7 +42,7 @@ const userReducer = (state = initialState, action = {}) => {
         password: '',
         logged: false,
       };
-    case CHANGE_TEXT: {
+    case CHANGE_SEARCH_BAR_VALUE: {
       return {
         searchBar: action.value,
       };

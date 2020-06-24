@@ -5,7 +5,7 @@ import './style.scss';
 
 const ProductCategory = ({ loading, error, listProducts, fetchProducts }) => { 
   useEffect(fetchProducts, []);
-  
+  console.log(listProducts);
   return (
     <>
       <div className="product-event">
@@ -37,7 +37,7 @@ const ProductCategory = ({ loading, error, listProducts, fetchProducts }) => {
           <article className="product-article">
             {
             listProducts.map((list) => (
-              <CardDesign list={list} />
+              <CardDesign object={list} />
 
             ))
           }
