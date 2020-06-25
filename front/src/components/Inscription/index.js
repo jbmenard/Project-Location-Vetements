@@ -1,10 +1,11 @@
 import React from 'react';
 import './styles.scss';
 import Button from 'src/components/Button';
+import { Redirect } from 'react-router-dom';
 import Account from '../../assets/images/account.png';
 
 const Inscription = ({
-  onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser,
+  onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser, toggleRedirection
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -47,6 +48,8 @@ const Inscription = ({
       <div className="wrapper-img">
         <img className="img-design" src={Account} alt="" />
       </div>
+      {toggleRedirection
+      && <Redirect to="/" />}
     </section>
   );
 };
