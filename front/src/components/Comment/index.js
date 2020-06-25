@@ -2,8 +2,8 @@ import React from 'react';
 import Button from 'src/components/Button';
 import './style.scss';
 
-const Comment = ({handleComment}) => (
-  <>
+const Comment = ({ handleComment, isClick }) => (
+  <div>
     <h3 className="comment-title">avis client</h3>
     <div className="comment">
       <div className="comment-avis1">
@@ -19,11 +19,18 @@ const Comment = ({handleComment}) => (
         <p>Kévin le loueur est vraiment tres sympa, et le costume est cooool</p>
       </div>
       <div onClick={handleComment} className="comment-button">
-        <Button type="submit" size="large" value="nouveau commentaire" color="orange" />
+        <Button type="button" size="large" value="nouveau commentaire" color="orange" />
       </div>
+      {isClick && (
+      <form className="comment-commentaire">
+        <p>mettre un commentaire</p>
+        <div>
+          <textarea>coucou bande de naze</textarea>
+        </div>
+      </form>
+      )}
     </div>
-
-  </>
+  </div>
 );
 
 export default Comment;

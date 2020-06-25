@@ -19,7 +19,8 @@ export const initialState = {
   logged: false,
   toggleInformation: false,
   searchBar: '',
-  commentMessage: true,
+  commentMessage: false,
+  isClick: false,
 };
 
 const userReducer = (state = initialState, action = {}) => {
@@ -64,7 +65,8 @@ const userReducer = (state = initialState, action = {}) => {
     case COMMENTAIRE: {
       return {
         ...state,
-        commentMessage: false,
+        commentMessage: !state.commentMessage,
+        isClick: !state.isClick,
 
       };
     }
