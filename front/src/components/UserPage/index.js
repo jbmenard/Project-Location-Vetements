@@ -29,8 +29,8 @@ const UserPage = ({
     <>
       <div className="header-background">
         <div className="header-avatar">
-          <Avatar size="large" avatar="http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png" />
-          <div className="avatar-add">
+          <Avatar size="large" avatar={user.user.AppUserInfo.avatar ? user.user.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
+          <div className="avatar-add" onClick={}>
             +
           </div>
         </div>
@@ -43,7 +43,6 @@ const UserPage = ({
                 && (
                 <form onSubmit={updateFirstName}>
                   <input className="adduserinfos--input" placeholder={firstName} type="text" name="first_name" id="first_name" onChange={onChangeFirstName} />
-                  <input type="hidden" value={user.id} />
                   <input type="submit" value="ok" />
                 </form>
                 )}
@@ -58,7 +57,6 @@ const UserPage = ({
               && (
                 <form onSubmit={updateMobile}>
                   <input className="adduserinfos--input" placeholder={mobile} type="text" name="mobile" id="mobile" onChange={onChangeMobile} />
-                  <input type="hidden" value={user.id} />
                   <input type="submit" value="ok" />
                 </form>
               )}
