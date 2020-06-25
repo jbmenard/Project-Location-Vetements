@@ -1,3 +1,4 @@
+
 import {
   TOGGLE_INPUT,
   CHANGE_VALUE_STATE_USER,
@@ -6,8 +7,8 @@ import {
   LOG_USER,
   HIDDEN_INPUT,
 } from 'src/actions/inscription';
-import { SAVE_LOGOUT } from 'src/actions/user';
 import { CHANGE_SEARCH_BAR_VALUE, } from 'src/actions/search';
+import { SAVE_LOGOUT, COMMENTAIRE } from 'src/actions/user';
 
 
 export const initialState = {
@@ -27,6 +28,8 @@ export const initialState = {
   logged: false,
   toggleInput: false,
   searchBar: '',
+  commentMessage: false,
+  isClick: false,
 };
 
 const userReducer = (state = initialState, action = {}) => {
@@ -76,12 +79,19 @@ const userReducer = (state = initialState, action = {}) => {
         toggleInput: true,
       };
     }
-    case HIDDEN_INPUT: {
-      // console.log((action.value));
+    case HIDDEN_INPUT: {2
       return {
         ...state,
         toggleInput: false,
         userInfo: action.value,
+      };
+    }
+    case COMMENTAIRE: {
+      return {
+        ...state,
+        commentMessage: !state.commentMessage,
+        isClick: !state.isClick,
+
       };
     }
     default:

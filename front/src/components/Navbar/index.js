@@ -3,7 +3,6 @@ import './styles.scss';
 import { NavLink } from 'react-router-dom';
 import Button from 'src/components/Button';
 import Search from 'src/containers/search'
-import { changeText } from '../../actions/search';
 
 const Navbar = ({
   toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin,
