@@ -8,6 +8,7 @@ import {
   infoUser,
   UPDATE_FIRST_NAME,
   UPDATE_MOBILE,
+  UPDATE_AVATAR,
   hiddenInput,
   check,
 } from 'src/actions/inscription';
@@ -119,13 +120,13 @@ const apiUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log('je suis dans le middleware', response.data);
-          
+
           store.dispatch(hiddenInput(response.data));
           store.dispatch(check());
         })
         .catch((err) => {
           console.log('je suis une erreur');
-          
+
           console.trace(err);
         });
       break;
@@ -144,13 +145,36 @@ const apiUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log('je suis dans le middleware', response.data);
-          
+
           store.dispatch(hiddenInput(response.data));
           store.dispatch(check());
         })
         .catch((err) => {
           console.log('je suis une erreur');
-          
+
+          console.trace(err);
+        });
+      break;
+    }
+    case UPDATE_AVATAR: {
+      const state = store.getState().userReducer
+      const data = new FormData();
+      data.set('avatar', state.avatar);
+      axios({
+        method: 'patch',
+        url: `http://localhost:5050/userinfo/${state.user.user.AppUserInfo.id}`,
+        data,
+      }, {
+        withCredentials: true,
+      })
+        .then((response) => {
+          // console.log('je suis dans le middleware', response.data);
+          store.dispatch(hiddenInput(response.data));
+          store.dispatch(check());
+        })
+        .catch((err) => {
+          console.log('je suis une erreur');
+
           console.trace(err);
         });
       break;

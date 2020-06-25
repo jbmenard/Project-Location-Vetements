@@ -1,15 +1,14 @@
-
 import {
   TOGGLE_INPUT,
   CHANGE_VALUE_STATE_USER,
   CHANGE_VALUE_STATE_USER_INFORMATIONS,
+  CHANGE_AVATAR_IN_STATE,
   INFO_USER,
   LOG_USER,
   HIDDEN_INPUT,
 } from 'src/actions/inscription';
-import { CHANGE_SEARCH_BAR_VALUE, } from 'src/actions/search';
+import { CHANGE_SEARCH_BAR_VALUE } from 'src/actions/search';
 import { SAVE_LOGOUT, COMMENTAIRE } from 'src/actions/user';
-
 
 export const initialState = {
   password: '',
@@ -30,18 +29,25 @@ export const initialState = {
   searchBar: '',
   commentMessage: false,
   isClick: false,
+  toggleValidateButton: false,
 };
 
 const userReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHANGE_VALUE_STATE_USER: {
-      console.log(action.value);
       return {
         ...state,
         [action.name]: action.value,
       };
     }
     case CHANGE_VALUE_STATE_USER_INFORMATIONS: {
+      if (action.name === 'avatar') {
+        return {
+          ...state,
+          avatar: action.value,
+          toggleValidateButton: !state.toggleValidateButton,
+        };
+      }
       return {
         ...state,
         [action.name]: action.value,
@@ -60,7 +66,7 @@ const userReducer = (state = initialState, action = {}) => {
     }
     case LOG_USER: {
       console.log(action.userData);
-      
+
       return {
         ...state,
         user: action.userData,
@@ -79,11 +85,12 @@ const userReducer = (state = initialState, action = {}) => {
         toggleInput: true,
       };
     }
-    case HIDDEN_INPUT: {2
+    case HIDDEN_INPUT: { 2;
       return {
         ...state,
         toggleInput: false,
         userInfo: action.value,
+        toggleValidateButton: false,
       };
     }
     case COMMENTAIRE: {

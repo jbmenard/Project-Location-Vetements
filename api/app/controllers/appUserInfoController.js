@@ -117,18 +117,24 @@ const appUserInfoController = {
                             fs.writeFile(newPath, rawData, (err) => { 
                                 if(err) console.log(err) 
                             }) 
+                            await appUserInfo.update({
+                                first_name: fields.first_name,
+                                last_name: fields.last_name,
+                                address: fields.address,
+                                avatar: `/${files.avatar.name}`,
+                                mobile: fields.mobile,
+                            })
+                            return res.send(appUserInfo)
                         }
-                        
+
                         await appUserInfo.update({
                             first_name: fields.first_name,
                             last_name: fields.last_name,
                             address: fields.address,
-                            if(files){
-                                avatar: `/${files.image.name}`
-                            },
                             mobile: fields.mobile,
                         })
                         res.send(appUserInfo)
+                        
                         
                     })
                     // console.log(req);
