@@ -5,13 +5,11 @@ import Button from 'src/components/Button';
 import Search from 'src/containers/search'
 
 const Navbar = ({
-  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, userData, connectUser, isLoggin,
+  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin,
 }) => {
   // const handleClick = () => {
   //   console.log("oui")
   // }
-
-  console.log(toggleMenu);
 
   return (
     <>
@@ -41,7 +39,7 @@ const Navbar = ({
           <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
           <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
           {isLoggin
-          && <NavLink to={`/user/${userData.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>}
+          && <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>}
           <NavLink to="/ailleurs" onClick={toggleNavbar} className="item">Parcourir</NavLink>
           <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink>
           {isLoggin

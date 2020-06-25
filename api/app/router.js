@@ -18,7 +18,7 @@ router.delete('/user/:id', appUserController.delete);
 
 router.post('/signin', authController.loginAction);
 router.get('/logout', authController.logout);
-router.post('/isLogged', authController.testSession)
+router.post('/islogged', authController.isLogged)
 
 router.get('/userinfo', appUserInfoController.getAll);
 router.get('/userinfo/:id', appUserInfoController.getOne );
