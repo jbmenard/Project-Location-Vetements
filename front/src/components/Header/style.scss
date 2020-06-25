@@ -2,6 +2,10 @@
 @media (min-width :992px) {
   .header {
      
+     z-index: none;
+     &-toggle {
+       display: none;
+     }
   }
 }
 

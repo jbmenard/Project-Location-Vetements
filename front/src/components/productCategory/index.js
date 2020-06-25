@@ -5,7 +5,7 @@ import './style.scss';
 
 
 const ProductCategory = ({ loading, error, listProducts, fetchProducts }) => { 
-  useEffect(fetchProducts, []);
+  
 
   return (
     <>
