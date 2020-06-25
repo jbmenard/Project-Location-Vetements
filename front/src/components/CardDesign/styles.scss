@@ -18,7 +18,8 @@
     }
 
     &-price {
-      padding-right: 1em;
+      font-size: 1.3em;
+      padding: 0.2em 2.5em 0 0;
       text-align: right;
       width: 50%;
     }
@@ -29,13 +30,28 @@
 
     &-image {
       width: 100%;
-      
-
     }
   }
 
   &-button{
     margin: auto;
   }
+}
 
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.icon-trash .fa {
+  border: none;
+  padding: 0;
+  margin: 0 0 0 0.2em;
+}
+
+.icon-cog .fa {
+  border: none;
+  padding: 0;
+  margin: 0;
 }

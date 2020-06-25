@@ -1,10 +1,9 @@
 import axios from 'axios';
 
 import {
-  CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
+  CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError, SAVE_PRODUCTS, UPDATE_PRODUCT, DELETE_PRODUCT, fetchProducts
 } from 'src/actions/product';
 import { SEND_MESSAGE } from 'src/actions/search';
-import { SAVE_PRODUCTS } from '../actions/product';
 
 const api = (store) => (next) => (action) => {
   switch (action.type) {
@@ -60,7 +59,22 @@ const api = (store) => (next) => (action) => {
         url: `http://localhost:5050/product/name/${state.searchBar}`,
       })
         .then((response) => {
-         store.dispatch(saveProducts(response.data));
+          store.dispatch(saveProducts(response.data));
+        })
+        .catch((err) => {
+          console.trace(err);
+        });
+      break;
+    }
+    case DELETE_PRODUCT: {
+      axios({
+        method: 'delete',
+        url: `http://localhost:5050/product/${action.id}`,
+      }, {
+        withCredentials: true,
+      })
+        .then((response) => {
+          console.log(response.data);
         })
         .catch((err) => {
           console.trace(err);

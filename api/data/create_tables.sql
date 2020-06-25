@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS "product" (
 CREATE TABLE IF NOT EXISTS "comment" (
     "id" SERIAL PRIMARY KEY,
     "content" TEXT NOT NULL,
-    "product_id" INT NOT NULL REFERENCES "product"("id"),
+    "product_id" INT NOT NULL REFERENCES "product"("id") ON DELETE CASCADE,
     "app_user_id" INT NOT NULL REFERENCES "app_user"("id"),
     "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP NULL
