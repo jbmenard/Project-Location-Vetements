@@ -1,13 +1,11 @@
 @import 'src/styles/vars';
-//----------------------------version desktop -------------------------
-//a faire
 
-//---------------------------------------------------------------------//
 
 //-----------------------general---------------------------------------//
 * {
   margin : 0px;
   padding: 0px;
+ 
   
 }
 
@@ -120,6 +118,18 @@
   .carousel {
     z-index: none;
     margin-top: 0px;
+    transform: translate(1px, 124px);
+  }
+  .img-fluid {
+    width: 100%;
+  }
+  .card-general {
+    margin: 8rem auto 0 auto;
+    width: 80%;
+  }
+  .container-comment {
+    margin: auto;
+    width: 80%;
   }
 
   // .img-fluid {

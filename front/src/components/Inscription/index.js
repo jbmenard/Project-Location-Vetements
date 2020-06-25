@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.scss';
 import Button from 'src/components/Button';
 import Account from '../../assets/images/account.png';
+import Image from '../../assets/images/img-inscription.jpg';
 
 const Inscription = ({
   onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser,
@@ -46,6 +47,7 @@ const Inscription = ({
       </form>
       <div className="wrapper-img">
         <img className="img-design" src={Account} alt="" />
+        <img className="img-inscription" src={Image} alt=""/>
       </div>
     </section>
   );

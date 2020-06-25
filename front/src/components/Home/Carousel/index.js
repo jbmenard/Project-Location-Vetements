@@ -22,12 +22,12 @@ const Carousel = () => (
       <div className="carousel-item active">
         <img className="d-block img-fluid" src={Watch} alt="First slide" />
         <div className="carousel-caption d-md-block">
-          <h3 className="h3-responsive">Envie d'une montre de Luxe ?</h3>
+          <h3 className="h3-responsive"></h3>
           {/* <p>PHRASE D'ACCROCHE</p> */}
         </div>
       </div>
-      <Slide photo={Wedding} text="Invitée à un mariage" />
-      <Slide photo={Ski} text="Envie de Ski ?" />
+      <Slide photo={Wedding} text="" />
+      <Slide photo={Ski} text="" />
     </div>
     <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
       <span className="carousel-control-prev-icon" aria-hidden="true" />
