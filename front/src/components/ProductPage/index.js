@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import Button from 'src/components/Button';
+import Comment from 'src/containers/Comment';
 // import image from '../../assets/images';
 
 // == Import
@@ -31,6 +32,7 @@ const ProductPage = ({ product }) => {
         <div className="productpage-suggest--item">PRODUIT 1</div>
         <div className="productpage-suggest--item">PRODUIT 2</div>
       </section>
+      <Comment />
     </div>
   );
 };
