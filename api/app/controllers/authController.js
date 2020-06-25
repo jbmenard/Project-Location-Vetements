@@ -4,6 +4,7 @@ const formidable = require ('formidable');
 
 
 const AppUser = require('../models/app_user');
+const AppUserInfo = require('../models/app_user_info')
 
 const authController = {
     
@@ -54,6 +55,11 @@ const authController = {
               }).then( appUser => {
                 // console.log(user);
                 // 4. soit on redirige vers /login
+                AppUserInfo.create({
+                  app_user_id: appUser.id
+                })
+
+
                 res.send(appUser);
         
                 // 4alt. soit on log directement l'utilisateur et on redirige vers l'accueil
@@ -97,11 +103,12 @@ const authController = {
               return res.send(errors);
             }
             // 3. si tout va bien (email et pwd correct) => on enregistre l'utilisateur dans la session
-            req.session.data = appUser;
-      
+            req.session.user = appUser;
+            
+            
             // et pour finir, on redirige vers la page d'acceuil
             res.status(200).send({
-              data: req.session.data
+              user: req.session.user,
             })
 
           }).catch( err => {
@@ -113,17 +120,23 @@ const authController = {
       },
     
       logout: (req, res, next) => {
-        delete req.session.data;
+        delete req.session.user;
         res.send('Vous êtes déconnecté');
       },
 
-      testSession: (req, res, next) => {
-        if (req.session.data) {
-            console.log('ca marche');
+      isLogged: async (req, res, next) => {
+        if (req.session.user) {
+          console.log('ca marche');
+          const user = await AppUser.findByPk(req.session.user.id, {include: [{all: true, nested: true}]})
             
-          return res.locals.data = req.session.data;
+          req.session.user = user;
+          return res.status(200).send({
+            user: req.session.user,
+          })
         }
-        console.log('ca marche pas');
+        res.status(404).send({
+          notFound: "Vous n'êtes pas connecté"
+        })
     
       }
     

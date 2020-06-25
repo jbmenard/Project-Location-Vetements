@@ -96,17 +96,18 @@ const appUserInfoController = {
 
     update: async (req, res, next) => {
         try {
-            const { appUserInfosId } = req.params;
-            const appUserInfo = await AppUserInfos.findByPk( appUserInfosId );
+            const { id } = req.params;
+            const appUserInfo = await AppUserInfos.findByPk( id );
              // const appUserInfos = AppUserInfos.findOne({
             //     where: {
             //         app_user_id: recup id dans session
             //     }
             // })
-
+            
             if(appUserInfo) {
-                await new Promise((resolve, reject) => {
-                    form.parse(req, (err, fields, files) => { 
+                const form = new formidable.IncomingForm({multiples: true}); 
+                
+                    form.parse(req, async (err, fields, files) => { 
                         if(files.avatar){
     
                             const oldPath = files.avatar.path; 
@@ -118,26 +119,20 @@ const appUserInfoController = {
                             }) 
                         }
                         
-    
-                        const newAppUserInfos = AppUserInfos.update({
-                            id: Number(fields.id),
-                            first_name: fields.name,
+                        await appUserInfo.update({
+                            first_name: fields.first_name,
                             last_name: fields.last_name,
-                            address: Number(fields.address),
+                            address: fields.address,
                             if(files){
                                 avatar: `/${files.image.name}`
                             },
-                            mobile: fields.size,
-                            app_user_id: Number(fields.app_user_id),
-                        });
-
-                        res.status(200).send({
-                            info: newAppUserInfos
-                          })
+                            mobile: fields.mobile,
+                        })
+                        res.send(appUserInfo)
+                        
                     })
                     // console.log(req);
-                    
-                })          
+                             
             }
         } catch (error) {
             console.trace(error);

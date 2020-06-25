@@ -5,6 +5,7 @@ import Button from 'src/components/Button';
 
 // == Import
 import './styles.scss';
+import { NavLink } from 'react-router-dom';
 
 // == Composant
 const ProductPage = ({ product }) => {
@@ -15,7 +16,11 @@ const ProductPage = ({ product }) => {
       <section className="productpage-user">
         {/* <img className="productpage-user--photo" src="https://image.flaticon.com/icons/png/512/64/64572.png" alt="avatar" /> */}
         <div className="productpage-user--infos">
-          <p className="productpage-user--name">{product.owner.AppUserInfo.first_name}</p>
+          <p className="productpage-user--name">
+            <NavLink to={`/user/${product.owner.id}`}>
+              {product.owner.AppUserInfo.first_name}
+            </NavLink>
+          </p>
           <p className="productpage-user--note">23 évaluations - 4,3 / 5</p>
         </div>
       </section>

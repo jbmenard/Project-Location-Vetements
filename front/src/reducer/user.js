@@ -1,4 +1,11 @@
-import { CHANGE_VALUE_STATE_USER, CHANGE_VALUE_STATE_USER_INFORMATIONS, INFO_USER, LOG_USER } from 'src/actions/inscription';
+import {
+  TOGGLE_INPUT,
+  CHANGE_VALUE_STATE_USER,
+  CHANGE_VALUE_STATE_USER_INFORMATIONS,
+  INFO_USER,
+  LOG_USER,
+  HIDDEN_INPUT,
+} from 'src/actions/inscription';
 import { SAVE_LOGOUT } from 'src/actions/user';
 import { CHANGE_SEARCH_BAR_VALUE, } from 'src/actions/search';
 
@@ -8,17 +15,17 @@ export const initialState = {
   email: '',
   confirmPassword: '',
   user: {},
-  userInfo: {},
+  // userInfo: {},
 
   id: 10,
-  first_name: '',
+  first_name: 'Prénom',
   last_name: '',
   address: '',
-  mobile: '',
+  mobile: '06********',
   avatar: '',
   app_user_id: 7,
   logged: false,
-  toggleInformation: false,
+  toggleInput: false,
   searchBar: '',
 };
 
@@ -44,10 +51,13 @@ const userReducer = (state = initialState, action = {}) => {
       };
     case CHANGE_SEARCH_BAR_VALUE: {
       return {
+        ...state,
         searchBar: action.value,
       };
     }
     case LOG_USER: {
+      console.log(action.userData);
+      
       return {
         ...state,
         user: action.userData,
@@ -58,7 +68,21 @@ const userReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         userInfo: action.infoUser,
-      }
+      };
+    }
+    case TOGGLE_INPUT: {
+      return {
+        ...state,
+        toggleInput: true,
+      };
+    }
+    case HIDDEN_INPUT: {
+      // console.log((action.value));
+      return {
+        ...state,
+        toggleInput: false,
+        userInfo: action.value,
+      };
     }
     default:
       return {
