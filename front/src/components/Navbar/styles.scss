@@ -7,7 +7,52 @@
 }
 
 //---------------- version desktop --------------//
+@media ( min-width : 1024px ) {
 
+  .container-menu {
+    height: 6rem;
+  }
+  .liens  {
+
+    position: none;
+    height: auto !important;
+    display: flex;
+    flex-direction : row !important;
+    transition: none;
+    transform: none;
+    border: none;
+    &--label {
+      display: flex;
+      flex-direction: row !important;
+    }
+    &--inputs {
+      display: flex;
+      flex-direction: row !important;
+      margin: 0px !important;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: row !important;
+      margin: auto !important;
+    }
+    
+  }
+
+  .classform {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .item {
+    &--title {
+      display: flex;
+      flex-direction: row !important;
+      margin: auto;
+    }
+  }
+
+}
 .liens {
   
   // width: 70%;

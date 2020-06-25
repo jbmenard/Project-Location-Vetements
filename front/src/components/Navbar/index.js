@@ -23,7 +23,7 @@ const Navbar = ({
         <div className="liens-inputs">
           {!isLoggin
             && (
-            <form onSubmit={connectUser}>
+            <form className="classform" onSubmit={connectUser}>
               <label className="liens--label" htmlFor="email">
                 <span>Connexion</span>
                 <input className="liens--input" onChange={changeValueEmail} type="email" name="email" id="email" placeholder="Votre email" />
@@ -43,7 +43,7 @@ const Navbar = ({
           <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
           {isLoggin
           && <NavLink to={`/user/${userData.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>}
-          <NavLink to="/ailleurs" onClick={toggleNavbar} className="item">Parcourir</NavLink>
+          
           <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink>
           {isLoggin
             && (
