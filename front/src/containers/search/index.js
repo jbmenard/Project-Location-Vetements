@@ -4,6 +4,7 @@ import { sendMessage, changeSearchValue } from 'src/actions/search'
 
 const mapStateToProps = (state) => ({
   inputValue: state.userReducer.searchBar,
+  toggleRedirection: state.styleReducer.toggleRedirection,
 });
 
 const mapDispatchToProps = (dispatch) => ({

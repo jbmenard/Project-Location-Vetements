@@ -13,6 +13,7 @@ import {
   check,
 } from 'src/actions/inscription';
 import { LOGOUT, saveLogout } from 'src/actions/user';
+import { toggleRedirection } from 'src/actions/style';
 
 axios.defaults.withCredentials = true;
 
@@ -33,6 +34,7 @@ const apiUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response.data);
+          store.dispatch(toggleRedirection())
         })
         .catch((error) => {
           console.trace(error);

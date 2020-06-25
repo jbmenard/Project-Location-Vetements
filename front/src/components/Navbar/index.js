@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import Button from 'src/components/Button';
 import Search from 'src/containers/search'
 
 const Navbar = ({
-  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin,
+  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection
 }) => {
   // const handleClick = () => {
   //   console.log("oui")
@@ -45,7 +45,7 @@ const Navbar = ({
           {isLoggin
             && (
             <div onClick={handleLogout}>
-              <Button type="button" size="x-large" value="déconnection" color="orangelight" />
+              <Button type="button" size="x-large" value="Déconnection" color="orangelight" />
             </div>
             )}
         </div>

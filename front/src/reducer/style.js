@@ -1,7 +1,8 @@
-import { TOGGLE_NAVBAR } from 'src/actions/style';
+import { TOGGLE_NAVBAR, TOGGLE_REDIRECTION } from 'src/actions/style';
 
 const initialState = {
   toggleNavbar: false,
+  toggleRedirection: false,
 };
 
 const styleReducer = (state = initialState, action = {}) => {
@@ -11,6 +12,13 @@ const styleReducer = (state = initialState, action = {}) => {
         ...state,
         toggleNavbar: !state.toggleNavbar,
       };
+    case TOGGLE_REDIRECTION: {
+      return {
+        ...state,
+        toggleRedirection: true,
+        toggleNavbar: !state.toggleNavbar,
+      }
+    }
     default:
       return state;
   }

@@ -7,7 +7,7 @@ import {
   LOG_USER,
   HIDDEN_INPUT,
 } from 'src/actions/inscription';
-import { CHANGE_SEARCH_BAR_VALUE } from 'src/actions/search';
+import { CHANGE_SEARCH_BAR_VALUE, CLEAN_SEARCH_BAR } from 'src/actions/search';
 import { SAVE_LOGOUT, COMMENTAIRE } from 'src/actions/user';
 
 export const initialState = {
@@ -99,6 +99,12 @@ const userReducer = (state = initialState, action = {}) => {
         commentMessage: !state.commentMessage,
         isClick: !state.isClick,
 
+      };
+    }
+    case CLEAN_SEARCH_BAR: {
+      return {
+        ...state,
+        searchBar: '',
       };
     }
     default:
