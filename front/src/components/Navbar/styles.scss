@@ -11,16 +11,19 @@
 
   .container-menu {
     height: 6rem;
+    display: none;
+    
   }
   .liens  {
-
+    background-color: none;
     position: none;
     height: auto !important;
     display: flex;
     flex-direction : row !important;
-    transition: none;
-    transform: none;
-    border: none;
+    transition: none !important;
+    transform: none !important;
+    border: none !important;
+    margin-left: 15rem ;
     &--label {
       display: flex;
       flex-direction: row !important;
