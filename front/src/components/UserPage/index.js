@@ -11,14 +11,17 @@ const UserPage = ({
   loading,
   error,
   onChangeFirstName,
+  onChangeAvatarInState,
   onChangeMobile,
   updateFirstName,
   updateMobile,
+  updateAvatar,
   toggleInput,
   activeInputMobile,
   activeInputFirstName,
   firstName,
   mobile,
+  toggleValidateButton
   // userInfo,
 }) =>
 // console.log(userInfo);
@@ -30,8 +33,16 @@ const UserPage = ({
       <div className="header-background">
         <div className="header-avatar">
           <Avatar size="large" avatar={user.user.AppUserInfo.avatar ? user.user.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
-          <div className="avatar-add" onClick={}>
-            +
+          <div className="avatar-add">
+            <div className="avatar-button">
+              +
+            </div>
+            <form onSubmit={updateAvatar}>
+              <input type="file" onChange={onChangeAvatarInState} name="avatar" id="avatar" className="avatar-upload" />
+              {toggleValidateButton
+              && <input type="submit" value="envoyer" className="avatar-send" />
+              }
+            </form>
           </div>
         </div>
         <div className="header-informations">

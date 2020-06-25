@@ -10,6 +10,7 @@ export const CHECK = 'CHECK';
 export const TOGGLE_INPUT = 'TOGGLE_INPUT';
 export const UPDATE_FIRST_NAME = 'UPDATE_FIRST_NAME';
 export const UPDATE_MOBILE = 'UPDATE_MOBILE';
+export const UPDATE_AVATAR = 'UPDATE_AVATAR';
 export const HIDDEN_INPUT = 'HIDDEN_INPUT';
 
 export const connectUser = () => ({
@@ -66,7 +67,12 @@ export const updateMobile = () => ({
   type: UPDATE_MOBILE,
 });
 
+export const updateAvatar = () => ({
+  type: UPDATE_AVATAR,
+});
+
 export const hiddenInput = (value) => ({
   type: HIDDEN_INPUT,
   value,
 });
+

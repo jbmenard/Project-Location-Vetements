@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import UserPage from 'src/components/UserPage';
-import { toggleInput, changeValueStateUserInformations, updateFirstName, updateMobile } from 'src/actions/inscription';
+import { toggleInput, changeAvatarInState, changeValueStateUserInformations, updateAvatar, updateFirstName, updateMobile } from 'src/actions/inscription';
 
 const mapStateToProps = (state) => ({
   toggleInput: state.userReducer.toggleInput,
+  toggleValidateButton: state.userReducer.toggleValidateButton,
   firstName: state.userReducer.first_name,
   mobile: state.userReducer.mobile,
   userInfo: state.userReducer.userInfo,
@@ -21,6 +22,11 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(updateMobile())
   },
 
+  updateAvatar: (event) => {
+    event.preventDefault();
+    dispatch(updateAvatar())
+  },
+
   activeInputFirstName: (e) => {
     console.log('oui')
     dispatch(toggleInput());
@@ -28,6 +34,10 @@ const mapDispatchToProps = (dispatch) => ({
 
   activeInputMobile: (e) => {
     dispatch(toggleInput());
+  },
+
+  onChangeAvatarInState: (event) => {
+    dispatch(changeValueStateUserInformations(event.target.files[0], event.target.name));
   },
 
   onChangeFirstName: (event) => {
