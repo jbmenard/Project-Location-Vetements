@@ -51,15 +51,29 @@ SubCategory.belongsTo(Category, {
 })
 
 // User <-> Comment
-// User.hasMany(Comment, {
-//     foreignKey: "user_id",
-//     as: "comments"
-// });
+AppUser.hasMany(Comment, {
+    foreignKey: "app_user_id",
+    as: "comments"
+});
 
-// Comment.belongsTo(User, {
-//     foreignKey: "user_id",
-//     as: "user"
-// });
+Comment.belongsTo(AppUser, {
+    foreignKey: "app_user_id",
+    as: "app_user"
+});
+
+// Product <-> Comment
+Product.hasMany(Comment, {
+    foreignKey: "product_id",
+    as: "comments",
+    onDelete: "cascade"
+});
+
+Comment.belongsTo(Product, {
+    foreignKey: "product_id",
+    as: "product",
+    onDelete: "cascade"
+});
+
 
 // User <-> UserInfo
 AppUser.hasOne(AppUserInfo);

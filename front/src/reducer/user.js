@@ -21,6 +21,13 @@ export const initialState = {
   searchBar: '',
   commentMessage: false,
   isClick: false,
+  commentaires: [
+    {
+      content: 'Ceci est un commentaire',
+      app_user_id: 1,
+      product_id: 1,
+    },
+  ],
 };
 
 const userReducer = (state = initialState, action = {}) => {

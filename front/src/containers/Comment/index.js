@@ -5,6 +5,7 @@ import { commentaire } from  'src/actions/user';
 const mapStateToProps = (state) => ({
   commentMessage: state.userReducer.commentMessage,
   isClick: state.userReducer.isClick,
+  commentaires: state.userReducer.commentaires,
 });
 const mapDispatchToProps = (dispatch) => ({
   handleComment: () => {

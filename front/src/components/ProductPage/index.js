@@ -32,7 +32,7 @@ const ProductPage = ({ product }) => {
         <div className="productpage-suggest--item">PRODUIT 1</div>
         <div className="productpage-suggest--item">PRODUIT 2</div>
       </section>
-      <Comment />
+      <Comment comments={product.comments} />
     </div>
   );
 };
