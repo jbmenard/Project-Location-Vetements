@@ -1,5 +1,10 @@
 @import 'src/styles/vars';
 
+@media(min-width : 1028px){
+  .footer {
+    margin-top: 6.8rem;
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;
@@ -55,11 +60,19 @@
     .fa {
       
       margin-top :1rem;
-      border: 1px solid blanchedalmond;
+      
       padding: 1rem;
-      border-radius: 0px;
+      border-radius: 3px;
       margin-left: 1em;
-      color: blanchedalmond;
+      color: white;
+     
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+&:hover{
+  color: #FAEBD7;
+}
     }
 }
 

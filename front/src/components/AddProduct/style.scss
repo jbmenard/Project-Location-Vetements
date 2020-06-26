@@ -104,3 +104,26 @@ option {
 }
 
 
+// ----------------------version desktop ---------------------------//
+
+@media (min-width : 1028px) {
+  .container-form-image {
+display: flex;
+  }
+
+  .add-product--form{
+width: 100%;
+height: 80vh;
+overflow: scroll;
+scrollbar-darkshadow-color: rgba(255,255,255,0.2);
+  }
+
+  .wrapper-image{
+width: 100%;
+height: 80vh;
+  }
+  .img-clothes{
+width: 100%;
+height: 80vh;
+  }
+}
