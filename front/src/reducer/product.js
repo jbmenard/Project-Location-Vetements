@@ -10,7 +10,7 @@ export const initialState = {
   price: 0,
   mark: '',
   status: '',
-  app_user_id: 3,
+  app_user_id: '',
   sub_category_id: 2,
   gender_id: 1,
   loading: true,
@@ -29,7 +29,6 @@ const productReducer = (state = initialState, action = {}) => {
     }
     case ADD_PRODUCT_IN_STATE:
       console.log(action.value, action.name);
-
       return {
         ...state,
         [action.name]: action.value,

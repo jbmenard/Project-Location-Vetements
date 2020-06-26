@@ -11,26 +11,26 @@ const api = (store) => (next) => (action) => {
   switch (action.type) {
     case CREATE_PRODUCT: {
       const state = store.getState().productReducer;
-      console.log('state', state);
       const data = new FormData();
-      data.set('id', state.id);
       data.set('name', state.name);
       data.set('description', state.description);
       data.set('gender_id', state.gender_id);
-      data.append('image', state.image);
+      data.set('image', state.image);
       data.set('size', state.size);
       data.set('price', state.price);
       data.set('mark', state.mark);
       data.set('status', state.status);
-      data.set('app_user_id', state.app_user_id);
+      data.set('app_user_id', action.userId);
       data.set('sub_category_id', state.sub_category_id);
+      console.log('state', state.image);
       axios({
         method: 'post',
         url: 'http://localhost:5050/product',
         data,
       })
         .then((response) => {
-          console.log(response.data);
+          store.dispatch(saveProducts(response.data));
+          store.dispatch(toggleRedirection());
         })
         .catch((err) => {
           console.trace(err);
@@ -59,11 +59,14 @@ const api = (store) => (next) => (action) => {
         url: `http://localhost:5050/product/name/${state.searchBar}`,
       })
         .then((response) => {
+          console.log(response.data);
           store.dispatch(saveProducts(response.data));
           store.dispatch(toggleRedirection());
           store.dispatch(cleanSearchBar());
         })
         .catch((err) => {
+          console.log('Aucun produit ne correspond'); // ! Emettre une action pour afficher l'erreur
+
           console.trace(err);
         });
       break;

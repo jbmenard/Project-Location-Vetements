@@ -4,8 +4,9 @@ export const SAVE_PRODUCTS = 'SAVE_PRODUCTS';
 export const ADD_PRODUCT_IN_STATE = 'ADD_PRODUCT_IN_STATE';
 export const GET_ERROR = 'GET_ERROR';
 
-export const createProduct = () => ({
+export const createProduct = (userId) => ({
   type: CREATE_PRODUCT,
+  userId,
 });
 
 export const addProductInState = (value, name) => ({

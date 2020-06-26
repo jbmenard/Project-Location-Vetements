@@ -2,16 +2,16 @@ import React from 'react';
 import './styles.scss';
 import { NavLink, Redirect } from 'react-router-dom';
 import Button from 'src/components/Button';
-import Search from 'src/containers/search'
+import Search from 'src/containers/search';
 
 const Navbar = ({
-  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection
-}) => {
-  // const handleClick = () => {
-  //   console.log("oui")
-  // }
+  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection,
+}) =>
+// const handleClick = () => {
+//   console.log("oui")
+// }
 
-  return (
+  (
     <>
       <div className={`${toggleMenu ? 'liens liens--open' : 'liens'}`}>
         <div className="container-menu">
@@ -26,7 +26,7 @@ const Navbar = ({
                 <input className="liens--input" onChange={changeValueEmail} type="email" name="email" id="email" placeholder="Votre email" />
               </label>
               <label className="liens--label" htmlFor="password">
-                
+
                 <input className="liens--input" onChange={changeValuePassword} name="password" id="password" type="password" placeholder="Votre password" />
               </label>
               <Button type="submit" color="menu" value="Se connecter" size="medium" />
@@ -39,7 +39,12 @@ const Navbar = ({
           <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
           <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
           {isLoggin
-          && <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>}
+          && (
+            <>
+              <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>
+              <NavLink to="/newproduct" onClick={toggleNavbar} className="item">Nouveau produit</NavLink>
+            </>
+          )}
           <NavLink to="/ailleurs" onClick={toggleNavbar} className="item">Parcourir</NavLink>
           <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink>
           {isLoggin
@@ -52,6 +57,4 @@ const Navbar = ({
       </div>
     </>
   );
-};
-
 export default Navbar;

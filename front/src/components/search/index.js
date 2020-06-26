@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import './style.scss';
 
-const Search = ({ send, inputValue, changeSearchValue, toggleRedirection }) => {
+const Search = ({ send, inputValue, changeSearchValue, toggleRedirection, toggleNavbar }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     send();
@@ -21,7 +21,7 @@ const Search = ({ send, inputValue, changeSearchValue, toggleRedirection }) => {
           <input onChange={handleChange} value={inputValue} className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
         </label>
       </form>
-      {toggleRedirection
+      {toggleRedirection && toggleNavbar
       && <Redirect to="/products" />}
     </>
   );

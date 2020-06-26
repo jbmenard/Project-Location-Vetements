@@ -6,6 +6,7 @@ import './style.scss';
 
 
 const ProductCategory = ({ loading, error, listProducts}) => {
+console.log(listProducts);
 
   return (
     <>
