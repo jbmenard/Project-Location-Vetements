@@ -16,13 +16,17 @@ const Search = ({ send, inputValue, changeSearchValue, toggleRedirection, toggle
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label className="item--title" htmlFor="search">
-          <span className="search"> Rechercher</span>
+        {/* <label className="item--title" htmlFor="search">
+          <span className="search"> Rechercher</span>  */}
+          <div className="container-search">
+          <i class="fa fa-search" aria-hidden="true"></i>
           <input onChange={handleChange} value={inputValue} className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
-        </label>
+          </div>
+        {/* </label> */}
       </form>
       {toggleRedirection && toggleNavbar
       && <Redirect to="/products" />}
+
     </>
   );
 };

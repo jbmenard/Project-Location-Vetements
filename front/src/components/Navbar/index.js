@@ -20,22 +20,27 @@ const Navbar = ({
         <div className="liens-inputs">
           {!isLoggin
             && (
-            <form onSubmit={connectUser}>
+            <form className="classform" onSubmit={connectUser}>
               <label className="liens--label" htmlFor="email">
-                <span>Connexion</span>
+                <span className="connexion">Connexion</span>
                 <input className="liens--input" onChange={changeValueEmail} type="email" name="email" id="email" placeholder="Votre email" />
               </label>
               <label className="liens--label" htmlFor="password">
 
                 <input className="liens--input" onChange={changeValuePassword} name="password" id="password" type="password" placeholder="Votre password" />
               </label>
-              <Button type="submit" color="menu" value="Se connecter" size="medium" />
+              <div className="container-button">
+                <Button type="submit" color="menu" value="Se connecter" size="medium" />
+                
+              </div>
+              <i class="fa fa-user-plus"></i>
             </form>
             )}
         </div>
 
         <div className="liens-items">
           <Search />
+        <div className="container-navlink">
           <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
           <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
           {isLoggin
@@ -45,8 +50,8 @@ const Navbar = ({
               <NavLink to="/newproduct" onClick={toggleNavbar} className="item">Nouveau produit</NavLink>
             </>
           )}
-          <NavLink to="/ailleurs" onClick={toggleNavbar} className="item">Parcourir</NavLink>
-          <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink>
+            {/* <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink> */}
+          </div>
           {isLoggin
             && (
             <div onClick={handleLogout}>

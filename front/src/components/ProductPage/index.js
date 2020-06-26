@@ -1,6 +1,6 @@
 // == Import npm
-import React from 'react';
-import Button from 'src/components/Button';
+import React, { useEffect } from 'react';
+
 import Comment from 'src/containers/Comment';
 // import image from '../../assets/images';
 
@@ -9,9 +9,10 @@ import './styles.scss';
 import { NavLink } from 'react-router-dom';
 
 // == Composant
+import Button from 'src/components/Button';
+
 const ProductPage = (props) => {
   console.log('product Page', props);
-
   return (
     <div className="productpage">
       {/* <img className="productpage--photo" src={object.image ? object.image : 'Pas de photo'} alt="parrain" /> */}
@@ -41,7 +42,7 @@ const ProductPage = (props) => {
         <div className="productpage-suggest--item">PRODUIT 1</div>
         <div className="productpage-suggest--item">PRODUIT 2</div>
       </section>
-      <Comment />
+      <Comment comments={product.comments} />
     </div>
   );
 };
