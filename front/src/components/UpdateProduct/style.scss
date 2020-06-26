@@ -1,0 +1,50 @@
+.update-product {
+  font-weight: 300;
+  
+  &--title {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 1px solid #e9ebed;     
+    padding-bottom: 1em;
+  }
+  
+  &--form {
+    margin: 2em;
+  }
+  
+  &--input {
+    margin-top: 0.5em;
+    border: none;
+    background-color: #e9ebed;
+    padding: 0.3em;
+  }
+  
+  &-submit {
+    margin: 1.5em;
+    text-align: center;
+  
+    &--input {
+      box-shadow: 3px 3px 0px #ccc;
+      border: none;
+      background-color: #f0693d;
+      color: #fff;
+      padding: 1em;
+    }
+  }
+  
+  &,label {
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &--select {
+    margin-top: 0.5em;
+    font-weight: 300;
+    border: none;
+    background-color: #e9ebed;
+    padding: 0.3em;
+  }
+}
+  

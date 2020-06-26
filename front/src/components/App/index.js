@@ -18,6 +18,7 @@ import AddProduct from 'src/containers/AddProduct';
 import ProductCategory from 'src/containers/ProductCategory';
 import Inscription from 'src/containers/Inscription';
 import AddUserInfos from 'src/containers/AddUserInfos';
+import UpdateProduct from 'src/containers/UpdateProduct';
 
 // == Immport styles
 import './styles.scss';
@@ -56,9 +57,12 @@ console.log(user);
         <Route exact path="/newproduct"> {/* Form to create a new product */}
           <AddProduct />
         </Route>
+        <Route exact path="/updateproduct"> {/* Form to update a product */}
+          <UpdateProduct />
+        </Route>
         {/* {isLoggin
           && (
-          <Route exact path="/newuserinfos"> 
+          <Route exact path="/newuserinfos">
             <AddUserInfos userData={user} />
           </Route>
           )} */}
