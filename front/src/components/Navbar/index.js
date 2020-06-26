@@ -4,15 +4,14 @@ import { NavLink, Redirect } from 'react-router-dom';
 import Button from 'src/components/Button';
 import Search from 'src/containers/search';
 
-
 const Navbar = ({
-  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection
-}) => {
-  // const handleClick = () => {
-  //   console.log("oui")
-  // }
+  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection,
+}) =>
+// const handleClick = () => {
+//   console.log("oui")
+// }
 
-  return (
+  (
     <>
       <div className={`${toggleMenu ? 'liens liens--open' : 'liens'}`}>
         <div className="container-menu">
@@ -41,12 +40,16 @@ const Navbar = ({
 
         <div className="liens-items">
           <Search />
-          <div className="container-navlink">
-            <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
-            <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
-            {isLoggin
-          && <NavLink to={`/user/${userData.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>}
-
+        <div className="container-navlink">
+          <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
+          <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
+          {isLoggin
+          && (
+            <>
+              <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>
+              <NavLink to="/newproduct" onClick={toggleNavbar} className="item">Nouveau produit</NavLink>
+            </>
+          )}
             {/* <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink> */}
           </div>
           {isLoggin
@@ -59,6 +62,4 @@ const Navbar = ({
       </div>
     </>
   );
-};
-
 export default Navbar;
