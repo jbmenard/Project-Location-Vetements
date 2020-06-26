@@ -1,3 +1,19 @@
+@media (min-width :1024px) {
+  .button {
+    &-menu {
+      background-color:  #f0693d ;
+      color: #fff;
+      margin : 1.2rem 0 0 1.2rem !important;
+      padding:0.5rem 30px !important;
+      width: 8rem !important;
+      &:hover{
+        background-color: #8FBC8F;
+      }
+    }
+  }
+}
+
+
 .button{
   background-color: #b8f2e6;
   border: none;

@@ -3,9 +3,7 @@ import CardDesign from 'src/components/CardDesign';
 
 import './style.scss';
 
-
-const ProductCategory = ({ loading, error, listProducts }) => { 
-  
+const ProductCategory = ({ loading, error, listProducts}) => {
 
   return (
     <>

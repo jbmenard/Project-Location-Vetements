@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 import {
-  CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError, saveForm,
+  CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
+  UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts, SEND_FORM
 } from 'src/actions/product';
-import { SEND_MESSAGE } from 'src/actions/search';
-import { SAVE_PRODUCTS, SEND_FORM } from '../actions/product';
+import { SEND_MESSAGE, cleanSearchBar } from 'src/actions/search';
+import { toggleRedirection } from 'src/actions/style';
+
 
 const api = (store) => (next) => (action) => {
   switch (action.type) {
@@ -51,10 +53,50 @@ const api = (store) => (next) => (action) => {
         });
       break;
     }
+    case UPDATE_PRODUCT: {
+      const state = store.getState().productReducer;
+      const data = new FormData();
+      data.set('name', state.name);
+      data.set('description', state.description);
+      data.set('gender_id', state.gender_id);
+      data.set('image', state.image);
+      data.set('size', state.size);
+      data.set('price', state.price);
+      data.set('mark', state.mark);
+      data.set('status', state.status);
+      data.set('sub_category_id', state.sub_category_id);
+      axios({
+        method: 'patch',
+        url: `http://localhost:5050/product/${action.id}`,
+        data,
+      })
+        .then((response) => {
+          console.log(response.data);
+          store.dispatch(fetchProducts());
+        })
+        .catch((err) => {
+          console.trace(err);
+        });
+      break;
+    }
+
+    case DELETE_PRODUCT: {
+      axios({
+        method: 'delete',
+        url: `http://localhost:5050/product/${action.id}`,
+      }, {
+        withCredentials: true,
+      })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.trace(err);
+        });
+      break;
+    }
     case SEND_MESSAGE: {
-      console.log('message middleware');
       const state = store.getState().userReducer;
-      console.log(state.searchBar);
       axios({
         method: 'get',
         url: `http://localhost:5050/product/name/${state.searchBar}`,
@@ -68,7 +110,6 @@ const api = (store) => (next) => (action) => {
       break;
     }
     case SEND_FORM: {
-      console.log('je suis dans le middleware input');
       const state = store.getState().productReducer;
       const data = new FormData();
       data.set('content', state.content);
@@ -81,7 +122,8 @@ const api = (store) => (next) => (action) => {
 
       })
         .then((response) => {
-          console.log(response.data);
+          store.dispatch(toggleRedirection());
+          store.dispatch(cleanSearchBar());
         })
         .catch((err) => {
           console.trace(err);

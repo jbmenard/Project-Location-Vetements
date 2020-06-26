@@ -1,5 +1,44 @@
 @import 'src/styles/vars';
 
+@media (max-width : 600px) {
+  .img-inscription {
+    display: none;
+  }
+}
+@media (min-width : 1028px) {
+
+.inscription {
+    transform : translate(10px, 109px);
+    
+    display: flex;
+    
+  }
+
+  .img-design {
+    display: none
+  }
+
+  .wrapper-img {
+    width: 100%;
+    height: 80vh;
+  }
+
+  .img-inscription {
+    width: 100%;
+    height: 80vh;
+  }
+
+  .inscription .form {
+    width: 100%;
+    height: 80vh;
+    &-input {
+      width: 60%;
+      margin-left: 8rem;
+    }
+  }
+
+}
+
 body {
   
   background-color: #fff ;

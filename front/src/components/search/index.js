@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import './style.scss';
 
-const Search = ({ send, inputValue, changeSearchValue }) => {
+const Search = ({ send, inputValue, changeSearchValue, toggleRedirection }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     send();
@@ -13,12 +14,19 @@ const Search = ({ send, inputValue, changeSearchValue }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label className="item--title" htmlFor="search">
-        <span className="search"> Rechercher</span> 
-        <input onChange={handleChange} value={inputValue} className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
-      </label>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        {/* <label className="item--title" htmlFor="search">
+          <span className="search"> Rechercher</span>  */}
+          <div className="container-search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input onChange={handleChange} value={inputValue} className="item--input" name="search" id="search" type="search" placeholder="Votre recherche" />
+          </div>
+        {/* </label> */}
+      </form>
+      {toggleRedirection
+        && <Redirect to="/products" />}
+    </>
   );
 };
 
