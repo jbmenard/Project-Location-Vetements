@@ -30,6 +30,7 @@ export const initialState = {
   commentMessage: false,
   isClick: false,
   toggleValidateButton: false,
+
 };
 
 const userReducer = (state = initialState, action = {}) => {

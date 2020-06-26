@@ -2,10 +2,11 @@ import axios from 'axios';
 
 import {
   CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
-  UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts,
+  UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts, SEND_FORM
 } from 'src/actions/product';
 import { SEND_MESSAGE, cleanSearchBar } from 'src/actions/search';
 import { toggleRedirection } from 'src/actions/style';
+
 
 const api = (store) => (next) => (action) => {
   switch (action.type) {
@@ -102,6 +103,25 @@ const api = (store) => (next) => (action) => {
       })
         .then((response) => {
           store.dispatch(saveProducts(response.data));
+        })
+        .catch((err) => {
+          console.trace(err);
+        });
+      break;
+    }
+    case SEND_FORM: {
+      const state = store.getState().productReducer;
+      const data = new FormData();
+      data.set('content', state.content);
+      data.set('app_user_id', state.app_user_id);
+      data.set('product_id', state.id);
+      axios({
+        method: 'post',
+        url: 'http://localhost:5050/comment',
+        data,
+
+      })
+        .then((response) => {
           store.dispatch(toggleRedirection());
           store.dispatch(cleanSearchBar());
         })

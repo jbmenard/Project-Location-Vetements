@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from 'src/components/Button';
 import Comment from 'src/containers/Comment';
 // import image from '../../assets/images';
@@ -9,7 +9,7 @@ import './styles.scss';
 import { NavLink } from 'react-router-dom';
 
 // == Composant
-const ProductPage = ({ product }) => {
+const ProductPage = ({ product}) => {
   console.log(product);
   return (
     <div className="productpage">
@@ -37,7 +37,7 @@ const ProductPage = ({ product }) => {
         <div className="productpage-suggest--item">PRODUIT 1</div>
         <div className="productpage-suggest--item">PRODUIT 2</div>
       </section>
-      <Comment />
+      <Comment comments={product.comments} />
     </div>
   );
 };

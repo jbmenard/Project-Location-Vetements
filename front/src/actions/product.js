@@ -5,6 +5,9 @@ export const ADD_PRODUCT_IN_STATE = 'ADD_PRODUCT_IN_STATE';
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const GET_ERROR = 'GET_ERROR';
+export const SEND_FORM = 'SEND_FORM';
+export const SAVE_FORM = 'SAVE_FORM';
+export const CHANGE_INPUT_COMMENT_PRODUCT = 'CHANGE_INPUT_COMMENT_PRODUCT';
 
 export const createProduct = () => ({
   type: CREATE_PRODUCT,
@@ -37,4 +40,17 @@ export const fetchProducts = () => ({
 
 export const getError = () => ({
   type: GET_ERROR,
+});
+
+export const sendForm = () => ({
+  type: SEND_FORM,
+});
+
+export const saveForm = () => ({
+  type: SAVE_FORM,
+});
+
+export const changeInputCommentProduct = (value) => ({
+  type: CHANGE_INPUT_COMMENT_PRODUCT,
+  value,
 });
