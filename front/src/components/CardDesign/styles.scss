@@ -12,6 +12,20 @@
     display: flex;
     background-color: #fff;
 
+    &-icon {
+      display: flex;
+      justify-content: end;
+      width: 50%;
+
+      &--update {
+        width: 1.5em;
+      }
+
+      &--delete {
+        width: 1.5em;
+      }
+    }
+
     &-disponibility {
       width: 50%;
       color: green;  
