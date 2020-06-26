@@ -11,6 +11,10 @@ import Loue from '../../assets/images/je-loue.PNG';
 import Reçois from '../../assets/images/je-recois.PNG';
 import Rends from '../../assets/images/je-rends.png';
 
+import Martin from '../../assets/images/Martin-Dupont.jpg';
+import Juliette from '../../assets/images/Juliette-Smith.jpg';
+import Fatima from '../../assets/images/Fatima-Abdallah.jpg';
+
 const Home = () => (
 
   <>
@@ -35,12 +39,12 @@ const Home = () => (
       <h2 className="cards-title"> Temoignages </h2>
       <span className="invider" />
       <div className="row">
-
         <Opinion name="Martin Dupont" start="★★★★★" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
 
         <Opinion name="Juliette Smith" start="★★★★" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
 
         <Opinion name="Fatima Abdallah" start="★★★★★" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
+
       </div>
     </section>
 

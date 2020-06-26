@@ -1,8 +1,19 @@
 import axios from 'axios';
 import {
-  CREATE_USER, CREATE_USER_INFORMATIONS, CONNECT_USER, logUser, CHECK, infoUser,
+  CREATE_USER,
+  CREATE_USER_INFORMATIONS,
+  CONNECT_USER,
+  logUser,
+  CHECK,
+  infoUser,
+  UPDATE_FIRST_NAME,
+  UPDATE_MOBILE,
+  UPDATE_AVATAR,
+  hiddenInput,
+  check,
 } from 'src/actions/inscription';
 import { LOGOUT, saveLogout } from 'src/actions/user';
+import { toggleRedirection } from 'src/actions/style';
 
 axios.defaults.withCredentials = true;
 
@@ -23,6 +34,7 @@ const apiUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response.data);
+          store.dispatch(toggleRedirection())
         })
         .catch((error) => {
           console.trace(error);
@@ -86,16 +98,89 @@ const apiUser = (store) => (next) => (action) => {
         });
       break;
     case CHECK:
-      axios.post('http://localhost:5050/isLogged', {}, {
+      axios.post('http://localhost:5050/islogged', {}, {
         withCredentials: true,
       })
         .then((response) => {
-          console.log(response.data);
+          store.dispatch(logUser(response.data));
         })
         .catch((err) => {
           console.trace(err);
         });
       break;
+    case UPDATE_FIRST_NAME: {
+      const state = store.getState().userReducer;
+      // console.log(state.user.data.AppUserInfo.id);
+      const data = new FormData();
+      data.set('first_name', state.first_name);
+      axios({
+        method: 'patch',
+        url: `http://localhost:5050/userinfo/${state.user.user.AppUserInfo.id}`,
+        data,
+      }, {
+        withCredentials: true,
+      })
+        .then((response) => {
+          console.log('je suis dans le middleware', response.data);
+
+          store.dispatch(hiddenInput(response.data));
+          store.dispatch(check());
+        })
+        .catch((err) => {
+          console.log('je suis une erreur');
+
+          console.trace(err);
+        });
+      break;
+    }
+    case UPDATE_MOBILE: {
+      const state = store.getState().userReducer;
+      // console.log(state.user.data.AppUserInfo.id);
+      const data = new FormData();
+      data.set('mobile', state.mobile);
+      axios({
+        method: 'patch',
+        url: `http://localhost:5050/userinfo/${state.user.user.AppUserInfo.id}`,
+        data,
+      }, {
+        withCredentials: true,
+      })
+        .then((response) => {
+          console.log('je suis dans le middleware', response.data);
+
+          store.dispatch(hiddenInput(response.data));
+          store.dispatch(check());
+        })
+        .catch((err) => {
+          console.log('je suis une erreur');
+
+          console.trace(err);
+        });
+      break;
+    }
+    case UPDATE_AVATAR: {
+      const state = store.getState().userReducer
+      const data = new FormData();
+      data.set('avatar', state.avatar);
+      axios({
+        method: 'patch',
+        url: `http://localhost:5050/userinfo/${state.user.user.AppUserInfo.id}`,
+        data,
+      }, {
+        withCredentials: true,
+      })
+        .then((response) => {
+          // console.log('je suis dans le middleware', response.data);
+          store.dispatch(hiddenInput(response.data));
+          store.dispatch(check());
+        })
+        .catch((err) => {
+          console.log('je suis une erreur');
+
+          console.trace(err);
+        });
+      break;
+    }
     default:
       next(action);
   }

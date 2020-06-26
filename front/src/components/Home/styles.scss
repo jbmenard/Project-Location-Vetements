@@ -49,8 +49,21 @@
   text-align: center;
   font-size: 18px;
   text-align: justify;
+  justify-content: center;
   &-text {
     padding: 30px;
+  }
+  &-image {
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: center;
+
+    &--item {
+      width: 10em;
+      height: 10em;
+      border-radius: 50%;
+      margin: auto;
+    }
   }
   &-title {
     font-weight: 700;
