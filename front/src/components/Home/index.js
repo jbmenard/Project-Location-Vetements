@@ -9,6 +9,10 @@ import Loue from '../../assets/images/je-loue.PNG';
 import Reçois from '../../assets/images/je-recois.PNG';
 import Rends from '../../assets/images/je-rends.png';
 
+import Martin from '../../assets/images/Martin-Dupont.jpg';
+import Juliette from '../../assets/images/Juliette-Smith.jpg';
+import Fatima from '../../assets/images/Fatima-Abdallah.jpg';
+
 const Home = () => (
   // --------------- carousel ---------------
   <>
@@ -61,22 +65,28 @@ const Home = () => (
       <div className="row">
 
         <div className="temoignages col-md-4 ">
-          <i className="fa fa-user" />
+          <div className="temoignages-image">
+            <img className="temoignages-image--item" src={Martin} alt="Martin" />
+          </div>
           <h3 className="temoignages-title"> Martin Dupont</h3>
           <i className="icon-star">★★★★★</i>
-          <p className="temoignages-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus.</p>
+          <p className="temoignages-text">Pour un enterrement de vie de jeune garçon, je devais me déguiser en hot-dog géant, j'ai réussi à trouver mon bonheur sur O'Loc, et cette journée a était mémorable.</p>
         </div>
         <div className="temoignages col-md-4 ">
-          <i className="fa fa-user" />
+          <div className="temoignages-image">
+            <img className="temoignages-image--item" src={Juliette} alt="Juliette" />
+          </div>
           <h3 className="temoignages-title"> Juliette Smith</h3>
           <i className="icon-star">★★★★</i>
-          <p className="temoignages-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quidem vero dolores sequi unde, consequuntur iusto qui voluptatibus delectus blanditiis cumque voluptatem esse adipisci fuga accusantium et at quasi voluptas?</p>
+          <p className="temoignages-text">Lors d'une escapade en Corse, j'ai loué une tenue de plongée sous-marine pour pouvoir partager de bons moments entre amis, grâce à O'Loc j'ai pu explorer les fonds marins dans de bonnes conditions.</p>
         </div>
         <div className="temoignages col-md-4">
-          <i className="fa fa-user" />
+          <div className="temoignages-image">
+            <img className="temoignages-image--item" src={Fatima} alt="Fatima" />
+          </div>
           <h3 className="temoignages-title">Fatima Abdallah</h3>
           <i className="icon-star">★★★★★</i>
-          <p className="temoignages-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores nostrum soluta quasi adipisci temporibus facere nulla. Consectetur, quasi esse quos magni ut maxime aut libero rem voluptas! Nostrum, iste dolorum?</p>
+          <p className="temoignages-text">J'ai loué une belle robe d'un grand couturier pour assister au mariage d'une amie, tout s'est très bien déroulé du début jusqu'à la fin, j'en suis très ravie, je recommande fortement cette plateforme.</p>
         </div>
       </div>
     </section>
