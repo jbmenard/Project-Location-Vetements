@@ -1,7 +1,10 @@
 import React from 'react';
 import Button from 'src/components/Button';
-
 import './style.scss';
+import Clarisse from '../../assets/images/clarisse.jpeg';
+import Kevin from '../../assets/images/kevin.jpeg';
+import Roman from '../../assets/images/roman.jpg';
+import JB from '../../assets/images/jb.jpg';
 
 const Information = () => (
   <div className="information-page">
@@ -16,24 +19,60 @@ const Information = () => (
         <img className="intro-image" src="https://www.lenouveleconomiste.fr/wp-content/uploads/2018/06/location-826x459.jpg" alt="avatar" />
       </article>
     </section>
-    <section className="steps">
-      <h1 className="steps-title">Notre service</h1>
-      <article className="steps-container">
-        <div className="steps-item">
-          <section className="steps-item-top">Image 1</section>
-          <section className="steps-item-bottom">Description 1</section>
+    <section className="team">
+      <h1 className="team-title">Notre équipe</h1>
+      <article className="team-container">
+        <div className="team-item">
+          <section className="team-item-top">
+            <img className="team-item-top--image" src={Roman} alt="Roman" />
+          </section>
+          <section className="team-item-bottom">
+            <p className="team-item-bottom--name">Roman</p>
+            <p className="team-item-bottom--role">Product Owner - Git Referent</p>
+            <div className="team-social">
+              <i className="fa fa-envelope-o" aria-hidden="true" />
+              <i className="fa fa-linkedin-square" aria-hidden="true" />
+            </div>
+          </section>
         </div>
-        <div className="steps-item">
-          <section className="steps-item-top">Image 2</section>
-          <section className="steps-item-bottom">Description 2</section>
+        <div className="team-item">
+          <section className="team-item-top">
+            <img className="team-item-top--image" src={JB} alt="JB" />
+          </section>
+          <section className="team-item-bottom">
+            <p className="team-item-bottom--name">Jean-Baptiste</p>
+            <p className="team-item-bottom--role">Scrum Master - Developer</p>
+            <div className="team-social">
+              <i className="fa fa-envelope-o" aria-hidden="true" />
+              <i className="fa fa-linkedin-square" aria-hidden="true" />
+            </div>
+          </section>
         </div>
-        <div className="steps-item">
-          <section className="steps-item-top">Image 3</section>
-          <section className="steps-item-bottom">Description 3</section>
+        <div className="team-item">
+          <section className="team-item-top">
+            <img className="team-item-top--image" src={Clarisse} alt="Clarisse" />
+          </section>
+          <section className="team-item-bottom">
+            <p className="team-item-bottom--name">Clarisse</p>
+            <p className="team-item-bottom--role">Lead Dev Front</p>
+            <div className="team-social">
+              <i className="fa fa-envelope-o" aria-hidden="true" />
+              <i className="fa fa-linkedin-square" aria-hidden="true" />
+            </div>
+          </section>
         </div>
-        <div className="steps-item">
-          <section className="steps-item-top">Image 4</section>
-          <section className="steps-item-bottom">Description 4</section>
+        <div className="team-item">
+          <section className="team-item-top">
+            <img className="team-item-top--image" src={Kevin} alt="Kevin" />
+          </section>
+          <section className="team-item-bottom">
+            <p className="team-item-bottom--name">Kevin</p>
+            <p className="team-item-bottom--role">Lead Back Front</p>
+            <div className="team-social">
+              <i className="fa fa-envelope-o" aria-hidden="true" />
+              <i className="fa fa-linkedin-square" aria-hidden="true" />
+            </div>
+          </section>
         </div>
       </article>
     </section>
