@@ -2,7 +2,7 @@ import { SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE, GET_ERROR } from 'src/actions/prod
 
 export const initialState = {
   listProducts: [],
-  id: 31,
+  id: 1,
   name: '',
   description: '',
   image: '',

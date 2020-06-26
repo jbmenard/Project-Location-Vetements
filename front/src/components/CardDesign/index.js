@@ -11,7 +11,13 @@ import { getUrlByName } from '../../selectors/product';
 const CardDesign = ({ object }) => (
   <div className="card">
     <header className="card-header">
-      <p className="card-header-disponibility">Disponible</p>
+      <NavLink
+        className="card-header-disponibility"
+        to="/updateproduct"
+      >
+        {/* <i className="fa fa-pencil" aria-hidden="true" /> */}
+        Modifier
+      </NavLink>
       <p className="card-header-price">{object.price}€</p>
     </header>
     <section>
