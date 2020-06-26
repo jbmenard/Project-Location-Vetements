@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from 'src/components/Button';
 import Comment from 'src/containers/Comment';
 // import image from '../../assets/images';
@@ -8,7 +8,7 @@ import Comment from 'src/containers/Comment';
 import './styles.scss';
 
 // == Composant
-const ProductPage = ({ product }) => {
+const ProductPage = ({ product}) => {
   console.log(product);
   return (
     <div className="productpage">

@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 import {
-  CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
+  CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError, saveForm,
 } from 'src/actions/product';
 import { SEND_MESSAGE } from 'src/actions/search';
-import { SAVE_PRODUCTS } from '../actions/product';
+import { SAVE_PRODUCTS, SEND_FORM } from '../actions/product';
 
 const api = (store) => (next) => (action) => {
   switch (action.type) {
@@ -60,7 +60,28 @@ const api = (store) => (next) => (action) => {
         url: `http://localhost:5050/product/name/${state.searchBar}`,
       })
         .then((response) => {
-         store.dispatch(saveProducts(response.data));
+          store.dispatch(saveProducts(response.data));
+        })
+        .catch((err) => {
+          console.trace(err);
+        });
+      break;
+    }
+    case SEND_FORM: {
+      console.log('je suis dans le middleware input');
+      const state = store.getState().productReducer;
+      const data = new FormData();
+      data.set('content', state.content);
+      data.set('app_user_id', state.app_user_id);
+      data.set('product_id', state.id);
+      axios({
+        method: 'post',
+        url: 'http://localhost:5050/comment',
+        data,
+
+      })
+        .then((response) => {
+          console.log(response.data);
         })
         .catch((err) => {
           console.trace(err);
