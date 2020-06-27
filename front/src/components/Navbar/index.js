@@ -39,9 +39,10 @@ const Navbar = ({
               </label>
               <div className="container-button">
                 <Button type="submit" color="menu" value="Se connecter" size="medium" />
-
+                <NavLink to="/inscription" className="item" onClick={toggleNavbar}> <i className="fa fa-user-plus" /></NavLink>
               </div>
-              <i className="fa fa-user-plus" />
+             
+             
             </form>
             )}
         </div>
