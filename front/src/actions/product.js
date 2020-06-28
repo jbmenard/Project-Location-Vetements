@@ -10,9 +10,9 @@ export const SAVE_FORM = 'SAVE_FORM';
 export const CHANGE_INPUT_COMMENT_PRODUCT = 'CHANGE_INPUT_COMMENT_PRODUCT';
 export const RESET_COMMENT_MSG = 'RESET_COMMENT_MSG';
 
-export const ResetCommentMsg = (payload) => ({
+export const ResetCommentMsg = () => ({
   type: RESET_COMMENT_MSG,
-  payload,
+
 });
 
 export const createProduct = () => ({
