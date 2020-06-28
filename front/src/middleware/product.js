@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import {
   CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
-  UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts, SEND_FORM
+  UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts, SEND_FORM,
 } from 'src/actions/product';
 import { SEND_MESSAGE, cleanSearchBar } from 'src/actions/search';
 import { toggleRedirection } from 'src/actions/style';
@@ -122,8 +122,8 @@ const api = (store) => (next) => (action) => {
 
       })
         .then((response) => {
-          store.dispatch(toggleRedirection());
-          store.dispatch(cleanSearchBar());
+          // store.dispatch(toggleRedirection());
+          // store.dispatch(cleanSearchBar());
         })
         .catch((err) => {
           console.trace(err);

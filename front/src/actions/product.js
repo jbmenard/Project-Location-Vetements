@@ -8,6 +8,12 @@ export const GET_ERROR = 'GET_ERROR';
 export const SEND_FORM = 'SEND_FORM';
 export const SAVE_FORM = 'SAVE_FORM';
 export const CHANGE_INPUT_COMMENT_PRODUCT = 'CHANGE_INPUT_COMMENT_PRODUCT';
+export const RESET_COMMENT_MSG = 'RESET_COMMENT_MSG';
+
+export const ResetCommentMsg = (payload) => ({
+  type: RESET_COMMENT_MSG,
+  payload,
+});
 
 export const createProduct = () => ({
   type: CREATE_PRODUCT,

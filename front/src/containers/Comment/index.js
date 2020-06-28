@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import Comment from 'src/components/Comment';
 import { commentaire } from 'src/actions/user';
-import { sendForm, changeInputCommentProduct } from 'src/actions/product';
+import {
+  sendForm, changeInputCommentProduct, fetchProducts, ResetCommentMsg,
+} from 'src/actions/product';
 
 const mapStateToProps = (state) => ({
   commentMessage: state.userReducer.commentMessage,
@@ -19,6 +21,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
     const aFetchProduct = fetchProducts();
     dispatch(aFetchProduct);
+    const aResetCommentMsg = ResetCommentMsg();
+    dispatch(aResetCommentMsg);
   },
   changeInputCommentProduct: (value) => {
     const action = changeInputCommentProduct(value);
