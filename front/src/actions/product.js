@@ -49,7 +49,7 @@ export const getError = () => ({
   type: GET_ERROR,
 });
 
-export const sendForm = () => ({
+export const sendForm = () => (console.log('je suis dans action'),{
   type: SEND_FORM,
 });
 
