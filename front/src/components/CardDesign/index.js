@@ -1,7 +1,8 @@
 // == Import npm
 import React from 'react';
 import Button from 'src/components/Button';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
 
 // == Import
 import './styles.scss';
@@ -10,6 +11,7 @@ import { getUrlByName } from '../../selectors/product';
 // == Icons
 import Update from '../../assets/images/update-product.png';
 // import Delete from '../../assets/images/delete-product.png';
+
 
 // == Composant
 const CardDesign = ({ 

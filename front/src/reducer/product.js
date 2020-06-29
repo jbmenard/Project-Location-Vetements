@@ -10,7 +10,7 @@ export const initialState = {
   price: 0,
   mark: '',
   status: '',
-  app_user_id: '',
+  app_user_id: 1,
   sub_category_id: 2,
   gender_id: 1,
   loading: true,
@@ -34,6 +34,7 @@ const productReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         commentProduct: '',
+      
       };
     }
     case ADD_PRODUCT_IN_STATE:

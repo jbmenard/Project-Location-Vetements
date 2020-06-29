@@ -1,61 +1,120 @@
-.comment{
-  width: 100%;
-  display: inline-block;
-  margin-bottom: 2em;
+@import 'src/styles/vars';
+
+// Mobile version
+
+@media (max-width : 400px) {
+  .comment {
+    width: 90%;
+    margin: auto;
   
-
-
-  &-title{
-    text-align: center;
-    margin-bottom: 1em;
-    font-size: 1.5em;
+    &-formtitle {
+      font-weight: 700;
+      color: #5e6472;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1em;
+      font-size: 1.5em;
+    }
+  
+    &-button {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+  
+    &-form {
+      margin: auto;
+      width: 100%;
+  
+      &--textarea {
+        border: none;
+        padding: 0.8em;
+        width: 100%;
+        box-shadow: 0px 2px 10px lightgray;
+        border-radius: 30px;
+      }
+  
+      &--submit {
+        text-align: center;
+        border: none;
+        margin: 1em 0 1em 70%;
+        padding: 0.8em;
+        width: 30%;
+        box-shadow: 0px 2px 10px lightgray;
+        border-radius: 30px;
+      }
+    }
+  
+    &-name {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+  
+    &-content {
+      border: none;
+      padding: 0.8em;
+      // width: 80%;
+      box-shadow: 0px 2px 10px lightgray;
+      border-radius: 30px;
+    }
   }
-  &-avis1{
-    width: 50%;
-    margin-left: auto;
-    margin-right:auto;
-    margin-bottom: 2em;
-    
-    
-  }
-
-  &-avis2{
-    width: 50%;
-    margin-left: auto;
-    margin-right:auto;
-    margin-bottom: 2em;
-   
-  }
-  &-avis3{
-    width: 50%;
-    margin-left: auto;
-    margin-right:auto;
-    margin-bottom: 2em;
-   
-  }
-
-  &-name{
-    text-align: center;
-    font-weight: bold;
-    margin-bottom:.5em
-  }
-
-  &-button{
-    width: 40%;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-}
-.formcommentaire{
-  width: 50%;
-  margin-left:auto;
-  margin-right: auto;
-
-  &-textarea{
-    height: 5em;
-    margin-top:1em;
-  }
-
 }
 
+// Desktop version
+
+@media (min-width : 400px) {
+  .comment {
+    width: 60%;
+    margin: auto;
+  
+    &-formtitle {
+      font-weight: 700;
+      color: #5e6472;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1em;
+      font-size: 1.5em;
+    }
+  
+    &-button {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+  
+    &-form {
+      margin: auto;
+      width: 100%;
+  
+      &--textarea {
+        border: none;
+        padding: 0.8em;
+        width: 80%;
+        box-shadow: 0px 2px 10px lightgray;
+        border-radius: 30px;
+      }
+  
+      &--submit {
+        border: none;
+        margin-left: 2em;
+        padding: 0.8em;
+        width: 15%;
+        box-shadow: 0px 2px 10px lightgray;
+        border-radius: 30px;
+      }
+    }
+  
+    &-name {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+  
+    &-content {
+      border: none;
+      padding: 0.8em;
+      // width: 80%;
+      box-shadow: 0px 2px 10px lightgray;
+      border-radius: 30px;
+    }
+  }
+}
