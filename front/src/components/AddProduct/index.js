@@ -151,6 +151,10 @@ const AddProduct = ({
           </div>
         </div>
       </form>
+      <div className="wrapper-image">
+          <img className="img-clothes" src={Clothes} alt="" />
+        </div>
+      </div>
       {toggleRedirection
       && <Redirect to={`/user/${user.user.id}`} />}
     </div>
