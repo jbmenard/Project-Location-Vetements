@@ -42,7 +42,7 @@ const ProductPage = (props) => {
         <div className="productpage-suggest--item">PRODUIT 1</div>
         <div className="productpage-suggest--item">PRODUIT 2</div>
       </section>
-      <Comment comments={product.comments} />
+      <Comment comments={props.location.state.product.comments} />
     </div>
   );
 };
