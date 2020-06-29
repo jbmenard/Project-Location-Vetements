@@ -141,7 +141,7 @@ const productController = {
             const productId = req.params.id;
             const targetProduct = await Product.findByPk(productId);
             if(targetProduct){
-                await targetUser.destroy();
+                await targetProduct.destroy();
                 res.send("ok");
             }else{
                 next();

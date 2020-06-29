@@ -17,13 +17,13 @@ const mapStateToProps = (state) => ({
   sub_category_id: state.productReducer.sub_category_id,
 });
 
-// grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
 const mapDispatchToProps = (dispatch) => ({
   updateProduct: (id) => {
     console.log('Modifier produit');
     dispatch(updateProduct(id));
   },
   deleteProduct: (id) => {
+    console.log('Supprimer produit');
     dispatch(deleteProduct(id));
   },
 });

@@ -94,6 +94,7 @@ const api = (store) => (next) => (action) => {
         });
       break;
     }
+
     case SEND_MESSAGE: {
       const state = store.getState().userReducer;
       axios({

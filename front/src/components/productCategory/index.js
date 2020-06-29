@@ -1,5 +1,5 @@
 import React, {useEffect } from 'react';
-import CardDesign from 'src/components/CardDesign';
+import CardDesign from 'src/containers/CardDesign';
 
 import './style.scss';
 
