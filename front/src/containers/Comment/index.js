@@ -19,8 +19,8 @@ const mapDispatchToProps = (dispatch) => ({
     console.log('je suis dans le formulaire');
     const action = sendForm();
     dispatch(action);
-    const aFetchProduct = fetchProducts();
-    dispatch(aFetchProduct);
+    // const aFetchProduct = fetchProducts();
+    // dispatch(aFetchProduct);
     const aResetCommentMsg = ResetCommentMsg();
     dispatch(aResetCommentMsg);
   },

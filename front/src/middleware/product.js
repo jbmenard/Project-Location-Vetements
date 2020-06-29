@@ -114,6 +114,7 @@ const api = (store) => (next) => (action) => {
     }
     case SEND_FORM: {
       const state = store.getState().productReducer;
+      console.log("statecontent", state.content);
       const data = new FormData();
       data.set('content', state.content);
       data.set('app_user_id', state.app_user_id);
