@@ -131,15 +131,25 @@ body {
     &:focus{
       border: 1px solid $general-button-opacity;
     }
+    
   }
   
 
 }
 
+.error {
+    box-shadow: 0px 2px 10px brown;
+  }
+
 .img-design {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.text-error-form {
+  color: brown;
+  font-weight: 700;
 }
 
 

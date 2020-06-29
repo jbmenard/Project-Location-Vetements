@@ -11,6 +11,7 @@ import {
   UPDATE_AVATAR,
   hiddenInput,
   check,
+  
 } from 'src/actions/inscription';
 import { LOGOUT, saveLogout } from 'src/actions/user';
 import { toggleRedirection } from 'src/actions/style';
@@ -23,7 +24,6 @@ const apiUser = (store) => (next) => (action) => {
       const state = store.getState().userReducer;
       console.log(state);
       const data = new FormData();
-
       data.set('email', state.email);
       data.set('password', state.password);
       data.set('passwordConfirm', state.confirmPassword);
