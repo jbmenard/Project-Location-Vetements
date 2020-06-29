@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Avatar from 'src/components/Avatar';
-import CardDesign from 'src/components/CardDesign';
+import CardDesign from 'src/containers/CardDesign';
 import Button from 'src/components/Button';
 
 import './style.scss';

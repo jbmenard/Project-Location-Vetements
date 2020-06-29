@@ -20,12 +20,13 @@ import Inscription from 'src/containers/Inscription';
 import AddUserInfos from 'src/containers/AddUserInfos';
 import UpdateProduct from 'src/containers/UpdateProduct';
 
+
 // == Immport styles
 import './styles.scss';
 
 // == Composant
 const App = ({
-  listCard, loading, error, fetchProducts, user, isLoggin, checkIsLogged
+  listCard, loading, error, fetchProducts, user, isLoggin, checkIsLogged,
 }) => {
   useEffect(() => {
     fetchProducts();

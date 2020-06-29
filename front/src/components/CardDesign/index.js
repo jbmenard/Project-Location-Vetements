@@ -7,22 +7,34 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 import { getUrlByName } from '../../selectors/product';
 
-// == Composant
-const CardDesign = ({ object }) => {
-  // console.log('obj', object);
-  console.log(getUrlByName(object.name))
+// == Icons
+import Update from '../../assets/images/update-product.png';
+// import Delete from '../../assets/images/delete-product.png';
 
+// == Composant
+const CardDesign = ({ 
+  object,
+  deleteProduct,
+}) => {
+  const handleClick = (id) => {
+    return deleteProduct(id);
+  };
   return (
     <div className="card">
       <header className="card-header">
-         <NavLink
-        className="card-header-disponibility"
-        to="/updateproduct"
-      >
-        {/* <i className="fa fa-pencil" aria-hidden="true" /> */}
-        Modifier
-      </NavLink>
         <p className="card-header-price">{object.price}€</p>
+        <section className="card-header-icon">
+          <NavLink
+            to="/updateproduct"
+          >
+            <img
+              className="card-header-icon--update"
+              src={Update}
+              alt="update-product"
+            />
+          </NavLink>
+          <i className="card-header-icon--delete fa fa-times" aria-hidden="true" onClick={() => handleClick(object.id)} />
+        </section>
       </header>
       <section>
         <img className="card-body-image" src="https://img5.onthesnow.com/image/sm/52/caract%C3%A9ristiques_dune_bonne_tenue_de_ski_1_521068.jpg" alt="ski" />
