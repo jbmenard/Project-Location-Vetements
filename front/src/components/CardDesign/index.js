@@ -16,8 +16,8 @@ const CardDesign = ({
   object,
   deleteProduct,
   user,
+  isLogged,
 }) => {
-  console.log(user.user.id === object.app_user_id);
   
   const handleClick = (id) => deleteProduct(id);
   const checkUser = (userId, productId) => {
@@ -32,7 +32,7 @@ const CardDesign = ({
       <header className="card-header">
         <p className="card-header-price">{object.price}€</p>
         <section className="card-header-icon">
-          {checkUser(user.user.id, object.app_user_id)
+          { isLogged && checkUser(user.user.id, object.app_user_id)
           && (
             <>
               <NavLink

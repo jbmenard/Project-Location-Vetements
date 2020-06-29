@@ -16,6 +16,7 @@ const mapStateToProps = (state) => ({
   status: state.productReducer.status,
   user_id: state.productReducer.user_id,
   sub_category_id: state.productReducer.sub_category_id,
+  isLogged: state.userReducer.logged,
 });
 
 const mapDispatchToProps = (dispatch) => ({
