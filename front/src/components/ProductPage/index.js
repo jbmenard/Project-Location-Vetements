@@ -38,10 +38,6 @@ const ProductPage = (props) => {
       <section className="productpage-button">
         <Button size="medium" value="Louer" />
       </section>
-      <section className="productpage-suggest">
-        <div className="productpage-suggest--item">PRODUIT 1</div>
-        <div className="productpage-suggest--item">PRODUIT 2</div>
-      </section>
       <Comment comments={props.product.comments} />
     </div>
   );

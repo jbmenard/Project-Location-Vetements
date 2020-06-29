@@ -14,8 +14,8 @@ const Comment = ({ handleComment, isClick, comments, sendForm, changeInputCommen
   };
   console.log("comments",comments);
   return (
-    <div>
-      <h4>COMMENTAIRE</h4>
+    <div className="comment">
+      <h4 className="comment-formtitle">Commentaires</h4>
       <div>
         {comments.map((comment) => (
           <Commentaire comment={comment} />
@@ -23,15 +23,15 @@ const Comment = ({ handleComment, isClick, comments, sendForm, changeInputCommen
         ))}
       </div>
       <div onClick={handleComment} className="comment-button">
-        <Button type="button" size="large" value="nouveau commentaire" color="orange" />
+        <Button type="button" size="x-large" value="Nouveau commentaire" color="form" />
       </div>
-    
       {isClick && (
-
-        <form onSubmit={handleSubmit} className="formcommentaire">
-          <input className="formcommentaire-textarea" type="textarea" onChange={handleChange} value={inputValue} placeholder="commentaire" />
-          <input type="submit" />
+      <div className="comment-form">
+        <form onSubmit={handleSubmit}>
+          <input className="comment-form--textarea" type="textarea" onChange={handleChange} value={inputValue} placeholder="Écrire un nouveau commentaire" />
+          <input className="comment-form--submit" type="submit" />
         </form>
+      </div>
       )}
     </div>
   );
