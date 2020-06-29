@@ -5,10 +5,24 @@
   .team-container {
     display: flex;
   }
+  .information-page{
+    transform: translate(10px, 109px);
+  }
+
+  
+}
+
+@media(max-width : 600px) {
+  .team-item {
+    
+    margin: 3rem !important;
+   
+  }
 }
 
 .information-page {
   margin: 1em 0;
+  
 }
 
 // PART 1
@@ -54,6 +68,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+    
   }
 
   &-social {
@@ -70,7 +87,7 @@
   &-item {
     align-content: center;
     margin: 1em 1em;
-    height: 25em;
+    height: 18em;
     width: 18em;
     box-shadow: 5px 5px 15px lightgrey;
     transition: all 0.3s ease-in;
@@ -87,21 +104,29 @@
 
     &-top {
       background-color: #fff;
-      height: 18em;
+      height: 12em;
       width: 18em;
+      position: absolute;
 
       &--image {
         margin: 2em;
         border-radius: 50%;
-        height: 14em;
-        width: 14em;
+        height: 11em;
+        width: 11em;
+        position: relative;
+        bottom: 6rem;
+        left: 1.5rem;
+        border: 2px solid antiquewhite;
+        padding:2px;
       }
     }
 
     &-bottom {
       background-color: #fff;
-      height: 7em;
+      height: 8rem;
       width: 18em;
+      position: relative;
+      top: 10rem;
 
       &--name {
         text-align: center;

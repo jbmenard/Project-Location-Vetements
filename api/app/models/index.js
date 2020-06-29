@@ -52,26 +52,26 @@ as: "category"
 
 // User <-> Comment
 AppUser.hasMany(Comment, {
-foreignKey: "app_user_id",
-as: "comments"
+    foreignKey: "app_user_id",
+    as: "comments"
 });
 
 Comment.belongsTo(AppUser, {
-foreignKey: "app_user_id",
-as: "app_user"
+    foreignKey: "app_user_id",
+    as: "app_user"
 });
 
 // Product <-> Comment
 Product.hasMany(Comment, {
-foreignKey: "product_id",
-as: "comments",
-onDelete: "cascade"
+    foreignKey: "product_id",
+    as: "comments",
+    onDelete: "cascade"
 });
 
 Comment.belongsTo(Product, {
-foreignKey: "product_id",
-as: "product",
-onDelete: "cascade"
+    foreignKey: "product_id",
+    as: "product",
+    onDelete: "cascade"
 });
 
 // User <-> UserInfo

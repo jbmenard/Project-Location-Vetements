@@ -11,10 +11,7 @@ const mapStateToProps = (state) => ({
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
 const mapDispatchToProps = (dispatch) => ({
-  // fetchProducts: () => {
-  //   const action = fetchProducts();
-  //   dispatch(action);
-  // },
+ 
 });
 
 export default connect(

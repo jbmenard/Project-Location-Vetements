@@ -39,11 +39,11 @@ const Home = () => (
       <h2 className="cards-title"> Temoignages </h2>
       <span className="invider" />
       <div className="row">
-        <Opinion name="Martin Dupont" start="★★★★★" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
+        <Opinion name="Martin Dupont"  text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
 
-        <Opinion name="Juliette Smith" start="★★★★" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
+        <Opinion name="Juliette Smith"  text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
 
-        <Opinion name="Fatima Abdallah" start="★★★★★" text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
+        <Opinion name="Fatima Abdallah"  text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus." />
 
       </div>
     </section>

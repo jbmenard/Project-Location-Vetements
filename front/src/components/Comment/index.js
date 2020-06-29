@@ -1,36 +1,39 @@
 import React from 'react';
 import Button from 'src/components/Button';
+import Commentaire from './commentaire';
 import './style.scss';
 
-const Comment = ({ handleComment, isClick }) => (
-  <div>
-    <h3 className="comment-title">avis client</h3>
-    <div className="comment">
-      <div className="comment-avis1">
-        <h5 className="comment-name">keke du 29.</h5>
-        <p> Whouaaa se costume a fait fureur c'est trop de la bombe de balle.</p>
-      </div>
-      <div className="comment-avis2">
-        <h5 className="comment-name">jb du 93.</h5>
-        <p>Kévin le loueur est vraiment tres sympa, et le costume est cooool</p>
-      </div>
-      <h5 className="comment-name">germain du 53.</h5>
-      <div className="comment-avis3">
-        <p>Kévin le loueur est vraiment tres sympa, et le costume est cooool</p>
+const Comment = ({ handleComment, isClick, comments, sendForm, changeInputCommentProduct, inputValue }) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendForm();
+  };
+
+  const handleChange = (event) => {
+    changeInputCommentProduct(event.target.value);
+  };
+  return (
+    <div>
+      <h4>COMMENTAIRE</h4>
+      <div>
+        {comments.map((comment) => (
+          <Commentaire comment={comment} />
+
+        ))}
       </div>
       <div onClick={handleComment} className="comment-button">
         <Button type="button" size="large" value="nouveau commentaire" color="orange" />
       </div>
+    
       {isClick && (
-      <form className="comment-commentaire">
-        <p>mettre un commentaire</p>
-        <div>
-          <textarea>coucou bande de naze</textarea>
-        </div>
-      </form>
+
+        <form onSubmit={handleSubmit} className="formcommentaire">
+          <input className="formcommentaire-textarea" type="textarea" onChange={handleChange} value={inputValue} placeholder="commentaire" />
+          <input type="submit" />
+        </form>
       )}
     </div>
-  </div>
-);
+  );
+};
 
 export default Comment;

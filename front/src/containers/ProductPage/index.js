@@ -6,6 +6,7 @@ import { getRecipeBySlug } from 'src/selectors/product';
 
 const mapStateToProps = (state, ownProps) => ({
   product: getRecipeBySlug(state, ownProps.match.params.slug),
+
 });
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention

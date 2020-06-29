@@ -13,14 +13,16 @@ const mapStateToProps = (state) => ({
   price: state.productReducer.price,
   mark: state.productReducer.mark,
   status: state.productReducer.status,
-  user_id: state.productReducer.user_id,
+  user: state.userReducer.user,
   sub_category_id: state.productReducer.sub_category_id,
+  toggleRedirection: state.styleReducer.toggleRedirection,
+  toggleNavbar: state.styleReducer.toggleNavbar,
 });
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
 const mapDispatchToProps = (dispatch) => ({
-  createProduct: () => {
-    dispatch(createProduct());
+  createProduct: (userId) => {
+    dispatch(createProduct(userId));
   },
   onChangeName: (value, name) => {
     dispatch(addProductInState(value, name));

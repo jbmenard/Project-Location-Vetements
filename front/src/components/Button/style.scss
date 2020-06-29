@@ -1,7 +1,7 @@
 @media (min-width :1024px) {
   .button {
     &-menu {
-      background-color:  #f0693d ;
+      background-color:  #EEAC80;
       color: #fff;
       margin : 1.2rem 0 0 1.2rem !important;
       padding:0.5rem 30px !important;
@@ -10,7 +10,30 @@
         background-color: #8FBC8F;
       }
     }
+    &-form {
+      background-color: #EEAC80 ;
+      color: #fff;
+      border-radius: 20px;
+      width: 50% !important;
+      font-size: 1em;
+      font-weight: 700;
+      &:hover{
+        background-color: #8FBC8F;
+      }
+    }
+    &-orangelight {
+      background-color:#A52A2A;
+      color: #fff;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      &:hover{
+        background-color: #8FBC8F;
+      }
+    }
   }
+  
+
 }
 
 
@@ -53,7 +76,7 @@
   }
 
   &-menu {
-    background-color:  #f0693d ;
+    background-color:  #EEAC80 ;
     color: #fff;
     margin-left: 8em;
     &:hover{
@@ -68,7 +91,7 @@
   }
 
   &-orangelight {
-    background-color: #EEAC80;
+    background-color:#A52A2A;
     color: #fff;
   }
 
