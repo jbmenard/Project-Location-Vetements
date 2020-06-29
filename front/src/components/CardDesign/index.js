@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 import Button from 'src/components/Button';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 // == Import
 import './styles.scss';
