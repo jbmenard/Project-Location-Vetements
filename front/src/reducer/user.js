@@ -3,6 +3,7 @@ import {
   CHANGE_VALUE_STATE_USER,
   CHANGE_VALUE_STATE_USER_INFORMATIONS,
   CHANGE_AVATAR_IN_STATE,
+  SAVE_USERS,
   INFO_USER,
   LOG_USER,
   HIDDEN_INPUT,
@@ -15,6 +16,7 @@ export const initialState = {
   email: '',
   confirmPassword: '',
   user: {},
+  listUsers: [],
   errorPassword: false,
   errorPasswordLength: false,
   errorEmail: false,
@@ -79,6 +81,12 @@ const userReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+    }
+    case SAVE_USERS: {
+      return {
+        ...state,
+        listUsers: action.listUsers,
       };
     }
     case SAVE_LOGOUT:

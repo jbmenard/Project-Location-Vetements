@@ -17,22 +17,22 @@ import Header from 'src/containers/Header';
 import AddProduct from 'src/containers/AddProduct';
 import ProductCategory from 'src/containers/ProductCategory';
 import Inscription from 'src/containers/Inscription';
-import AddUserInfos from 'src/containers/AddUserInfos';
+// import AddUserInfos from 'src/containers/AddUserInfos';
 import UpdateProduct from 'src/containers/UpdateProduct';
-
 
 // == Immport styles
 import './styles.scss';
 
 // == Composant
 const App = ({
-  listCard, loading, error, fetchProducts, user, isLoggin, checkIsLogged,
+  listCard, listUsers, loading, error, fetchProducts, fetchUsers, user, isLoggin, checkIsLogged,
 }) => {
   useEffect(() => {
     fetchProducts();
+    fetchUsers();
     checkIsLogged();
   }, []);
-console.log(user);
+  console.log(listUsers);
 
   return (
 
@@ -49,12 +49,16 @@ console.log(user);
         <Route exact path="/product/:slug">
           <ProductPage />
         </Route>
-        {isLoggin
-          && (
-          <Route exact path={`/user/${user.user.id}`}> {/* user page */}
-            <UserPage products={listCard} loading={loading} error={error} />
-          </Route>
-          )}
+        {
+
+            listUsers.map((userInfo) => {
+              return (
+                <Route exact path={`/user/${userInfo.id}`}> {/* user page */}
+                  <UserPage taMere={userInfo} loading={loading} error={error} />
+                </Route>
+              );
+            })
+          }
         <Route exact path="/newproduct"> {/* Form to create a new product */}
           <AddProduct />
         </Route>

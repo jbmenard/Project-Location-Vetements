@@ -22,33 +22,47 @@ const UserPage = ({
   firstName,
   mobile,
   toggleValidateButton,
-  // userInfo,
-}) =>
-// console.log(userInfo);
-{
+  taMere,
+  isLogged,
+  // taMere,
+}) => {
+  console.log('user', taMere);
+  const checkUser = (userEmail, productEmail) => {
+    if (userEmail === productEmail) {
+      return true;
+    }
+
+    return false;
+  };
 
   return (
     <>
       <div className="header-background">
         <div className="header-avatar">
-          <Avatar size="large" avatar={user.user.AppUserInfo ? user.user.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
+          <Avatar size="large" avatar={taMere.AppUserInfo.avatar ? taMere.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
           <div className="avatar-add">
-            <div className="avatar-button">
-              +
-            </div>
-            <form onSubmit={updateAvatar}>
-              <input type="file" onChange={onChangeAvatarInState} name="avatar" id="avatar" className="avatar-upload" />
-              {toggleValidateButton
-              && <input type="submit" value="envoyer" className="avatar-send" />}
-            </form>
+            {isLogged
+            && checkUser(user.user.email, taMere.email)
+            && (
+              <>
+                <div className="avatar-button">
+                  +
+                </div>
+                <form onSubmit={updateAvatar}>
+                  <input type="file" onChange={onChangeAvatarInState} name="avatar" id="avatar" className="avatar-upload" />
+                  {toggleValidateButton
+                    && <input type="submit" value="envoyer" className="avatar-send" />}
+                </form>
+              </>
+            )}
           </div>
         </div>
         <div className="header-informations">
           <ul className="header-informations-ul">
-            <li className="header-informations-fullname" onClick={activeInputFirstName}>
+            <li className="header-informations-fullname" onClick={checkUser(user.user.email, taMere.email) ? activeInputFirstName : ''}>
               {!toggleInput
-                && user.user.AppUserInfo ? user.user.AppUserInfo.first_name : 'Mon Nom' }
-              {toggleInput
+                && taMere.AppUserInfo.first_name ? taMere.AppUserInfo.first_name : 'Mon Nom' }
+              {toggleInput && isLogged
                 && (
                 <form onSubmit={updateFirstName}>
                   <input className="adduserinfos--input" placeholder={firstName} type="text" name="first_name" id="first_name" onChange={onChangeFirstName} />
@@ -57,12 +71,12 @@ const UserPage = ({
                 )}
             </li>
             <li>
-              {user.user.email || 'Email'}
+              {taMere.email || 'Email'}
             </li>
-            <li onClick={activeInputMobile}>
+            <li onClick={checkUser(user.user.email, taMere.email) ? activeInputMobile : ''}>
               {!toggleInput
-              && user.user.AppUserInfo ? user.user.AppUserInfo.mobile : 'Mobile'}
-              {toggleInput
+              && taMere.AppUserInfo.mobile ? taMere.AppUserInfo.mobile : 'Mobile'}
+              {toggleInput && isLogged
               && (
                 <form onSubmit={updateMobile}>
                   <input className="adduserinfos--input" placeholder={mobile} type="text" name="mobile" id="mobile" onChange={onChangeMobile} />
@@ -74,18 +88,18 @@ const UserPage = ({
         </div>
       </div>
       <h2 className="title-user-page">
-        Produits de {user.user.AppUserInfo ? user.user.AppUserInfo.first_name : user.user.email}
+        Produits de {taMere.AppUserInfo.first_name ? taMere.AppUserInfo.first_name : taMere.email}
       </h2>
       <div className="card-list">
         {!loading && error && (
           <p className="loading-error">Une erreur s'est produite.Veuillez réessayer plus tard.</p>
         )}
         {
-          user.user.products.length
+          taMere.products.length
             ? !loading && !error && (
             <article className="product-article">
               {
-                    user.user.products.map((list) => (
+                    taMere.products.map((list) => (
                       <CardDesign object={list} />
                     )) // ! N'envoit pas la meme structure de données a cardDesign
                   }
