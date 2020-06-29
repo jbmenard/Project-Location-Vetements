@@ -56,6 +56,10 @@
       flex-direction: row !important;
       
     }
+    &--open {
+      transform: none;
+      border: 1px double $burger;
+    }
 
     &-items {
       display: flex;

@@ -13,6 +13,7 @@ export const UPDATE_MOBILE = 'UPDATE_MOBILE';
 export const UPDATE_AVATAR = 'UPDATE_AVATAR';
 export const HIDDEN_INPUT = 'HIDDEN_INPUT';
 
+
 export const connectUser = () => ({
   type: CONNECT_USER,
 });
@@ -75,4 +76,5 @@ export const hiddenInput = (value) => ({
   type: HIDDEN_INPUT,
   value,
 });
+
 
