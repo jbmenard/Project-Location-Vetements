@@ -16,6 +16,9 @@
        width: 12em !important;
        margin-bottom: 1.6rem !important;
      }
+     &--open {
+      transform: translate(0%) !important;
+    }
     
   }
 }

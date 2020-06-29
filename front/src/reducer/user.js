@@ -17,8 +17,8 @@ export const initialState = {
   user: {},
   errorPassword: false,
   errorPasswordLength: false,
-  validePasswordLength : true,
-  validePassword : true,
+  errorEmail: false,
+  
 
   // userInfo: {},
 
@@ -59,13 +59,13 @@ const userReducer = (state = initialState, action = {}) => {
           };
         }
       }
+
       return {
         ...state,
         [action.name]: action.value,
         errorPassword: false,
         errorPasswordLength: false,
-        validePassword : true,
-        validePasswordLength : true,
+
       };
     }
     case CHANGE_VALUE_STATE_USER_INFORMATIONS: {
