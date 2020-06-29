@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 import Button from 'src/components/Button';
 
 const ProductPage = (props) => {
-  console.log('product Page', props.location.state.product.comments);
+
   return (
     <div className="productpage">
       {/* <img className="productpage--photo" src={object.image ? object.image : 'Pas de photo'} alt="parrain" /> */}
@@ -42,7 +42,7 @@ const ProductPage = (props) => {
         <div className="productpage-suggest--item">PRODUIT 1</div>
         <div className="productpage-suggest--item">PRODUIT 2</div>
       </section>
-      <Comment comments={props.location.state.product.comments} />
+      <Comment comments={props.product.comments} />
     </div>
   );
 };
