@@ -31,6 +31,17 @@
         background-color: #8FBC8F;
       }
     }
+    &-error {
+      background-color: #C0C0C0 !important;
+      
+      color: #fff;
+      border-radius: 20px !important;
+      width: 50% !important;
+      font-size: 1em !important;
+      font-weight: 700 !important;
+
+    }
+
   }
   
 
@@ -107,7 +118,7 @@
     background-color: #aed9e0;
   }
 
-  &-black {
+  &-error {
     background-color: #5e6472;
   }
 

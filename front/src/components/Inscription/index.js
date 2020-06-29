@@ -25,28 +25,29 @@ const Inscription = ({
     onChangeConfirmPassword(event.target.value, event.target.name);
   };
 
-  
-
   return (
     <section className="inscription">
       <form className="form" action="" onSubmit={handleSubmit}>
 
         <h2 className="form-t"> S'inscrire </h2>
 
-        
         <div className="form-infos">
-        
+
           <input className="form-input" type="email" name="email" placeholder="Adresse email" onChange={handleChangeEmail} />
-        
+
           <input className={`${errorPassword ? ' form-input error' : 'form-input'}`} type="password" name="password" onChange={handleChangePassword} placeholder="Mot de passe" />
-         
+
           <input className={`${errorPassword ? ' form-input error' : 'form-input'}`} type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} placeholder="Confirmation mot de passe " />
           {errorPassword && (
             <p className="text-error-form">Les 2 mots de passe ne correspondent pas </p>
           )};
           <div className="form-button">
+            { errorPassword && (
+            <Button type="button" size="x-large" value="Envoyer" color="error" />
+            )}
+            { !errorPassword && (
             <Button type="submit" size="x-large" value="Envoyer" color="form" />
-
+            )}
           </div>
         </div>
 
