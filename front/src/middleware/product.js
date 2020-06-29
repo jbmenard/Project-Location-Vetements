@@ -103,6 +103,8 @@ const api = (store) => (next) => (action) => {
       })
         .then((response) => {
           store.dispatch(saveProducts(response.data));
+          store.dispatch(toggleRedirection());
+          store.dispatch(cleanSearchBar());
         })
         .catch((err) => {
           console.trace(err);
@@ -122,8 +124,7 @@ const api = (store) => (next) => (action) => {
 
       })
         .then((response) => {
-          // store.dispatch(toggleRedirection());
-          // store.dispatch(cleanSearchBar());
+          console.log(response.data);
         })
         .catch((err) => {
           console.trace(err);
