@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import ProductCategory from 'src/components/ProductPage';
+import ProductPage from 'src/components/ProductPage';
 import { getRecipeBySlug } from 'src/selectors/product';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({});
 const container = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ProductCategory);
+)(ProductPage);
 
 const containerWithRouter = withRouter(container);
 

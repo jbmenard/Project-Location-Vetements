@@ -11,6 +11,7 @@ import { getUrlByName } from '../../selectors/product';
 import Update from '../../assets/images/update-product.png';
 // import Delete from '../../assets/images/delete-product.png';
 
+
 // == Composant
 const CardDesign = ({ 
   object,

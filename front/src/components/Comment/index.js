@@ -12,6 +12,7 @@ const Comment = ({ handleComment, isClick, comments, sendForm, changeInputCommen
   const handleChange = (event) => {
     changeInputCommentProduct(event.target.value);
   };
+  console.log("comments",comments);
   return (
     <div className="comment">
       <h4 className="comment-formtitle">Commentaires</h4>
