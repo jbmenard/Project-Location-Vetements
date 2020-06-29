@@ -3,6 +3,8 @@ import {
   CREATE_USER,
   CREATE_USER_INFORMATIONS,
   CONNECT_USER,
+  FETCH_USERS,
+  fetchUsers,
   logUser,
   CHECK,
   infoUser,
@@ -11,6 +13,8 @@ import {
   UPDATE_AVATAR,
   hiddenInput,
   check,
+  saveUsers,
+  changeValueStateUserInformations,
 } from 'src/actions/inscription';
 import { LOGOUT, saveLogout } from 'src/actions/user';
 import { toggleRedirection } from 'src/actions/style';
@@ -39,6 +43,17 @@ const apiUser = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.trace(error);
+        });
+      break;
+    }
+    case FETCH_USERS: {
+      axios.get('http://localhost:5050/user')
+        .then((response) => {
+          store.dispatch(saveUsers(response.data));
+        })
+        .catch((error) => {
+          console.error(error);
+          store.dispatch(getError());
         });
       break;
     }
@@ -122,10 +137,9 @@ const apiUser = (store) => (next) => (action) => {
         withCredentials: true,
       })
         .then((response) => {
-          console.log('je suis dans le middleware', response.data);
-
           store.dispatch(hiddenInput(response.data));
-          store.dispatch(check());
+          console.log(response.data);
+          store.dispatch(fetchUsers());
         })
         .catch((err) => {
           console.log('je suis une erreur');
@@ -150,7 +164,8 @@ const apiUser = (store) => (next) => (action) => {
           console.log('je suis dans le middleware', response.data);
 
           store.dispatch(hiddenInput(response.data));
-          store.dispatch(check());
+          store.dispatch(fetchUsers());
+
         })
         .catch((err) => {
           console.log('je suis une erreur');
@@ -173,7 +188,8 @@ const apiUser = (store) => (next) => (action) => {
         .then((response) => {
           // console.log('je suis dans le middleware', response.data);
           store.dispatch(hiddenInput(response.data));
-          store.dispatch(check());
+          store.dispatch(fetchUsers());
+
         })
         .catch((err) => {
           console.log('je suis une erreur');

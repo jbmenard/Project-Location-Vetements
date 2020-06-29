@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   mobile: state.userReducer.mobile,
   userInfo: state.userReducer.userInfo,
   user: state.userReducer.user,
+  isLogged: state.userReducer.logged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

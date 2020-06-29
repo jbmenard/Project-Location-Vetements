@@ -6,12 +6,13 @@ import Search from 'src/containers/search';
 
 const Navbar = ({
   toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection,
-}) =>
+}) =>{
 // const handleClick = () => {
 //   console.log("oui")
 // }
+console.log(user);
 
-  (
+  return (
     <>
       <div className={`${toggleMenu ? 'liens liens--open' : 'liens'}`}>
         <div className="container-menu">
@@ -70,4 +71,5 @@ const Navbar = ({
       </div>
     </>
   );
+};
 export default Navbar;

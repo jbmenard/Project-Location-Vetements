@@ -2,12 +2,13 @@ import { connect } from 'react-redux';
 
 import App from 'src/components/App';
 import { fetchProducts } from 'src/actions/product';
-import { check } from 'src/actions/inscription';
+import { check, fetchUsers } from 'src/actions/inscription';
 
 const mapStateToProps = (state) => ({
   // oneUser: state.userReducer.email,
   user: state.userReducer.user,
   infoUser: state.userReducer.userInfo,
+  listUsers: state.userReducer.listUsers,
   isLoggin: state.userReducer.logged,
   listCard: state.productReducer.listProducts,
   loading: state.productReducer.loading,
@@ -20,6 +21,12 @@ const mapDispatchToProps = (dispatch) => ({
     const action = fetchProducts();
     dispatch(action);
   },
+
+  fetchUsers: () => {
+    const action = fetchUsers();
+    dispatch(action);
+  },
+
   checkIsLogged: () => {
     dispatch(check());
   },
