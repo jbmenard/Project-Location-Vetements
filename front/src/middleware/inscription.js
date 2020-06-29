@@ -23,6 +23,7 @@ const apiUser = (store) => (next) => (action) => {
       const state = store.getState().userReducer;
       console.log(state);
       const data = new FormData();
+
       data.set('email', state.email);
       data.set('password', state.password);
       data.set('passwordConfirm', state.confirmPassword);
@@ -34,7 +35,7 @@ const apiUser = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response.data);
-          store.dispatch(toggleRedirection())
+          store.dispatch(toggleRedirection());
         })
         .catch((error) => {
           console.trace(error);
@@ -159,7 +160,7 @@ const apiUser = (store) => (next) => (action) => {
       break;
     }
     case UPDATE_AVATAR: {
-      const state = store.getState().userReducer
+      const state = store.getState().userReducer;
       const data = new FormData();
       data.set('avatar', state.avatar);
       axios({

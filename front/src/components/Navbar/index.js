@@ -20,11 +20,11 @@ const Navbar = ({
         <div className="liens-inputs">
           {isLoggin && (
             <>
-              <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}><i class="fa fa-unlock"></i></NavLink>
-          <h2 className="title-loggin">Bienvenue chez O'loc ! </h2>
-          </>
+              <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}><i className="fa fa-unlock" /></NavLink>
+              <h2 className="title-loggin">Bienvenue chez O'loc ! </h2>
+            </>
           )}
-         
+
           {!isLoggin
             && (
             <form className="classform" onSubmit={connectUser}>
@@ -41,8 +41,7 @@ const Navbar = ({
                 <Button type="submit" color="menu" value="Se connecter" size="medium" />
                 <NavLink to="/inscription" className="item" onClick={toggleNavbar}> <i className="fa fa-user-plus" /></NavLink>
               </div>
-             
-             
+
             </form>
             )}
         </div>
@@ -55,14 +54,13 @@ const Navbar = ({
             {isLoggin && (
               <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>
             )}
-            
 
             {/* <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink> */}
           </div>
           {isLoggin
             && (
             <div onClick={handleLogout}>
-              
+
               <Button type="button" size="x-large" value="Déconnection" color="orangelight" />
             </div>
             )}
