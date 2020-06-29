@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import {
   CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
-  UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts, SEND_FORM
+  UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts, SEND_FORM,
 } from 'src/actions/product';
 import { SEND_MESSAGE, cleanSearchBar } from 'src/actions/search';
 import { toggleRedirection } from 'src/actions/style';
@@ -104,6 +104,8 @@ const api = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response.data);
           store.dispatch(saveProducts(response.data));
+          store.dispatch(toggleRedirection());
+          store.dispatch(cleanSearchBar());
         })
         .catch((err) => {
           console.trace(err);
@@ -123,8 +125,7 @@ const api = (store) => (next) => (action) => {
 
       })
         .then((response) => {
-          store.dispatch(toggleRedirection());
-          store.dispatch(cleanSearchBar());
+          console.log(response.data);
         })
         .catch((err) => {
           console.log('Aucun produit ne correspond'); // ! Emettre une action pour afficher l'erreur

@@ -1,4 +1,4 @@
-import { SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE, GET_ERROR, CHANGE_INPUT_COMMENT_PRODUCT } from 'src/actions/product';
+import { SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE, GET_ERROR, CHANGE_INPUT_COMMENT_PRODUCT, RESET_COMMENT_MSG } from 'src/actions/product';
 
 export const initialState = {
   listProducts: [],
@@ -27,6 +27,13 @@ const productReducer = (state = initialState, action = {}) => {
         listProducts: action.products,
         loading: false,
 
+      };
+    }
+    case RESET_COMMENT_MSG: {
+      console.log("je suis dans msg");
+      return {
+        ...state,
+        commentProduct: '',
       };
     }
     case ADD_PRODUCT_IN_STATE:

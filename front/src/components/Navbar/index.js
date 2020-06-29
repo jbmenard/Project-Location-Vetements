@@ -33,7 +33,7 @@ const Navbar = ({
                 <Button type="submit" color="menu" value="Se connecter" size="medium" />
                 
               </div>
-              <i class="fa fa-user-plus"></i>
+              <NavLink to="/inscription"> <i class="fa fa-user-plus"></i></NavLink>
             </form>
             )}
         </div>
