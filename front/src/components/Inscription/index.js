@@ -6,7 +6,7 @@ import Account from '../../assets/images/account.png';
 import Image from '../../assets/images/img-inscription.jpg';
 
 const Inscription = ({
-  onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser, toggleRedirection, errorPassword,
+  onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser, toggleRedirection, errorPassword, errorPasswordLength, validePassword, validePasswordLength,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,19 +35,29 @@ const Inscription = ({
 
           <input className="form-input" type="email" name="email" placeholder="Adresse email" onChange={handleChangeEmail} />
 
-          <input className={`${errorPassword ? ' form-input error' : 'form-input'}`} type="password" name="password" onChange={handleChangePassword} placeholder="Mot de passe" />
-
+          <input className={`${errorPassword || errorPasswordLength ? ' form-input error' : 'form-input'}`} type="password" name="password" onChange={handleChangePassword} placeholder="Mot de passe" />
+          {errorPasswordLength && (
+            <p className="text-error-form">Le mot de passe doit contenir 6 caractéres </p>
+          )}
           <input className={`${errorPassword ? ' form-input error' : 'form-input'}`} type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} placeholder="Confirmation mot de passe " />
           {errorPassword && (
             <p className="text-error-form">Les 2 mots de passe ne correspondent pas </p>
-          )};
+          )}
           <div className="form-button">
-            { errorPassword && (
-            <Button type="button" size="x-large" value="Envoyer" color="error" />
+            { (errorPassword || errorPasswordLength) && (
+              <Button type="button" size="x-large" value="Envoyer" color="error" />
             )}
-            { !errorPassword && (
-            <Button type="submit" size="x-large" value="Envoyer" color="form" />
+            { (!errorPassword && !errorPasswordLength) &&(
+               <Button type="submit" size="x-large" value="Envoyer" color="form" />
             )}
+
+  
+          
+
+
+
+        
+
           </div>
         </div>
 
