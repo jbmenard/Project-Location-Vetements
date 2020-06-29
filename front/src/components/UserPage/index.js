@@ -31,7 +31,7 @@ const UserPage = ({
     <>
       <div className="header-background">
         <div className="header-avatar">
-          <Avatar size="large" avatar={user.user.AppUserInfo.avatar ? user.user.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
+          <Avatar size="large" avatar={user.user.AppUserInfo ? user.user.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
           <div className="avatar-add">
             <div className="avatar-button">
               +
@@ -47,7 +47,7 @@ const UserPage = ({
           <ul className="header-informations-ul">
             <li className="header-informations-fullname" onClick={activeInputFirstName}>
               {!toggleInput
-                && user.user.AppUserInfo.first_name ? user.user.AppUserInfo.first_name : 'Mon Nom' }
+                && user.user.AppUserInfo ? user.user.AppUserInfo.first_name : 'Mon Nom' }
               {toggleInput
                 && (
                 <form onSubmit={updateFirstName}>
@@ -61,7 +61,7 @@ const UserPage = ({
             </li>
             <li onClick={activeInputMobile}>
               {!toggleInput
-              && user.user.AppUserInfo.mobile ? user.user.AppUserInfo.mobile : 'Mobile'}
+              && user.user.AppUserInfo ? user.user.AppUserInfo.mobile : 'Mobile'}
               {toggleInput
               && (
                 <form onSubmit={updateMobile}>
@@ -74,7 +74,7 @@ const UserPage = ({
         </div>
       </div>
       <h2 className="title-user-page">
-        Produits de {user ? user.user.AppUserInfo.first_name : user.user.email}
+        Produits de {user.user.AppUserInfo ? user.user.AppUserInfo.first_name : user.user.email}
       </h2>
       <div className="card-list">
         {!loading && error && (

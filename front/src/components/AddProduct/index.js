@@ -2,8 +2,8 @@ import React from 'react';
 // import _ from 'lodash';
 import Button from 'src/components/Button';
 import './style.scss';
+import Clothes from '../../assets/images/clothes.jpg';
 import { Redirect } from 'react-router-dom';
-import { getUrlByName } from '../../selectors/product';
 
 const AddProduct = ({
   createProduct,
@@ -106,7 +106,6 @@ const AddProduct = ({
             <option value="3">Enfant</option>
             <option value="4">Bébé</option>
           </select>
-
         </label>
         <label htmlFor="size">
           Taille *
