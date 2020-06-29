@@ -3,7 +3,6 @@ import React from 'react';
 import Button from 'src/components/Button';
 import { Link, NavLink } from 'react-router-dom';
 
-
 // == Import
 import './styles.scss';
 import { getUrlByName } from '../../selectors/product';
@@ -12,30 +11,42 @@ import { getUrlByName } from '../../selectors/product';
 import Update from '../../assets/images/update-product.png';
 // import Delete from '../../assets/images/delete-product.png';
 
-
 // == Composant
-const CardDesign = ({ 
+const CardDesign = ({
   object,
   deleteProduct,
+  user,
 }) => {
-  const handleClick = (id) => {
-    return deleteProduct(id);
+  console.log(user.user.id === object.app_user_id);
+  
+  const handleClick = (id) => deleteProduct(id);
+  const checkUser = (userId, productId) => {
+    if (userId === productId) {
+      return true;
+    }
+
+    return false;
   };
   return (
     <div className="card">
       <header className="card-header">
         <p className="card-header-price">{object.price}€</p>
         <section className="card-header-icon">
-          <NavLink
-            to="/updateproduct"
-          >
-            <img
-              className="card-header-icon--update"
-              src={Update}
-              alt="update-product"
-            />
-          </NavLink>
-          <i className="card-header-icon--delete fa fa-times" aria-hidden="true" onClick={() => handleClick(object.id)} />
+          {checkUser(user.user.id, object.app_user_id)
+          && (
+            <>
+              <NavLink
+                to="/updateproduct"
+              >
+                <img
+                  className="card-header-icon--update"
+                  src={Update}
+                  alt="update-product"
+                />
+              </NavLink>
+              <i className="card-header-icon--delete fa fa-times" aria-hidden="true" onClick={() => handleClick(object.id)} />
+            </>
+          )}
         </section>
       </header>
       <section>

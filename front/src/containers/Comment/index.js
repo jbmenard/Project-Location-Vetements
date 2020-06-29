@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
   commentMessage: state.userReducer.commentMessage,
   isClick: state.userReducer.isClick,
   inputValue: state.productReducer.commentProduct,
-
+  isLogged: state.userReducer.logged,
 });
 const mapDispatchToProps = (dispatch) => ({
   handleComment: () => {

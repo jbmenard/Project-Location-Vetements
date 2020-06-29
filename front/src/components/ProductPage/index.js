@@ -38,7 +38,7 @@ const ProductPage = (props) => {
       <section className="productpage-button">
         <Button size="medium" value="Louer" />
       </section>
-      <Comment comments={props.product.comments} />
+      <Comment comments={props.product} />
     </div>
   );
 };

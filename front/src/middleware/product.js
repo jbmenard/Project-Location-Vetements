@@ -115,10 +115,11 @@ const api = (store) => (next) => (action) => {
     }
     case SEND_FORM: {
       const state = store.getState().productReducer;
+      const stateUser = store.getState().userReducer;
       console.log("statecontent", state.content);
       const data = new FormData();
       data.set('content', state.content);
-      data.set('app_user_id', state.app_user_id);
+      data.set('app_user_id', stateUser.user.user.id);
       data.set('product_id', state.id);
       axios({
         method: 'post',
