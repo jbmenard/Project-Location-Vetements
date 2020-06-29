@@ -15,6 +15,7 @@ export const initialState = {
   email: '',
   confirmPassword: '',
   user: {},
+  errorPassword: false,
   // userInfo: {},
 
   id: 10,
@@ -36,9 +37,19 @@ export const initialState = {
 const userReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHANGE_VALUE_STATE_USER: {
+      if (action.name === 'confirmPassword') {
+        if (state.password !== action.value) {
+          return {
+            ...state,
+            [action.name]: action.value,
+            errorPassword: true,
+          };
+        }
+      }
       return {
         ...state,
         [action.name]: action.value,
+        errorPassword: false,
       };
     }
     case CHANGE_VALUE_STATE_USER_INFORMATIONS: {

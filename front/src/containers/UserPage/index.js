@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import UserPage from 'src/components/UserPage';
-import { toggleInput, changeAvatarInState, changeValueStateUserInformations, updateAvatar, updateFirstName, updateMobile } from 'src/actions/inscription';
+import { toggleInput, changeAvatarInState, changeValueStateUserInformations, updateAvatar, updateFirstName, updateMobile } from 'src/actions/inscription'; 
 
 const mapStateToProps = (state) => ({
   toggleInput: state.userReducer.toggleInput,

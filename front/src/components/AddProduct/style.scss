@@ -104,3 +104,40 @@ option {
 }
 
 
+// ----------------------version desktop ---------------------------//
+
+@media (min-width : 1028px) {
+  .container-form-image {
+display: flex;
+  }
+.add-product{
+  transform: translate(10px,108px);
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+  .add-product--form{
+width: 100%;
+height: 80vh;
+margin: 0;
+overflow-y: auto;
+
+  }
+
+
+  .wrapper-image{
+width: 100%;
+height: 80vh;
+  }
+  .img-clothes{
+width: 100%;
+height: 80vh;
+  }
+}
+
+//-----------------------version mobile ----------------------------//
+
+@media(max-width : 1027px) {
+.wrapper-image{
+  display: none;
+}
+}

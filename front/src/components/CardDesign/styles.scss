@@ -12,6 +12,23 @@
     display: flex;
     background-color: #fff;
 
+    &-icon {
+      display: flex;
+      justify-content: flex-end;
+      width: 50%;
+
+      &--update {
+        width: 1.5em;
+      }
+
+      &--delete {
+        width: 1.5em;
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
     &-disponibility {
       width: 50%;
       color: green;  
