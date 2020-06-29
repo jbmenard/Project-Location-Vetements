@@ -1,12 +1,10 @@
 .card {
   box-shadow: 2px 5px 12px #ccc;
-  margin-top: 3em;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   height: 23em;
   width: 15em;
-  margin: 1.5em;
 
   &-header {
     display: flex;
