@@ -18,6 +18,10 @@ export const initialState = {
   user: {},
   listUsers: [],
   errorPassword: false,
+  errorPasswordLength: false,
+  errorEmail: false,
+  
+
   // userInfo: {},
 
   id: 10,
@@ -39,8 +43,8 @@ export const initialState = {
 const userReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHANGE_VALUE_STATE_USER: {
-      if (action.name === 'confirmPassword') {
-        if (state.password !== action.value) {
+      if (action.name === 'confirmPassword' ) {
+        if (state.password !== action.value || action.value === null) {
           return {
             ...state,
             [action.name]: action.value,
@@ -48,10 +52,22 @@ const userReducer = (state = initialState, action = {}) => {
           };
         }
       }
+      if (action.name === 'password') {
+        if (action.value.length < 6 || action.value === null) {
+          return {
+            ...state,
+            [action.name]: action.value,
+            errorPasswordLength: true,
+          };
+        }
+      }
+
       return {
         ...state,
         [action.name]: action.value,
         errorPassword: false,
+        errorPasswordLength: false,
+
       };
     }
     case CHANGE_VALUE_STATE_USER_INFORMATIONS: {

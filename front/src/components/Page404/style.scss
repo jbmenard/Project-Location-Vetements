@@ -1,4 +1,18 @@
 
+@media (min-width : 1028px) {
+  .title {
+    &-error {
+      &-oops {
+        font-size: 5rem !important;
+
+      }
+      &-404 {
+        font-size: 0.8rem !important;
+        width: 220px !important;
+      }
+    }
+  }
+}
 .title{
   
   &-logo{

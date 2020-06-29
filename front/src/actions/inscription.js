@@ -14,6 +14,7 @@ export const UPDATE_AVATAR = 'UPDATE_AVATAR';
 export const HIDDEN_INPUT = 'HIDDEN_INPUT';
 export const SAVE_USERS = 'SAVE_USERS'
 
+
 export const connectUser = () => ({
   type: CONNECT_USER,
 });
@@ -81,4 +82,5 @@ export const hiddenInput = (value) => ({
   type: HIDDEN_INPUT,
   value,
 });
+
 
