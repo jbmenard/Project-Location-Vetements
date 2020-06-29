@@ -5,6 +5,7 @@ import { updateProduct, deleteProduct } from 'src/actions/product';
 
 const mapStateToProps = (state) => ({
   id: state.productReducer.id,
+  user: state.userReducer.user,
   name: state.productReducer.name,
   description: state.productReducer.description,
   gender_id: state.productReducer.gender_id,
