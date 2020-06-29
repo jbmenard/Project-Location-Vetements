@@ -21,12 +21,11 @@ const UserPage = ({
   activeInputFirstName,
   firstName,
   mobile,
-  toggleValidateButton
+  toggleValidateButton,
   // userInfo,
 }) =>
 // console.log(userInfo);
 {
-  console.log(user.user.AppUserInfo);
 
   return (
     <>
@@ -40,8 +39,7 @@ const UserPage = ({
             <form onSubmit={updateAvatar}>
               <input type="file" onChange={onChangeAvatarInState} name="avatar" id="avatar" className="avatar-upload" />
               {toggleValidateButton
-              && <input type="submit" value="envoyer" className="avatar-send" />
-              }
+              && <input type="submit" value="envoyer" className="avatar-send" />}
             </form>
           </div>
         </div>
@@ -88,8 +86,8 @@ const UserPage = ({
             <article className="product-article">
               {
                     user.user.products.map((list) => (
-                      <CardDesign list={list} />
-                    ))
+                      <CardDesign object={list} />
+                    )) // ! N'envoit pas la meme structure de données a cardDesign
                   }
             </article>
             )

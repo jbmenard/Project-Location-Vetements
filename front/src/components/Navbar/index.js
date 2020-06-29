@@ -41,20 +41,22 @@ const Navbar = ({
                 <Button type="submit" color="menu" value="Se connecter" size="medium" />
                 <NavLink to="/inscription" className="item" onClick={toggleNavbar}> <i className="fa fa-user-plus" /></NavLink>
               </div>
-
             </form>
             )}
         </div>
 
         <div className="liens-items">
           <Search />
-          <div className="container-navlink">
-            <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
-            <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
-            {isLoggin && (
+        <div className="container-navlink">
+          <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
+          <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
+          {isLoggin
+          && (
+            <>
               <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>
-            )}
-
+              <NavLink to="/newproduct" onClick={toggleNavbar} className="item">Nouveau produit</NavLink>
+            </>
+          )}
             {/* <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink> */}
           </div>
           {isLoggin

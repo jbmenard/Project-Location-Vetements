@@ -13,10 +13,16 @@ const styleReducer = (state = initialState, action = {}) => {
         toggleNavbar: !state.toggleNavbar,
       };
     case TOGGLE_REDIRECTION: {
+      if (state.toggleNavbar === true) {
+        return {
+          ...state,
+          toggleRedirection: true,
+          toggleNavbar: !state.toggleNavbar,
+        };
+      }
       return {
         ...state,
         toggleRedirection: true,
-        toggleNavbar: !state.toggleNavbar,
       }
     }
     default:
