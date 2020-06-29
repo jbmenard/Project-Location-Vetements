@@ -1,40 +1,49 @@
 @import 'src/styles/index';
 @import 'src/styles/vars';
 
-@media (min-width : 400px) {
+@media (min-width : 500px) {
+  .intro {
+    transform: translate(10px, 60px);
+  }
+
+  .team {
+    transform: translate(10px, 140px);
+    margin-bottom: 17em;
+  }
+
   .team-container {
     display: flex;
   }
   .information-page{
     transform: translate(10px, 109px);
   }
-
-  
 }
 
 @media(max-width : 600px) {
-  .team-item {
-    
+  .team-item { 
     margin: 3rem !important;
-   
   }
 }
 
 .information-page {
   margin: 1em 0;
-  
 }
 
 // PART 1
 
 .intro {
-  margin: 1em;
+  width: 80%;
+  margin: 1em auto;
+  display: flex;
+  flex-wrap: flex;
 
-// &-left {
-// }
+  &-left {
+    width: 50%;
+  }
 
-// &-right {
-// }
+  &-right {
+    width: 50%;
+  }
 
   &-title {
     font-size: 1.2em;
@@ -47,8 +56,8 @@
   }
 
   &-image {
-    width: 340px;
-    margin-top: 1em;
+    width: 90%;
+    margin-left: 10%;
   }
 }
 

@@ -63,8 +63,6 @@ const AddProduct = ({
 
     onChangeImage(event.target.files[0], event.target.name);
   };
-  console.log(user.user.id);
-  
   return (
     <div className="add-product">
       <h1 className="add-product--title">Ajouter un produit</h1>
