@@ -30,13 +30,14 @@
 
 
 .cards-title{
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 1.1rem;
+  
+  font-size: 2rem;
   padding-top: 30px;
   padding-bottom: 30px;
   color : $footer-background;
+  font-family: 'Amatic SC', cursive;
   
 }
 
@@ -51,6 +52,7 @@
 
   &-text {
     margin: 1em;
+    line-height: normal;
   }
 
   &-photo {
@@ -129,6 +131,7 @@
     margin: 4rem auto 0 auto;
     width: 90%;
   }
+  
 }
 
 
@@ -149,7 +152,10 @@
   }
   .container-comment {
     margin: auto;
-    width: 80%;
+    width: 100%;
+    background-image: url('../../assets//images/brick-wall.png');
+    background-repeat: repeat;
+    background-color: beige;
   }
 
   // .img-fluid {

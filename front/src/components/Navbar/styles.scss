@@ -32,6 +32,7 @@
     color : #A52A2A;
   }
   .liens  {
+    justify-content: space-around;
     background-color: none;
     position: none;
     height: auto !important;
@@ -52,8 +53,8 @@
       text-transform: uppercase;
     }
     &--inputs {
-      display: flex;
-      flex-direction: row !important;
+      
+      margin-top: -1rem !important;
       
     }
     &--open {
@@ -84,7 +85,7 @@
     &--title {
       display: flex;
       flex-direction: row !important;
-      margin: auto;
+     
 
     }
     &--input{
@@ -103,10 +104,6 @@
     text-transform: uppercase;
   }
 
-  .container-button{
-    
-    
-  }
 
   
 }
@@ -155,6 +152,9 @@
     }
     &-inputs{
     margin-top : 1em;
+    display: flex;
+    align-items: baseline;
+    
     }
     &--input{
     border: 2px solid #f8f8ff;
@@ -193,8 +193,7 @@
 
 
   .item {
-  margin-bottom: 10px;
-  margin-top: 30px;
+ 
   
   &:hover{
     color: $navbar-hover;
