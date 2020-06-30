@@ -29,14 +29,14 @@ const Comment = ({
       {isLogged
       && (
       <div onClick={handleComment} className="comment-button">
-        <Button type="button" size="x-large" value="Nouveau commentaire" color="form" />
+        <Button type="button" size="x-large" value="Nouveau commentaire" color="orange" />
       </div>
       )}
       {isClick && (
       <div className="comment-form">
         <form onSubmit={handleSubmit}>
-          <input className="comment-form--textarea" type="textarea" onChange={handleChange} value={inputValue} placeholder="Écrire un nouveau commentaire" />
-          <input className="comment-form--submit" type="submit" />
+          <input className="comment-form--textarea" type="textarea" onChange={handleChange} value={inputValue} placeholder="..." />
+          <input className="comment-form--submit" type="submit" value="OK" />
         </form>
       </div>
       )}
