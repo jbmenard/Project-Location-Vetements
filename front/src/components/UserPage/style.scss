@@ -46,10 +46,6 @@
     &-ul {
       font-size: 1em;
       margin-bottom: 1em;
-
-      &,li {
-        margin: 0.5em auto 0.5em 0em;
-      }
     }
 
     &-fullname {
@@ -66,7 +62,8 @@
 .avatar {
 
   &-button {
-  
+    color: $general-button;
+    font-size: 0.7em;
   }
 
   &-upload {
@@ -109,7 +106,13 @@
   top: 90px;
   left: 80px;
   position: relative;
-  top: -45px;
-  left: 20px;
+  top: -50px;
+  left: 10px;
   width: 18%;
 }
+
+.icon-edit{
+  padding: 0.2em;
+  font-size: 1.2em;
+}
+
