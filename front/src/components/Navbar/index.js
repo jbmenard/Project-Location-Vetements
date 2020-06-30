@@ -5,12 +5,12 @@ import Button from 'src/components/Button';
 import Search from 'src/containers/search';
 
 const Navbar = ({
-  toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection,
-}) =>{
+  errorNotFoundProduct, toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection,
+}) => {
 // const handleClick = () => {
 //   console.log("oui")
 // }
-console.log(user);
+  console.log(user);
 
   return (
     <>
@@ -47,11 +47,11 @@ console.log(user);
         </div>
 
         <div className="liens-items">
-          <Search />
-        <div className="container-navlink">
-          <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
-          <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
-          {isLoggin
+          <Search errorToggle={errorNotFoundProduct} />
+          <div className="container-navlink">
+            <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
+            <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
+            {isLoggin
           && (
             <>
               <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>

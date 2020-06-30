@@ -7,6 +7,7 @@ import { changeValueStateUser, connectUser } from 'src/actions/inscription';
 
 const mapStateToProps = (state) => ({
   toggleMenu: state.styleReducer.toggleNavbar,
+  errorNotFoundProduct: state.userReducer.errorNotFoundProduct,
 });
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
