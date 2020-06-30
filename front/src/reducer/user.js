@@ -7,6 +7,8 @@ import {
   INFO_USER,
   LOG_USER,
   HIDDEN_INPUT,
+  LOGIN_ERROR,
+  LOGIN_VALIDE,
 } from 'src/actions/inscription';
 import { CHANGE_SEARCH_BAR_VALUE, CLEAN_SEARCH_BAR, PRODUCT_NOT_FOUND_ACTION, PRODUCT_FOUND, } from 'src/actions/search';
 import { SAVE_LOGOUT, COMMENTAIRE } from 'src/actions/user';
@@ -28,7 +30,7 @@ export const initialState = {
   address: '',
   mobile: '06********',
   avatar: '',
-  app_user_id: 7,
+  app_user_id: '',
   logged: false,
   toggleInput: false,
   searchBar: '',
@@ -41,6 +43,7 @@ export const initialState = {
   errorPasswordLength: false,
   errorEmail: false,
   errorNotFoundProduct: false,
+  errorNotFoundUser: false,
 
 };
 
@@ -157,6 +160,18 @@ const userReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         errorNotFoundProduct: false,
+      };
+    }
+    case LOGIN_ERROR: {
+      return {
+        ...state,
+        errorNotFoundUser: true,
+      };
+    }
+    case LOGIN_VALIDE: {
+      return {
+        ...state,
+        errorNotFoundUser: false,
       };
     }
     default:
