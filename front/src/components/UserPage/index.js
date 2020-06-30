@@ -39,14 +39,14 @@ const UserPage = ({
     <>
       <div className="header-background">
         <div className="header-avatar">
-          <Avatar size="large" avatar={taMere.AppUserInfo.avatar ? taMere.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
+          <Avatar size="large" avatar={(taMere.AppUserInfo.avatar !== null) ? taMere.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
           <div className="avatar-add">
             {isLogged
             && checkUser(user.user.email, taMere.email)
             && (
               <>
-                <div className="avatar-button">
-                  +
+                <div className="icon-position">
+                <i className="fa fa-camera avatar-button" />
                 </div>
                 <form onSubmit={updateAvatar}>
                   <input type="file" onChange={onChangeAvatarInState} name="avatar" id="avatar" className="avatar-upload" />
@@ -59,23 +59,28 @@ const UserPage = ({
         </div>
         <div className="header-informations">
           <ul className="header-informations-ul">
-            <li className="header-informations-fullname" onClick={checkUser(user.user.email, taMere.email) ? activeInputFirstName : ''}>
+            <li className="header-informations-fullname" onClick={isLogged && checkUser(user.user.email, taMere.email) ? activeInputFirstName : ''}>
+
               {!toggleInput
-                && taMere.AppUserInfo.first_name ? taMere.AppUserInfo.first_name : 'Mon Nom' }
+                && taMere.AppUserInfo.first_name ? taMere.AppUserInfo.first_name : 'Mon nom'}
+              {isLogged && checkUser(user.user.email, taMere.email) ? <i className="fa fa-edit icon-edit" /> : ''}
               {toggleInput && isLogged
                 && (
-                <form onSubmit={updateFirstName}>
-                  <input className="adduserinfos--input" placeholder={firstName} type="text" name="first_name" id="first_name" onChange={onChangeFirstName} />
-                  <input type="submit" value="ok" />
-                </form>
+                  <>
+                    <form onSubmit={updateFirstName}>
+                      <input className="adduserinfos--input" placeholder={taMere.AppUserInfo.first_name ? taMere.AppUserInfo.first_name : 'Mon nom'} type="text" name="first_name" id="first_name" onChange={onChangeFirstName} />
+                      <input type="submit" value="ok" />
+                    </form>
+                  </>
                 )}
             </li>
             <li>
               {taMere.email || 'Email'}
             </li>
-            <li onClick={checkUser(user.user.email, taMere.email) ? activeInputMobile : ''}>
+            <li onClick={isLogged && checkUser(user.user.email, taMere.email) ? activeInputMobile : ''}>
               {!toggleInput
               && taMere.AppUserInfo.mobile ? taMere.AppUserInfo.mobile : 'Mobile'}
+              {isLogged && checkUser(user.user.email, taMere.email) ? <i className="fa fa-edit icon-edit" /> : ''}
               {toggleInput && isLogged
               && (
                 <form onSubmit={updateMobile}>

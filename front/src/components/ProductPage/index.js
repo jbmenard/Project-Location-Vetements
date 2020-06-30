@@ -15,7 +15,7 @@ const ProductPage = (props) => {
 
   return (
     <div className="productpage">
-      {/* <img className="productpage--photo" src={object.image ? object.image : 'Pas de photo'} alt="parrain" /> */}
+      {/* <img className="productpage--photo" src={props.location.state.object.image ? object.image : 'Pas de photo'} alt="parrain" /> */}
       <section className="productpage-user">
         {/* <img className="productpage-user--photo" src="https://image.flaticon.com/icons/png/512/64/64572.png" alt="avatar" /> */}
         <div className="productpage-user--infos">
