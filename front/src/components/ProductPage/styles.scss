@@ -4,11 +4,16 @@
 
 @media (max-width : 500px) {
 
+  .icon-center{
+    text-align: center;
+    width: 100%;
+    margin: 1em auto;
+  }
+
   .productpage {
     width: 80%;
     margin: auto;
     font-size: 1.2em;
-    transform: translate(0, 1em);
   
     &--photo {
       width: 100%;
@@ -22,11 +27,11 @@
   
     &-user {
       display: flex;
-      margin: 2em 0 1em 4em;
-      text-align: left;
+      align-items: center;
+      border-bottom: solid 1px #ccc;
   
       &--photo {
-        width: 100%;; 
+        width: 30%;; 
       }
   
       &--name {
@@ -38,15 +43,21 @@
         font-weight: 500;
         color: #5E6472;
       }
+
+      &--owner{
+        font-size: 0.5em;
+        color: grey;
+        margin-left: 0.5em;
+      }
     }
   
     &-infos {
       border-top: 1px solid #ccc;
-      padding: 1em 0 0 4em;
-      text-align: left;
+      text-align: center;
   
       &--title {
         font-weight: 700;
+        margin: 0.5em auto;
       }
   
       &--item {
@@ -55,6 +66,7 @@
   
       &--price {
         font-weight: 500;
+        margin: 0.5em auto;
       }
     }
   
@@ -91,13 +103,16 @@
 @media (min-width : 500px) {
 
   .productpage {
-    width: 80%;
+    max-width: 60%;
     margin: auto;
     font-size: 1.2em;
     transform: translate(0, 180px);
   
     &--photo {
-      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 35%;
     }
   
     &-header {
@@ -105,14 +120,20 @@
       height: 5em;
       margin-bottom: 2em;
     }
+
+    .icon-center{
+      text-align: center;
+      width: 100%;
+      margin: 1em auto;
+    }
   
     &-user {
       display: flex;
-      margin: 2em 0 1em 4em;
-      text-align: left;
+      margin: 2em 0 1em 0em;
+      border-bottom: solid 1px #ccc;
   
       &--photo {
-        width: 100%; 
+        width: 10%; 
       }
   
       &--name {
@@ -124,19 +145,26 @@
         font-weight: 500;
         color: #5E6472;
       }
+
+      &--owner{
+        font-size: 0.6em;
+        color: grey;
+        margin-left: 0.5em;
+      }
     }
   
     &-infos {
       border-top: 1px solid #ccc;
       padding: 1em 0 0 4em;
-      text-align: left;
+      text-align: right;
   
       &--title {
         font-weight: 700;
+        font-size: 1.5em;
       }
   
       &--item {
-        font-weight: 300;
+       
       }
   
       &--price {

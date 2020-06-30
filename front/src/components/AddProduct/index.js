@@ -110,23 +110,22 @@ const AddProduct = ({
             Taille *
             <select className="form-control" name="size" id="size" defaultChecked="xsmall" onChange={(event) => handleSelectSize(event)}>
               <option value="">Choisir :</option>
-              <option value="xsmall">XS</option>
-              <option value="small">S</option>
-              <option value="medium">M</option>
-              <option value="large">L</option>
-              <option value="xlarge">XL</option>
-              <option value="2xlarge">XXL</option>
-              <option value="3xlarge">3XL</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
             </select>
           </label>
           <label htmlFor="status">
             Etat du produit *
             <select className="form-control" name="status" id="status" defaultChecked="neverUsed" onChange={(event) => handleSelectState(event)}>
               <option value="">Choisir</option>
-              <option value="neverUsed">Jamais porté</option>
-              <option value="likeNew">Comme neuf</option>
-              <option value="used">Usé</option>
-              <option value="toGive">A donner</option>
+              <option value="Jamais porté">Jamais porté</option>
+              <option value="Bon état">Bon état</option>
+              <option value="Usé">Usé</option>
+              <option value="Fin de vie">Fin de vie</option>
 
             </select>
 

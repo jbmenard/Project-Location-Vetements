@@ -119,10 +119,12 @@ const api = (store) => (next) => (action) => {
     case SEND_FORM: {
       const state = store.getState().productReducer;
       const stateUser = store.getState().userReducer;
+      console.log(action.productId);
+      
       const data = new FormData();
       data.set('content', state.content);
       data.set('app_user_id', stateUser.user.user.id);
-      data.set('product_id', state.id);
+      data.set('product_id', action.productId);
       axios({
         method: 'post',
         url: 'http://localhost:5050/comment',
