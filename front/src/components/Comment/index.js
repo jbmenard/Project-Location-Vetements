@@ -4,28 +4,28 @@ import Commentaire from './commentaire';
 import './style.scss';
 
 const Comment = ({
-  handleComment, isClick, isLogged, comments, sendForm, changeInputCommentProduct, inputValue,
+  handleComment, isClick, isLogged, product, sendForm, changeInputCommentProduct, inputValue,
 }) => {
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, productId) => {
     event.preventDefault();
-    sendForm();
+    console.log('je sis la');
+    
+    sendForm(productId);
   };
 
   const handleChange = (event) => {
     changeInputCommentProduct(event.target.value);
   };
-  console.log('comments', comments);
+  // console.log('product', product.id);
   return (
     <div className="comment">
       <h4 className="comment-formtitle">Commentaires</h4>
-      <div>
-        {comments
-          ? comments.comments.map((comment) => (
-            <Commentaire comment={comment} />
+      {product
+        ? product.comments.map((comment) => (
+          <Commentaire comment={comment} />
 
-          ))
-          : 'Aucun commentaire'}
-      </div>
+        ))
+        : 'Aucun commentaire'}
       {isLogged
       && (
       <div onClick={handleComment} className="comment-button">
@@ -34,9 +34,9 @@ const Comment = ({
       )}
       {isClick && (
       <div className="comment-form">
-        <form onSubmit={handleSubmit}>
-          <input className="comment-form--textarea" type="textarea" onChange={handleChange} value={inputValue} placeholder="..." />
-          <input className="comment-form--submit" type="submit" value="OK" />
+        <form onSubmit={(event) => handleSubmit(event, product.id)}>
+          <input className="comment-form--textarea" type="textarea" onChange={handleChange} value={inputValue} placeholder="Commenter..." />
+          <input className="comment-form--submit" type="submit" value="Envoyer" />
         </form>
       </div>
       )}

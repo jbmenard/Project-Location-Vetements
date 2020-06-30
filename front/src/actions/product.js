@@ -49,8 +49,9 @@ export const getError = () => ({
   type: GET_ERROR,
 });
 
-export const sendForm = () => (console.log('je suis dans action'),{
+export const sendForm = (productId) => ({
   type: SEND_FORM,
+  productId,
 });
 
 export const saveForm = () => ({

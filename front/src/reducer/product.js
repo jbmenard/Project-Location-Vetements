@@ -2,7 +2,6 @@ import { SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE, GET_ERROR, CHANGE_INPUT_COMMENT_PR
 
 export const initialState = {
   listProducts: [],
-  id: 1,
   name: '',
   description: '',
   image: '',
