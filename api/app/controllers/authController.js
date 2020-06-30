@@ -93,14 +93,18 @@ const authController = {
             //  - si il n'existe pas => erreur
             if (!appUser) {
               errors.push("Cet email n'existe pas");         
-              return res.send(errors);
+              return res.status(404).send({
+                notFound: "Cet email ou ce mot de passe n'existe pas"
+              });
             }
             // 2. comparer le mot de passe fournie au Hash stocké dans la BDD
             const validPassword = bcrypt.compareSync(fields.password, appUser.password);
             //  - si c'est pas bon => erreur
             if (!validPassword) {
               errors.push("Cet email ou le mot de passe n'existe pas");
-              return res.send(errors);
+              return res.status(404).send({
+                notFound: "Email ou mot de passe inconnu"
+              });
             }
             // 3. si tout va bien (email et pwd correct) => on enregistre l'utilisateur dans la session
             req.session.user = appUser;
