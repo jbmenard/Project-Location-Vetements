@@ -4,7 +4,7 @@ import {
   CREATE_PRODUCT, FETCH_PRODUCTS, saveProducts, getError,
   UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts, SEND_FORM,
 } from 'src/actions/product';
-import { SEND_MESSAGE, cleanSearchBar } from 'src/actions/search';
+import { SEND_MESSAGE, cleanSearchBar, productNotFoundAction, productFound } from 'src/actions/search';
 import { toggleRedirection } from 'src/actions/style';
 
 
@@ -107,8 +107,11 @@ const api = (store) => (next) => (action) => {
           store.dispatch(saveProducts(response.data));
           store.dispatch(toggleRedirection());
           store.dispatch(cleanSearchBar());
+          store.dispatch(productFound());
+
         })
         .catch((err) => {
+          store.dispatch(productNotFoundAction());
           console.trace(err);
         });
       break;
@@ -116,7 +119,6 @@ const api = (store) => (next) => (action) => {
     case SEND_FORM: {
       const state = store.getState().productReducer;
       const stateUser = store.getState().userReducer;
-      console.log("statecontent", state.content);
       const data = new FormData();
       data.set('content', state.content);
       data.set('app_user_id', stateUser.user.user.id);
@@ -131,8 +133,6 @@ const api = (store) => (next) => (action) => {
           console.log(response.data);
         })
         .catch((err) => {
-          console.log('Aucun produit ne correspond'); // ! Emettre une action pour afficher l'erreur
-
           console.trace(err);
         });
       break;
