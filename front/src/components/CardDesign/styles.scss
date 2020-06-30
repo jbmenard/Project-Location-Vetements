@@ -22,18 +22,21 @@
 
     &-icon {
       display: flex;
-      justify-content: flex-end;
-      width: 50%;
+      justify-content: space-between;
+      width: 30%;
 
       &--update {
-        width: 1.5em;
-      }
-
-      &--delete {
-        width: 1.5em;
         border: none;
         margin: 0;
         padding: 0;
+        color: black;
+      }
+
+      &--delete {
+        border: none;
+        margin: 0;
+        padding: 0;
+        color: black;
       }
     }
 
@@ -43,9 +46,9 @@
     }
 
     &-price {
-      padding-right: 1em;
-      text-align: right;
-      width: 50%;
+      transform: translate(-3px, 3px);
+      width: 70%;
+      font-size: 1.5em;
     }
   }
 
@@ -54,13 +57,14 @@
 
     &-image {
       width: 100%;
-      
-
     }
   }
 
-  &-button{
-    margin: auto;
-  }
+  &-footer {
+    margin: none;
 
+    &--button {
+      transform: translate(-4px, -28px);
+    }
+  }
 }
