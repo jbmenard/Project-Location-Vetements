@@ -42,7 +42,7 @@ const api = (store) => (next) => (action) => {
       const state = store.getState().productReducer;
       state.loading = false;
 
-      axios.get('http://localhost:5050/product/name/slip')
+      axios.get('http://localhost:5050/product')
         .then((response) => {
           const saveProductsAction = saveProducts(response.data);
           store.dispatch(saveProductsAction);
