@@ -8,7 +8,9 @@
 
 //---------------- version desktop --------------//
 @media ( min-width : 1024px ) {
-
+.container-navlink{
+  margin-left: 2rem;
+}
   .container-menu {
     height: 6rem;
     display: none;
@@ -32,6 +34,7 @@
     color : #A52A2A;
   }
   .liens  {
+    justify-content: space-around;
     background-color: none;
     position: none;
     height: auto !important;
@@ -52,8 +55,8 @@
       text-transform: uppercase;
     }
     &--inputs {
-      display: flex;
-      flex-direction: row !important;
+      
+      margin-top: -1rem !important;
       
     }
     &--open {
@@ -84,7 +87,7 @@
     &--title {
       display: flex;
       flex-direction: row !important;
-      margin: auto;
+     
 
     }
     &--input{
@@ -103,10 +106,6 @@
     text-transform: uppercase;
   }
 
-  .container-button{
-    
-    
-  }
 
   
 }
@@ -145,16 +144,20 @@
     }
     &-title{
     color:#fff;
-    font-weight: 200;
+    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     margin-top: 1em;
     font-size: 26px;
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
+    font-style: oblique;
     }
     &-inputs{
     margin-top : 1em;
+    display: flex;
+    align-items: baseline;
+    
     }
     &--input{
     border: 2px solid #f8f8ff;
@@ -193,9 +196,8 @@
 
 
   .item {
-  margin-bottom: 10px;
-  margin-top: 30px;
-  
+ 
+   margin : 1rem;
   &:hover{
     color: $navbar-hover;
     

@@ -52,11 +52,13 @@ const Navbar = ({
           <div className="container-navlink">
             <NavLink to="/" className="item" onClick={toggleNavbar}>Accueil</NavLink>
             <NavLink to="/products" className="item" onClick={toggleNavbar}>Produits</NavLink>
+            <NavLink to="/information" onClick={toggleNavbar} className="item">Comment ça marche ?</NavLink>
             {isLoggin
           && (
             <>
               <NavLink to={`/user/${user.user.id}`} className="item" onClick={toggleNavbar}>Profile</NavLink>
               <NavLink to="/newproduct" onClick={toggleNavbar} className="item">Nouveau produit</NavLink>
+              
             </>
           )}
             {/* <NavLink to="/information" className="item" onClick={toggleNavbar}> Comment ça marche ?</NavLink> */}
