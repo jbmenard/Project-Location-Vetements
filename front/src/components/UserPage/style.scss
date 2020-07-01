@@ -41,17 +41,17 @@
     width: 60%;
     display: flex;
     flex-wrap: wrap;
-    justify-content:start;
+    justify-content:flex-start;
 
   }
-  .card-list{
+  // .card-list{
     
    
     
    
     
     
-  }
+  // }
 
 }
 
@@ -98,9 +98,9 @@
 
 .avatar {
 
-  &-button {
+  // &-button {
   
-  }
+  // }
 
   &-upload {
     opacity: 0.0;

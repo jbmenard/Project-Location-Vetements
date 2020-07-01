@@ -1,14 +1,28 @@
 @import 'src/styles/index';
 @import 'src/styles/vars';
 
-@media (min-width : 500px) {
+@media (min-width : 600px) {
   .intro {
     transform: translate(10px, 60px);
+    height: 70vh;
+    &-left{
+      width: 100%;
+    }
+    &-right{
+      width: 100%;
+    }
   }
 
   .team {
-    transform: translate(10px, 140px);
+    background-image: url('../../assets/images/brick-wall.png');
+  justify-content: center;
+    width: 88%;
+    transform: translate(94px,160px);
     margin-bottom: 17em;
+    &-title{
+      position: relative;
+    top: -4rem;
+    }
   }
 
   .team-container {
@@ -19,14 +33,28 @@
   }
 }
 
-@media(max-width : 600px) {
+@media(max-width : 599px) {
   .team-item { 
     margin: 3rem !important;
   }
+  .intro{
+    display: flex;
+    flex-direction: column;
+    &-image {
+      display: none;
+      
+    }
+    &-title{
+      font-size: 1.7rem !important;
+      font-family: 'Dancing Script', cursive;
+    }
+  }
+  
 }
 
 .information-page {
   margin: 1em 0;
+ 
 }
 
 // PART 1
@@ -38,39 +66,44 @@
   flex-wrap: flex;
 
   &-left {
-    width: 50%;
+    width: 100%;
   }
 
   &-right {
-    width: 50%;
+    width: 100%;
   }
 
   &-title {
-    font-size: 1.2em;
+    font-size: 3rem;
     border-bottom: 1px solid #ccc;
     padding: 1em 0;
+    font-family: 'Dancing Script', cursive;
   }
 
   &-text {
     margin-top: 1em;
+    padding: 1rem;
+    line-height: normal;
   }
 
   &-image {
     width: 90%;
     margin-left: 10%;
+    height: 70vh;
   }
 }
 
 // PART 2
 
 .team {
-  background-color: #FFDAB9;
-  justify-content: center;
-
+ 
+ 
   &-title {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.5em;
     padding: 1em 0;
+    font-family: Anton,sans-serif;
+    font-weight: 300;
   }
 
   &-container {
@@ -95,7 +128,7 @@
 
   &-item {
     align-content: center;
-    margin: 1em 1em;
+    margin: 1em 2em;
     height: 18em;
     width: 18em;
     box-shadow: 5px 5px 15px lightgrey;
@@ -104,7 +137,7 @@
     -moz-transition: all 0.3s ease-in;
 
     &:hover {
-      background: whitesmoke;
+      background: lightgreen;
       color : $burger;
       border-radius: 5px;
       border: none;

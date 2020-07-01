@@ -13,7 +13,9 @@ const Information = () => (
         <h1 className="intro-title">Qui sommes-nous ?</h1>
         <p className="intro-text">O'Loc est un service de location entre particuliers, qui vous permet de louer des vêtements, déguisements ou accessoires pour un évènement ou pour une courte durée.</p>
         <p className="intro-text">Tu te rends sur les pistes enneigées pour les vacances d'hiver ? Loues ici une combinaison de ski au moindre coût et tu éviteras d'acheter un produit que tu ne porteras qu'à de rares occasions.</p>
-        <Button type="button" size="x-large" color="orange" value="Notre catalogue" />
+        <a href="/products"> <Button type="button" size="x-large" color="orange" value="Notre catalogue" /></a>
+         
+        
       </article>
       <article className="intro-right">
         <img className="intro-image" src="https://www.lenouveleconomiste.fr/wp-content/uploads/2018/06/location-826x459.jpg" alt="avatar" />
