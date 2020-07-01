@@ -7,6 +7,8 @@
   .update-product {
     width: 90%;
     margin: auto;
+   
+
 
     &--form {
       margin-bottom: 2em;
@@ -36,6 +38,7 @@
 @media (min-width : 1024px) {
   .container-form-image {
     display: flex;
+    margin-bottom: 7em;
     
       }
   
@@ -43,6 +46,7 @@
   transform: translate(10px,108px);
   margin-left: 4rem;
   margin-right: 4rem;
+  
 
      &--form {
       margin-bottom: 6em;
@@ -57,7 +61,7 @@
       }
 
   .wrapper-image{
-    width: 100%;
+    width: 60%;
     height: 80vh;
     margin-bottom: 4em;
     margin-right:2em;
@@ -66,7 +70,14 @@
     width: 100%;
     height: 80vh;
     margin-bottom: 2em;
-    
+  }
+
+  .update-product-submit--input{
+    border-radius: 50px;
+  }
+  .update-product--title{
+    font-size: 2rem;
+    font-weight:500;
   }
   }
 }
@@ -77,6 +88,7 @@
 
 .update-product {
   font-weight: 300;
+  font-family: 'Comic Neue', cursive;
   
   &--title {
     margin-top: 1em;

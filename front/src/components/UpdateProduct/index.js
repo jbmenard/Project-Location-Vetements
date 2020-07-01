@@ -1,7 +1,7 @@
 import React from 'react';
 // import _ from 'lodash';
 import { Redirect } from 'react-router-dom';
-import Clothes from '../../assets/images/soubrette.jpg';
+import Clothes from '../../assets/images/fringues.jpeg';
 import './style.scss';
 import { NavLink } from 'react-router-dom';
 import { object } from 'prop-types';
@@ -71,7 +71,7 @@ const UpdateProduct = ({
         </div>
         <form className="update-product--form" onSubmit={(event) => handleSubmit(event, product.id)}>
           <label htmlFor="name">
-            Nom du produit :
+            Nom du produit *
             <input className="update-product--input" type="text" placeholder={product.name} name="name" id="name" onChange={handleChangeName} />
           </label>
           <label htmlFor="sub_category_id">
@@ -109,7 +109,7 @@ const UpdateProduct = ({
             </select>
           </label>
           <label htmlFor="size">
-            Taille
+            Taille *
             <select className="update-product--select" defaultValue={product.size} name="size" id="size" onChange={handleSelectSize}>
               <option value="">Choisir :</option>
               <option value="XS">XS</option>
@@ -121,7 +121,7 @@ const UpdateProduct = ({
             </select>
           </label>
           <label htmlFor="status">
-            Etat du produit :
+            Etat du produit *
             <select className="update-product--select" defaultValue={product.state} name="status" id="status" onChange={handleSelectState}>
               <option value="">Choisir</option>
               <option value="Jamais porté">Jamais porté</option>
@@ -131,11 +131,11 @@ const UpdateProduct = ({
             </select>
           </label>
           <label htmlFor="description">
-            Description :
+            Description *
             <input onChange={handleChangeDescription} placeholder={product.description} className="update-product--input" type="textarea" name="description" id="description" onChange={handleChangeName} />
           </label>
           <label htmlFor="price">
-            Prix :
+            Prix *
             <input className="update-product--input" placeholder={product.price} type="number" name="price" id="price" onChange={handleChangePrice} />
           </label>
           <label htmlFor="price">
