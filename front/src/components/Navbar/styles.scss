@@ -8,7 +8,9 @@
 
 //---------------- version desktop --------------//
 @media ( min-width : 1024px ) {
-
+.container-navlink{
+  margin-left: 2rem;
+}
   .container-menu {
     height: 6rem;
     display: none;
@@ -142,13 +144,14 @@
     }
     &-title{
     color:#fff;
-    font-weight: 200;
+    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     margin-top: 1em;
     font-size: 26px;
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
+    font-style: oblique;
     }
     &-inputs{
     margin-top : 1em;
@@ -194,7 +197,7 @@
 
   .item {
  
-  
+   margin : 1rem;
   &:hover{
     color: $navbar-hover;
     
