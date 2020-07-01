@@ -1,7 +1,128 @@
+@import 'src/styles/vars';
 
+.container-menu {
+  background-color: $burger;
+  padding: 10px;
+  background-image: url('../../assets/images/bright-squares.png');
+}
+
+//---------------- version desktop --------------//
+@media ( min-width : 1024px ) {
+.container-navlink{
+  margin-left: 2rem;
+}
+  .container-menu {
+    height: 6rem;
+    display: none;
+    
+  }
+
+  .classform .fa {
+    margin : 0 !important 
+  }
+
+  .connexion {
+    display: none;
+  }
+
+  .title-loggin{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-left: 1rem;
+    color : #A52A2A;
+  }
+  .liens  {
+   
+    justify-content: space-around;
+    background-color: none;
+    position: none;
+    height: auto !important;
+    display: flex;
+    flex-direction : row !important;
+    transition: none !important;
+    transform: none !important;
+    border: none !important;
+    padding-left: 15rem;
+    
+    width: 100%;
+    font-size: 0.8rem;
+    &--label {
+      display: flex;
+      flex-direction: row !important;
+      margin : 1rem 10px !important;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    &--inputs {
+      
+      margin-top: -1rem !important;
+      
+    }
+    &--open {
+      transform: none;
+      border: 1px double $burger;
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: row !important;
+      margin-bottom: auto !important;
+      margin-top: 1.6rem !important;
+    }
+    &--input {
+      margin-left: 1rem !important;
+      width: 100%;
+    }
+    
+  }
+
+  .classform {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+
+  .item {
+    &--title {
+      display: flex;
+      flex-direction: row !important;
+     
+
+    }
+    &--input{
+      margin-top: 1.5em !important;
+      height: 2.5em;
+    }
+  }
+.item .fa {
+  margin : 0 !important;
+}
+
+  .search {
+    margin-top: 1rem;
+    font-weight: 700;
+    margin-right: 1rem;
+    text-transform: uppercase;
+  }
+
+
+  
+}
+
+@media(max-width : 1023px) {
+  .container-navlink{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .liens {
-  background-color: cadetblue;
-  width: 70%;
+  
+  // width: 70%;
+  background-color: rgba(255, 255, 255, 0.863);
+ 
   position: fixed;
   height: 200vh;
   transform: translateX(-100%);
@@ -10,6 +131,7 @@
   
     &--open {
       transform: translateX(0%);
+      border: 1px double $burger;
     }
   z-index: 1;
     &-items {
@@ -22,32 +144,52 @@
     
     }
     &-title{
-    color:#Fff;
+    color:#fff;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1em;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-style: oblique;
     }
     &-inputs{
     margin-top : 1em;
+    display: flex;
+    align-items: baseline;
+    
     }
     &--input{
+    border: 2px solid #f8f8ff;
     margin: auto;
     width: 80%;
-    border: none;
+    // border: none;
+    padding : 5px;
+    &:hover {
+      border: 2px solid $general-button-opacity;
+    }
     }
     &--label{
     display: flex;
     flex-direction: column;
     padding-bottom: 1em;
-    padding-top: 1em;
+    padding-top: 0em;
+    
+   
 
     &, span {
-      margin-left: 1.4em;
+      // margin-left: 2.4em;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top : 1em;
     }
+
+    
     }
     &--items{
     margin-top: 1em;
+    
     }
 
 }
@@ -55,17 +197,40 @@
 
 
   .item {
-  margin-bottom: 10px;
-  margin-top: 30px;
-  font-weight: bold;
-  cursor: pointer;
+ 
+   margin : 1rem;
+  &:hover{
+    color: $navbar-hover;
+    
+  }
+  &:link {
+    text-decoration: none;
+  }
   padding: 10px;
+ 
   &--input{
   border: none;
   margin-top: 0.5em;
+  padding : 5px;
+  border: 2px solid #f8f8ff;
+    &:hover{
+      border: 2px solid $general-button-opacity;
+    }
   }
   &--title{
   margin:10px;
+  display: flex;
+  flex-direction: column;
   }
+  
   }
 
+  .search {
+    // margin-left: 2.4em;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+.user-not-found{
+  color: red;
+}

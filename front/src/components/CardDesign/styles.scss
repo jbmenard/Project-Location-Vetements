@@ -1,16 +1,44 @@
+// --------------------------------------------------------------
+// ----------------------- MOBILE VERSION -----------------------
+// --------------------------------------------------------------
+
+
+
+// ---------------------------------------------------------------
+// ----------------------- DESKTOP VERSION -----------------------
+// ---------------------------------------------------------------
+
 .card {
   box-shadow: 2px 5px 12px #ccc;
-  margin-top: 3em;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   height: 23em;
   width: 15em;
-  margin: 1.5em;
 
   &-header {
     display: flex;
     background-color: #fff;
+
+    &-icon {
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+
+      &--update {
+        border: none;
+        margin: 0;
+        padding: 0;
+        color: black;
+      }
+
+      &--delete {
+        border: none;
+        margin: 0;
+        padding: 0;
+        color: black;
+      }
+    }
 
     &-disponibility {
       width: 50%;
@@ -18,9 +46,9 @@
     }
 
     &-price {
-      padding-right: 1em;
-      text-align: right;
-      width: 50%;
+      transform: translate(-3px, 3px);
+      width: 70%;
+      font-size: 1.5em;
     }
   }
 
@@ -29,13 +57,14 @@
 
     &-image {
       width: 100%;
-      
-
     }
   }
 
-  &-button{
-    margin: auto;
-  }
+  &-footer {
+    margin: none;
 
+    &--button {
+      transform: translate(-4px, -28px);
+    }
+  }
 }

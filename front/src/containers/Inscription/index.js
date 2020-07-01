@@ -8,6 +8,12 @@ const mapStateToProps = (state) => ({
   email: state.userReducer.email,
   password: state.userReducer.password,
   confirmPassword: state.userReducer.confirmPassword,
+  toggleRedirection: state.styleReducer.toggleRedirection,
+  errorPassword: state.userReducer.errorPassword,
+  errorPasswordLength: state.userReducer.errorPasswordLength,
+  validePasswordLength: state.userReducer.validePasswordLength,
+  validePassword: state.userReducer.validePassword,
+  
 })
 console.log('je suis ici 1');
 

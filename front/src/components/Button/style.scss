@@ -1,3 +1,49 @@
+@media (min-width :1024px) {
+  .button {
+    &-menu {
+      background-color:  #EEAC80;
+      color: #fff;
+      margin : 1.2rem 0 0 1.2rem !important;
+      padding:0.5rem 30px !important;
+      width: 8rem !important;
+      &:hover{
+        background-color: #8FBC8F;
+      }
+    }
+    &-form {
+      text-align: center;
+      background-color: #EEAC80;
+      color: #fff;
+      border-radius: 20px;
+      width: 50% !important;
+      font-size: 1em;
+      font-weight: 700;
+      &:hover{
+        background-color: #8FBC8F;
+      }
+    }
+    &-orangelight {
+      background-color:#A52A2A;
+      color: #fff;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      &:hover{
+        background-color: #8FBC8F;
+      }
+    }
+    &-error {
+      background-color: #C0C0C0 !important;
+      color: #fff;
+      border-radius: 20px !important;
+      width: 50% !important;
+      font-size: 1em !important;
+      font-weight: 700 !important;
+    }
+  }
+}
+
+
 .button{
   background-color: #b8f2e6;
   border: none;
@@ -9,6 +55,7 @@
 
   &-medium {
     padding: 1em 1.5em;
+    font-size: 0.8em;
   }
 
   &-large {
@@ -23,8 +70,34 @@
   &-eggshell {
     background-color: #faf3dd;
   }
-  &-orange {
-    background-color:  #f0693d ;
+  &-form {
+    background-color: #EEAC80 ;
+    color: #fff;
+    border-radius: 20px;
+    width: 80%;
+    font-size: 1em;
+    font-weight: 700;
+    &:hover{
+      background-color: #8FBC8F;
+    }
+  }
+
+  &-menu {
+    background-color:  #EEAC80 ;
+    color: #fff;
+    margin-left: 8em;
+    &:hover{
+      background-color: #8FBC8F;
+    }
+  }
+
+  &-orange{
+    background-color:  #EEAC80;
+    color: #fff;
+  }
+
+  &-orangelight {
+    background-color:#A52A2A;
     color: #fff;
   }
 
@@ -40,7 +113,7 @@
     background-color: #aed9e0;
   }
 
-  &-black {
+  &-error {
     background-color: #5e6472;
   }
 

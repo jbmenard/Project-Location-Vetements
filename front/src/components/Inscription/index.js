@@ -1,9 +1,12 @@
 import React from 'react';
 import './styles.scss';
 import Button from 'src/components/Button';
+import { Redirect } from 'react-router-dom';
+import Account from '../../assets/images/account.png';
+import Image from '../../assets/images/img-inscription.jpg';
 
 const Inscription = ({
-  onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser,
+  onChangeEmail, onChangePassword, onChangeConfirmPassword, createUser, toggleRedirection, errorPassword, errorPasswordLength, validePassword, validePasswordLength,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,23 +26,49 @@ const Inscription = ({
   };
 
   return (
-    <form className="form" action="" onSubmit={handleSubmit}>
-      <h2 className="form-t"> Creer un compte </h2>
-      <span className="form-invider"> </span>
-      <div className="form-infos">
-        <label className="form-title">Email</label>
-        <input className="form-input" type="email" name="email" placeholder="exemple@gmail.com" onChange={handleChangeEmail} />
-        <label className="form-title">Mot de Passe</label>
-        <input className="form-input" type="password" name="password" onChange={handleChangePassword} />
-        <label className="form-title">Confirmer le Mot de Passe</label>
-        <input className="form-input" type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} />
-        <div className="form-button">
-          <Button type="submit" size="small" value="Envoyer" color="orange" />
+    <section className="inscription">
+      <form className="form" action="" onSubmit={handleSubmit}>
 
+        <h2 className="form-t"> S'inscrire </h2>
+
+        <div className="form-infos">
+
+          <input className="form-input" type="email" name="email" placeholder="Adresse email" onChange={handleChangeEmail} />
+
+          <input className={`${errorPassword || errorPasswordLength ? ' form-input error' : 'form-input'}`} type="password" name="password" onChange={handleChangePassword} placeholder="Mot de passe" />
+          {errorPasswordLength && (
+            <p className="text-error-form">Le mot de passe doit contenir 6 caractéres </p>
+          )}
+          <input className={`${errorPassword ? ' form-input error' : 'form-input'}`} type="password" name="confirmPassword" onChange={handleChangeConfirmPassword} placeholder="Confirmation mot de passe " />
+          {errorPassword && (
+            <p className="text-error-form">Les 2 mots de passe ne correspondent pas </p>
+          )}
+          <div className="form-button">
+            { (errorPassword || errorPasswordLength) && (
+              <Button type="button" size="x-large" value="Envoyer" color="error" />
+            )}
+            { (!errorPassword && !errorPasswordLength) &&(
+               <Button type="submit" size="medium" value="Envoyer" color="form" />
+            )}
+
+  
+          
+
+
+
+        
+
+          </div>
         </div>
-      </div>
 
-    </form>
+      </form>
+      <div className="wrapper-img">
+        <img className="img-design" src={Account} alt="" />
+        <img className="img-inscription" src={Image} alt="" />
+      </div>
+      {toggleRedirection
+      && <Redirect to="/" />}
+    </section>
   );
 };
 

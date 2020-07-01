@@ -1,4 +1,7 @@
 const AppUserInfos = require('../models/app_user_info');
+const formidable = require ('formidable');
+const fs = require('fs'); 
+const path = require('path')
 
 const appUserInfoController = {
 
@@ -17,14 +20,16 @@ const appUserInfoController = {
 
     getOne: async (req, res, next) => {
         try {
-            const { appUserInfosId } = req.params
-            const appUserInfo = await AppUserInfos.findByPk(appUserInfosId, {
+            
+            const { id } = req.params
+            const appUserInfo = await AppUserInfos.findByPk(id, {
                 include: [{all: true,  nested: true}]
             });
 
         if (appUserInfo) {
             return res.send(appUserInfo);
         }
+        
         next();
         } catch (error) {
             console.trace(error);
@@ -34,8 +39,55 @@ const appUserInfoController = {
 
     create: async (req, res, next) => {
         try {
-            const newAppUserInfos = await AppUserInfos.create(req.body);
-            res.send(newAppUserInfos);
+            // const appUserInfos = AppUserInfos.findOne({
+            //     where: {
+            //         app_user_id: recup id dans session
+            //     }
+            // })
+
+            // if(appUserInfo){
+            //     executer la création
+            // }
+            const form = new formidable.IncomingForm({multiples: true}); 
+            await new Promise((resolve, reject) => {
+                form.parse(req, (err, fields, files) => { 
+                    if(files.avatar){
+
+                        const oldPath = files.avatar.path; 
+                        const newPath = '/var/www/html/Project-Location-Vetements/front/public' 
+                        + '/'+files.avatar.name 
+                        const rawData = fs.readFileSync(oldPath) 
+                        fs.writeFile(newPath, rawData, (err) => { 
+                            if(err) console.log(err) 
+                        }) 
+                    }
+                    
+                    const userInfo = {
+                        first_name: fields.first_name,
+                        last_name: fields.last_name,
+                        address: fields.address,
+                        mobile: fields.mobile,
+                        app_user_id: Number(fields.app_user_id),
+                    }
+                    if(!files.avatar){
+                        const newAppUserInfos = AppUserInfos.create(userInfo);
+                        return res.status(200).send({
+                            info: newAppUserInfos,
+                        })
+                    }
+                        
+                    userInfo.avatar = `/${files.avatar.name}`
+                    const newAppUserInfos = AppUserInfos.create(userInfo);
+                    res.status(200).send({
+                        info: newAppUserInfos,
+                    })
+                    
+                    
+
+                })
+                // console.log(req);
+                
+            })
         } catch (error) {
             console.trace(error);
             res.status(500).send(error)
@@ -44,14 +96,50 @@ const appUserInfoController = {
 
     update: async (req, res, next) => {
         try {
-            const { appUserInfosId } = req.params;
-            const appUserInfo = await AppUserInfos.findByPk( appUserInfosId );
-
+            const { id } = req.params;
+            const appUserInfo = await AppUserInfos.findByPk( id );
+             // const appUserInfos = AppUserInfos.findOne({
+            //     where: {
+            //         app_user_id: recup id dans session
+            //     }
+            // })
+            
             if(appUserInfo) {
-                await appUserInfo.update(req.body);
-                return res.send(appUserInfo)            
+                const form = new formidable.IncomingForm({multiples: true}); 
+                
+                    form.parse(req, async (err, fields, files) => { 
+                        if(files.avatar){
+    
+                            const oldPath = files.avatar.path; 
+                            const newPath = '/var/www/html/Project-Location-Vetements/front/public' 
+                            + '/'+files.avatar.name 
+                            const rawData = fs.readFileSync(oldPath) 
+                            fs.writeFile(newPath, rawData, (err) => { 
+                                if(err) console.log(err) 
+                            }) 
+                            await appUserInfo.update({
+                                first_name: fields.first_name,
+                                last_name: fields.last_name,
+                                address: fields.address,
+                                avatar: `/${files.avatar.name}`,
+                                mobile: fields.mobile,
+                            })
+                            return res.send(appUserInfo)
+                        }
+
+                        await appUserInfo.update({
+                            first_name: fields.first_name,
+                            last_name: fields.last_name,
+                            address: fields.address,
+                            mobile: fields.mobile,
+                        })
+                        res.send(appUserInfo)
+                        
+                        
+                    })
+                    // console.log(req);
+                             
             }
-            next()
         } catch (error) {
             console.trace(error);
             res.status(500).send(error)
@@ -60,8 +148,8 @@ const appUserInfoController = {
 
     delete: async (req, res, next) => {
         try {
-            const { appUserInfosId } = req.params;
-            const appUserInfo = await AppUserInfos.findByPk( AppUserInfosId );
+            const { id } = req.params;
+            const appUserInfo = await AppUserInfos.findByPk( id );
             if(appUserInfo) {
                 await appUserInfo.destroy();
                 return res.send('Element supprimé')

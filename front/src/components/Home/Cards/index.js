@@ -1,20 +1,22 @@
 import React from 'react';
 import './styles.scss';
-import CardImage from '../../../assets/images/card.png';
 
-const Cards = ({ title, text, number }) => (
+const Cards = ({
+  title, text, image, number,
+}) => (
   <>
 
     <div className="col-md-4">
-      <div className="card text-center">
-
-        <div className="card-body">
-          <div className="card-number">
-            <h1 className="text-number">{number}</h1>
-          </div>
-          <div className="card-text">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{text}</p>
+      <div className="card-menu text-center">
+        <div className="backgroud">
+          <div className="card-menu-body">
+            <div className="card-menu-image">
+              <img src={image} alt="" className="image" />
+            </div>
+            <div className="card-menu-text">
+              <h5 className="card-menu-title"><span className="number">{number}</span>{title}</h5>
+              <p className="card-menu-text">{text}</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import ProductCategory from 'src/components/ProductPage';
+import ProductPage from 'src/components/ProductPage';
 import { getRecipeBySlug } from 'src/selectors/product';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => (console.log("ownprops", ownProps),{
   product: getRecipeBySlug(state, ownProps.match.params.slug),
+
 });
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
@@ -14,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({});
 const container = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ProductCategory);
+)(ProductPage);
 
 const containerWithRouter = withRouter(container);
 

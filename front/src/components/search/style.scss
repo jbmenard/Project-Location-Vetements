@@ -1,0 +1,17 @@
+@media (min-width : 1028px) {
+  .container-search {
+    display: flex;
+  }
+
+  .container-search .fa {
+    margin: 0.5 !important;
+    color :#2C5753;
+    
+  }
+
+}
+
+.not-found-message{
+  color: red;
+  margin-left: 2.5em;
+}

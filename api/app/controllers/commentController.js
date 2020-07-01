@@ -1,5 +1,8 @@
 
 const Comment = require('../models/comment');
+const formidable = require ('formidable');
+const fs = require('fs'); 
+const path = require('path') 
 
 const commentController = {
     getAll: async (req, res, next) => {
@@ -46,30 +49,29 @@ const commentController = {
 
     create: async ( req, res, next) => {
         try {
-      //1. on récupère les infos du body
-      // const title = req.body.title;
-      // const position = req.body.position;
-      // const color = req.body.color;
+      
+            const form = new formidable.IncomingForm({multiples: true}); 
+            await new Promise((resolve, reject) => {
+                form.parse(req, async (err, fields, files) => { 
+                    
+                    const newComment = await Comment.create({
+                    content: fields.content,
+                    product_id: Number(fields.product_id),
+                    app_user_id: Number(fields.app_user_id),
+                    });
+                    
+                    return res.send(newComment)
+                })
+            })
+        
+        
 
-      // 1bis : plutôt que d'écrire 3 lignes, on peut déconstruire l'objet
-      //const { title, position, color } = req.body;  
-
-      //2. on crée une liste (+save)
-      // const newList = await List.create({title, position, color});
-
-      // 2bis. si on déconstruit req.body pour le reconstruire tel quel juste après, autant passer directement req.body lui meme !!
-      // à ce moment là, c'est Sequelize (et la BDD) qui vont faire les vérif (en fait, grace au NOT NULL, on récupèrera une erreur !)
-         
-      const newComment = await Comment.create(req.body);
-
-      //3. on envoie la nouvelle liste
-
-      res.send(newComment)
         } catch (error) {
             console.trace(error);
             res.status(500).send(error);
         }
     },
+
 
     update: async ( req, res, next) => {
         try {

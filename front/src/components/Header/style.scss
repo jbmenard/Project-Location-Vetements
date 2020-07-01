@@ -1,8 +1,39 @@
+// -------------------------version desktop -------------------------------
+@media (min-width :1024px) {
+  .header {
+    position: fixed !important;
+     z-index: none;
+     
+     
+     
+     padding-top: 0.45rem;
+     &-toggle {
+       display: none;
+       
+     }
+     &-img {
+       margin:1.51rem !important;
+       width: 12em !important;
+       margin-bottom: 1.6rem !important;
+     }
+     &--open {
+      transform: translate(0%) !important;
+    }
+    
+  }
+}
+
+// ---------------------------------------------------------------------//
+
+
 .header{
+  z-index: 1;
+  position: relative;
   display: flex;
   justify-content: space-between;
   transform: translateX(0%);
   transition: transform 0.8s;
+  margin-bottom: 3em;
 
   &-toggle {
   max-width: 50%;
@@ -13,13 +44,19 @@
   cursor: pointer;
   }
 
-  
   &-img{
-  width: 12em;
+  margin: 1.2em;
+  width: 8em;
   height: auto;
   }
 
   &--open {
-    transform: translateX(70%);
+    transform: translateX(78%);
+  }
+}
+
+@media (max-width : 500px) {
+  .header {
+    margin-bottom: 0em;
   }
 }

@@ -1,74 +1,50 @@
 import React from 'react';
 import './styles.scss';
-
+// ---------------------- composants -----------------------------//
+import Opinion from './Opinion';
 import Cards from './Cards';
-import Watch from '../../assets/images/watch.jpg';
-import Ski from '../../assets/images/ski.jpg';
-import Wedding  from '../../assets/images/wedding.jpg';
+import Carousel from './Carousel';
+
+// ------------------cards section service ---------------------//
+
+import Loue from '../../assets/images/je-loue.PNG';
+import Reçois from '../../assets/images/je-recois.PNG';
+import Rends from '../../assets/images/je-rends.png';
+
+import Martin from '../../assets/images/Martin-Dupont.jpg';
+import Juliette from '../../assets/images/Juliette-Smith.jpg';
+import Fatima from '../../assets/images/Fatima-Abdallah.jpg';
 
 const Home = () => (
-  // --------------- carousel ---------------
+
   <>
-    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img className="d-block  img-fluid" src={Watch} alt="First slide" />
-          <div className="carousel-caption d-md-block">
-            <h5>TITLE</h5>
-            <p>PHRASE D'ACCROCHE</p>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img className="d-block  img-fluid" src={Ski} alt="Second slide" />
-          <div className="carousel-caption  d-md-block">
-            <h5>TITLE</h5>
-            <p>PHRASE D'ACCROCHE</p>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img className="d-block  img-fluid" src={Wedding} alt="Third slide" />
-          <div className="carousel-caption  d-md-block">
-            <h5>TITLE</h5>
-            <p>PHRASE D'ACCROCHE</p>
-          </div>
-        </div>
-      </div>
-      <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true" />
-        <span className="sr-only">Previous</span>
-      </a>
-      <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true" />
-        <span className="sr-only">Next</span>
-      </a>
-    </div>
+                                {/* CAROUSEL  */}
+
+    <Carousel />
+
+                                   {/* CARDS  */}
     <section className="card-general">
       <div className="container" />
       <h2 className="cards-title"> Comment ça marche ?</h2>
-      <span className="invider" />
+      {/* <span className="invider" /> */}
       <div className="row">
-        <Cards title="JE LOUE" number={1} text="paragraphe à ecrire" />
-        <Cards title="JE RECOIS" number={2} text="paragraphe à ecrire" />
-        <Cards title="JE RENDS" number={3} text="paragraphe à ecrire" />
+        <Cards title="JE LOUE" image={Loue} number={1} text="Créez votre profil et choisissez les produits qui vous interessent." />
+        <Cards title="JE RECOIS" image={Reçois} number={2} text="Prenez contact avec le loueur et recevez votre produit." />
+        <Cards title="JE RENDS" image={Rends} text="Je renvoie les articles au proprietaire sans les laver " number={3} />
       </div>
     </section>
-    <section className="container-temoignages">
-      <h2 className="cards-title"> Temoignages </h2>
-      <span className="invider" />
-      <div className="row">
+                              {/* OPINION  */}
 
-        <div className="temoignages col-md-4 ">
-          <h3 className="temoignages-title"> Heading</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque, tenetur, delectus necessitatibus itaque voluptatem suscipit voluptatum rem, quaerat ipsa asperiores quo velit voluptas veritatis. Labore nesciunt dolores totam possimus.</p>
-        </div>
-        <div className="temoignages col-md-4 ">
-          <h3 className="temoignages-title"> Heading</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quidem vero dolores sequi unde, consequuntur iusto qui voluptatibus delectus blanditiis cumque voluptatem esse adipisci fuga accusantium et at quasi voluptas?</p>
-        </div>
-        <div className="temoignages col-md-4">
-          <h3 className="temoignages-title">Heading</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores nostrum soluta quasi adipisci temporibus facere nulla. Consectetur, quasi esse quos magni ut maxime aut libero rem voluptas! Nostrum, iste dolorum?</p>
-        </div>
+    <section className="container-comment">
+      <h2 className="cards-title"> Temoignages </h2>
+      {/* <span className="invider" /> */}
+      <div className="row">
+        <Opinion name="Martin Dupont" photo={Martin} text="Je me suis rendu sur O'Loc car je cherchais un déguisement en location pour un enteremment de vie de jeune garçon. J'ai rapidement trouver mon bonheur auprès d'un vendeur autour de chez moi. Je recommande O'Loc." />
+
+        <Opinion name="Juliette Smith" photo={Juliette} text="Pour un voyage en Corse, j'avais besoin d'une tenue de plongée sous-marine pour découvrir les fonds marins avec des amis. Grâce à O'Loc, j'ai pu louer une tenue adaptée à ma taille. Je recommande O'Loc." />
+
+        <Opinion name="Fatima Abdallah" photo={Fatima} text="Pour le mariage d'une de mes meilleures amies, j'ai pu louer une robe d'un grand couturier et j'en suis très ravie. Je recommande fortement la plateforme O'Loc, et je salue la simplicité et la rapidité du service." />
+
       </div>
     </section>
 

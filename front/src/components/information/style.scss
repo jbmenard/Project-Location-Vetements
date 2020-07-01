@@ -1,0 +1,191 @@
+@import 'src/styles/index';
+@import 'src/styles/vars';
+
+@media (min-width : 600px) {
+  .intro {
+    transform: translate(10px, 60px);
+    height: 70vh;
+    &-left{
+      width: 100%;
+    }
+    &-right{
+      width: 100%;
+    }
+  }
+
+  .team {
+    background-image: url('../../assets/images/brick-wall.png');
+  justify-content: center;
+    width: 88%;
+    transform: translate(94px,160px);
+    margin-bottom: 20em;
+    &-title{
+      position: relative;
+    top: -4rem;
+    }
+  
+  }
+
+  .team-container {
+    display: flex;
+  }
+  .information-page{
+    transform: translate(10px, 109px);
+  }
+}
+
+@media(max-width : 599px) {
+  .team-item { 
+    margin: 3rem !important;
+  }
+  .intro{
+    display: flex;
+    flex-direction: column;
+    &-image {
+      display: none;
+      
+    }
+    &-title{
+      font-size: 1.7rem !important;
+      font-family: 'Dancing Script', cursive;
+    }
+  }
+  
+}
+
+.information-page {
+  margin: 1em 0;
+ 
+}
+
+// PART 1
+
+.intro {
+  width: 80%;
+  margin: 1em auto;
+  display: flex;
+  flex-wrap: flex;
+
+  &-left {
+    width: 100%;
+  }
+
+  &-right {
+    width: 100%;
+  }
+
+  &-title {
+    font-size: 3rem;
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0;
+    font-family: 'Dancing Script', cursive;
+  }
+
+  &-text {
+    margin-top: 1em;
+    padding: 1rem;
+    line-height: normal;
+  }
+
+  &-image {
+    width: 90%;
+    margin-left: 10%;
+    height: 70vh;
+  }
+}
+
+// PART 2
+
+.team {
+ 
+ 
+  &-title {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 1em 0;
+    font-family: Anton,sans-serif;
+    font-weight: 300;
+  }
+
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+    
+  }
+
+  &-social {
+    display: flex;
+    justify-content: center;
+
+    .fa {
+      margin: 0.3em;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &-item {
+    align-content: center;
+    margin: 1em 2em;
+    height: 18em;
+    width: 18em;
+    box-shadow: 5px 5px 15px lightgrey;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+
+    &:hover {
+      background: lightgreen;
+      color : $burger;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 5px 5px 10px $burger;
+    }
+
+    &-top {
+      background-color: #fff;
+      height: 12em;
+      width: 18em;
+      position: absolute;
+
+      &--image {
+        margin: 2em;
+        border-radius: 50%;
+        height: 11em;
+        width: 11em;
+        position: relative;
+        bottom: 6rem;
+        left: 1.5rem;
+        border: 2px solid antiquewhite;
+        padding:2px;
+      }
+    }
+
+    &-bottom {
+      background-color: #fff;
+      height: 8rem;
+      width: 18em;
+      position: relative;
+      top: 10rem;
+
+      &--name {
+        text-align: center;
+        font-size: 1.3em;
+        font-family: 'Anton', sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      &--role {
+        color: #6D7F87;
+        margin-top: 0.5em;
+        text-align: center;
+        font-size: 1.1em;
+        font-style: italic;
+      }
+    }
+  }
+}

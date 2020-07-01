@@ -1,16 +1,20 @@
 import React from 'react';
 import './styles.scss';
+import Clarisse from '../../assets/images/clarisse.jpeg';
+import Kevin from '../../assets/images/kevin.jpeg';
+import Roman from '../../assets/images/roman.jpg';
+import JB from '../../assets/images/jb.jpg';
 
 const Footer = () => (
   <footer className="footer">
     <div className="footer-icons">
       <h3 className="footer-title">Retrouvez-nous sur</h3>
-       <span className='footer-invider'>  </span>
-      
-          <i className="fa fa-facebook"></i>
-          <i className="fa fa-twitter"></i>
-          <i className="fa fa-instagram"></i>
-         
+      <span className="footer-invider">  </span>
+
+      <i className="fa fa-facebook"  />
+      <i className="fa fa-twitter "  />
+      <i className="fa fa-instagram " />
+
     </div>
     <div className="footer-infos">
       <ul className="footer-info">
