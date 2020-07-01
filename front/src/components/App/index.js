@@ -54,7 +54,7 @@ const App = ({
             listUsers.map((userInfo) => {
               return (
                 <Route exact path={`/user/${userInfo.id}`}> {/* user page */}
-                  <UserPage taMere={userInfo} loading={loading} error={error} />
+                  <UserPage taMere={userInfo} fetchUser={fetchUsers} fetchProduct={fetchProducts} loading={loading} error={error} />
                 </Route>
               );
             })
