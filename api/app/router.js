@@ -38,7 +38,8 @@ router.post('/gender', genderController.create);
 router.patch('/gender/:id', genderController.update);
 router.delete('/gender/:id', genderController.delete);
 
-router.get('/product/name/:product', productController.getAll);
+router.get('/product/name/:product', productController.getAllByName);
+router.get('/product/', productController.getAll);
 router.get('/product/:id', productController.getOne );
 router.post('/product', productController.create);
 router.patch('/product/:id', productController.update);

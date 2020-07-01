@@ -12,33 +12,37 @@ import { NavLink } from 'react-router-dom';
 import Button from 'src/components/Button';
 
 const ProductPage = (props) => {
+  console.log(props);
 
   return (
     <div className="productpage">
-      {/* <img className="productpage--photo" src={props.location.state.object.image ? object.image : 'Pas de photo'} alt="parrain" /> */}
       <section className="productpage-user">
-        {/* <img className="productpage-user--photo" src="https://image.flaticon.com/icons/png/512/64/64572.png" alt="avatar" /> */}
+        <img className="productpage-user--photo" src={props.product.owner ? props.product.owner.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} alt="avatar" />
         <div className="productpage-user--infos">
           <p className="productpage-user--name">
             {/* // ! pour les vérif comparer app_user_id avec l'id du user si connecté */}
-            <NavLink to={`/user/${props.location.state.product.app_user_id}`}>
-              {props.location.state.product.owner ?
-                props.location.state.product.owner.AppUserInfo.first_name
+            <NavLink to={`/user/${props.product.app_user_id}`}>
+              {props.product.owner
+                ? props.product.owner.AppUserInfo.first_name
                 : 'Mon profil'}
             </NavLink>
+            <p className="productpage-user--owner">{props.product.owner ? props.product.owner.email : '' }</p>
           </p>
-          <p className="productpage-user--note">23 évaluations - 4,3 / 5</p>
         </div>
       </section>
+      {(props.product.image !== null)
+        ? <img className="productpage--photo" src={props.product.image} alt="Image Produit" />
+        : <i className="fas fa-tshirt fa-5x icon-center" />}
       <section className="productpage-infos">
-        <h1 className="productpage-infos--title">Déguisement de parrain de la street</h1>
-        <p className="productpage-infos--item">M / 38 / 10 - Impeccable - Giorgio Armani</p>
-        <p className="productpage-infos--price">{props.location.state.product.price} $</p>
+        <h1 className="productpage-infos--title">{props.product.name}</h1>
+        <p className="productpage-infos--item">Taille: {props.product.size}</p>
+        <p className="productpage-infos--item">Etat: {props.product.status}</p>
+        <p className="productpage-infos--price">{props.product.price} $</p>
       </section>
-      <section className="productpage-button">
-        <Button size="medium" value="Louer" />
-      </section>
-      <Comment comments={props.product} />
+      {/* <section className="productpage-button">
+      <Button size="medium" value="Louer" />
+    </section> */}
+      <Comment product={props.product} />
     </div>
   );
 };

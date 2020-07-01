@@ -12,7 +12,9 @@ export const UPDATE_FIRST_NAME = 'UPDATE_FIRST_NAME';
 export const UPDATE_MOBILE = 'UPDATE_MOBILE';
 export const UPDATE_AVATAR = 'UPDATE_AVATAR';
 export const HIDDEN_INPUT = 'HIDDEN_INPUT';
-export const SAVE_USERS = 'SAVE_USERS'
+export const SAVE_USERS = 'SAVE_USERS';
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+export const LOGIN_VALIDE = 'LOGIN_VALIDE';
 
 
 export const connectUser = () => ({
@@ -83,4 +85,10 @@ export const hiddenInput = (value) => ({
   value,
 });
 
+export const loginError = () => ({
+  type: LOGIN_ERROR,
+});
 
+export const loginValide = () => ({
+  type: LOGIN_VALIDE,
+});

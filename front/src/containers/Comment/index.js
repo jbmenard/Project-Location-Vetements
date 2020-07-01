@@ -15,9 +15,9 @@ const mapDispatchToProps = (dispatch) => ({
   handleComment: () => {
     dispatch(commentaire());
   },
-  sendForm: () => {
+  sendForm: (productId) => {
     console.log('je suis dans le formulaire');
-    const action = sendForm();
+    const action = sendForm(productId);
     dispatch(action);
     const aFetchProduct = fetchProducts();
     dispatch(aFetchProduct);

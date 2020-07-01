@@ -42,7 +42,7 @@ const api = (store) => (next) => (action) => {
       const state = store.getState().productReducer;
       state.loading = false;
 
-      axios.get('http://localhost:5050/product/name/slip')
+      axios.get('http://localhost:5050/product')
         .then((response) => {
           const saveProductsAction = saveProducts(response.data);
           store.dispatch(saveProductsAction);
@@ -56,6 +56,7 @@ const api = (store) => (next) => (action) => {
     case UPDATE_PRODUCT: {
       const state = store.getState().productReducer;
       const data = new FormData();
+      console.log(state)
       data.set('name', state.name);
       data.set('description', state.description);
       data.set('gender_id', state.gender_id);
@@ -119,10 +120,12 @@ const api = (store) => (next) => (action) => {
     case SEND_FORM: {
       const state = store.getState().productReducer;
       const stateUser = store.getState().userReducer;
+      console.log(action.productId);
+      
       const data = new FormData();
       data.set('content', state.content);
       data.set('app_user_id', stateUser.user.user.id);
-      data.set('product_id', state.id);
+      data.set('product_id', action.productId);
       axios({
         method: 'post',
         url: 'http://localhost:5050/comment',

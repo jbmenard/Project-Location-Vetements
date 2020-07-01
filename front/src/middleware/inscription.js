@@ -14,6 +14,8 @@ import {
   hiddenInput,
   check,
   saveUsers,
+  loginError,
+  loginValide,
 
 } from 'src/actions/inscription';
 import { LOGOUT, saveLogout } from 'src/actions/user';
@@ -97,8 +99,10 @@ const apiUser = (store) => (next) => (action) => {
         .then((response) => {
           console.log('response: ', response);
           store.dispatch(logUser(response.data));
+          store.dispatch(loginValide());
         })
         .catch((err) => {
+          store.dispatch(loginError())
           console.trace(err);
         });
       break;
