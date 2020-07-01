@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import ProductPage from 'src/components/ProductPage';
 import { getRecipeBySlug } from 'src/selectors/product';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => (console.log("ownprops", ownProps),{
   product: getRecipeBySlug(state, ownProps.match.params.slug),
 
 });

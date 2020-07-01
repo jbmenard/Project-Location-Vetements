@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 // == Import
 import './styles.scss';
-import { getUrlByName } from '../../selectors/product';
+import { getUrlByName, getUpdateUrlByName } from '../../selectors/product';
 
 // == Icons
 // import Update from '../../assets/images/update-product.png';
@@ -35,7 +35,7 @@ const CardDesign = ({
           && (
             <>
               <NavLink
-                to="/updateproduct"
+                to={getUpdateUrlByName(object.name)}
               >
                 {/* <img
                   className="card-header-icon--update"

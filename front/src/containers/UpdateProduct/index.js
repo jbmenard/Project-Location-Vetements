@@ -1,19 +1,13 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 
 import UpdateProduct from 'src/components/UpdateProduct';
 import { updateProduct, addProductInState } from 'src/actions/product';
+import { getRecipeBySlug } from 'src/selectors/product';
 
-const mapStateToProps = (state) => ({
-  id: state.productReducer.id,
-  name: state.productReducer.name,
-  description: state.productReducer.description,
-  gender_id: state.productReducer.gender_id,
-  image: state.productReducer.image,
-  size: state.productReducer.size,
-  price: state.productReducer.price,
-  mark: state.productReducer.mark,
-  status: state.productReducer.status,
-  sub_category_id: state.productReducer.sub_category_id,
+const mapStateToProps = (state, ownProps) => (console.log("ownprops", ownProps),{
+  product: getRecipeBySlug(state, ownProps.match.params.slug),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -49,7 +43,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(
+
+const container = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(UpdateProduct);
+
+const containerWithRouter = withRouter(container);
+
+export default containerWithRouter;

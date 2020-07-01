@@ -62,7 +62,7 @@ const App = ({
         <Route exact path="/newproduct"> {/* Form to create a new product */}
           <AddProduct />
         </Route>
-        <Route exact path="/updateproduct"> {/* Form to update a product */}
+        <Route exact path="/update/:slug"> {/* Form to update a product */}
           <UpdateProduct />
         </Route>
         {/* {isLoggin

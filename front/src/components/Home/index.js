@@ -26,18 +26,18 @@ const Home = () => (
     <section className="card-general">
       <div className="container" />
       <h2 className="cards-title"> Comment ça marche ?</h2>
-      <span className="invider" />
+      {/* <span className="invider" /> */}
       <div className="row">
         <Cards title="JE LOUE" image={Loue} number={1} text="Créez votre profil et choisissez les produits qui vous interessent." />
         <Cards title="JE RECOIS" image={Reçois} number={2} text="Prenez contact avec le loueur et recevez votre produit." />
-        <Cards title="JE RENDS" image={Rends} text="Faut rendre les affaires " number={3} />
+        <Cards title="JE RENDS" image={Rends} text="Je renvoie les articles au proprietaire sans les laver " number={3} />
       </div>
     </section>
                               {/* OPINION  */}
 
     <section className="container-comment">
       <h2 className="cards-title"> Temoignages </h2>
-      <span className="invider" />
+      {/* <span className="invider" /> */}
       <div className="row">
         <Opinion name="Martin Dupont" photo={Martin} text="Je me suis rendu sur O'Loc car je cherchais un déguisement en location pour un enteremment de vie de jeune garçon. J'ai rapidement trouver mon bonheur auprès d'un vendeur autour de chez moi. Je recommande O'Loc." />
 

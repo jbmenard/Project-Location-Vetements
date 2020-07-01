@@ -9,7 +9,7 @@ export const initialState = {
   price: 0,
   mark: '',
   status: '',
-  app_user_id: 1,
+  app_user_id: '',
   sub_category_id: 2,
   gender_id: 1,
   loading: true,
