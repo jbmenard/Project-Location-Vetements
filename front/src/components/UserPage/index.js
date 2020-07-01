@@ -24,8 +24,15 @@ const UserPage = ({
   toggleValidateButton,
   taMere,
   isLogged,
+  fetchUser,
+  fetchProduct
   // taMere,
 }) => {
+  useEffect(() => {
+    fetchUser();
+    fetchProduct()
+  }, []);
+
   console.log('user', taMere);
   const checkUser = (userEmail, productEmail) => {
     if (userEmail === productEmail) {
