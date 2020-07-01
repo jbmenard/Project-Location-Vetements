@@ -48,7 +48,7 @@ const UserPage = ({
         <section className="user-informations">
           <section className="user-profil">
             <h2 className="user-title">
-              Modifier mes informations
+              Profil
             </h2>
             <div className="user-avatar">
               <Avatar size="large" avatar={(taMere.AppUserInfo.avatar !== null) ? taMere.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
@@ -116,7 +116,7 @@ const UserPage = ({
             {
               taMere.products.length
                 ? !loading && !error && (
-                <article className="product-article">
+                <article className="productlist-article">
                   {
                         taMere.products.map((list) => (
                           <CardDesign object={list} />
