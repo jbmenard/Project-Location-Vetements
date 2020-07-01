@@ -57,9 +57,9 @@ const CardDesign = ({
           <NavLink
             to={{
               pathname: getUrlByName(object.name),
-              state: {
-                product: object,
-              },
+              // state: {
+              //   productFormCard: object,
+              // },
             }}
             key={object.id}
           >
