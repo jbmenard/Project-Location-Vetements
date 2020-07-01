@@ -4,6 +4,7 @@ import Button from 'src/components/Button';
 import './style.scss';
 import { Redirect } from 'react-router-dom';
 import Clothes from '../../assets/images/clothes.jpg';
+import { object } from 'prop-types';
 
 const AddProduct = ({
   createProduct,
@@ -74,7 +75,7 @@ const AddProduct = ({
           </label>
           <label htmlFor="sub_category_id">
             Catégories
-            <select className="form-control" name="sub_category_id" id="sub_category_id" selected="1" onChange={(event) => handleSelectSubCategory(event)}>
+            <select className="form-control" name="sub_category_id" id="sub_category_id" onChange={(event) => handleSelectSubCategory(event)}>
               <option value="">Choisir :</option>
               <option value="1">Sports de Glisse</option>
               <option value="2">Sports nautiques</option>
@@ -108,7 +109,7 @@ const AddProduct = ({
           </label>
           <label htmlFor="size">
             Taille *
-            <select className="form-control" name="size" id="size" defaultChecked="xsmall" onChange={(event) => handleSelectSize(event)}>
+            <select className="form-control" name="size" id="size" onChange={(event) => handleSelectSize(event)}>
               <option value="">Choisir :</option>
               <option value="XS">XS</option>
               <option value="S">S</option>
@@ -120,7 +121,7 @@ const AddProduct = ({
           </label>
           <label htmlFor="status">
             Etat du produit *
-            <select className="form-control" name="status" id="status" defaultChecked="neverUsed" onChange={(event) => handleSelectState(event)}>
+            <select className="form-control" name="status" id="status" onChange={(event) => handleSelectState(event)}>
               <option value="">Choisir</option>
               <option value="Jamais porté">Jamais porté</option>
               <option value="Bon état">Bon état</option>

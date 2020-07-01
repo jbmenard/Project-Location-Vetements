@@ -56,6 +56,7 @@ const api = (store) => (next) => (action) => {
     case UPDATE_PRODUCT: {
       const state = store.getState().productReducer;
       const data = new FormData();
+      console.log(state)
       data.set('name', state.name);
       data.set('description', state.description);
       data.set('gender_id', state.gender_id);

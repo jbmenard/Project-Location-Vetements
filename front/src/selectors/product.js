@@ -20,6 +20,10 @@ export const getUrlByName = (name) => {
   return `/product/${getSlugByName(name)}`;
 };
 
+export const getUpdateUrlByName = (name) => {
+  return `/update/${getSlugByName(name)}`;
+};
+
 export const getRecipeBySlug = (state, slug) => {
   return state.productReducer.listProducts.find((product) => {
     return getSlugByName(product.name) === slug;
