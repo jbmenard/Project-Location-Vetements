@@ -48,7 +48,7 @@ const Inscription = ({
               <Button type="button" size="x-large" value="Envoyer" color="error" />
             )}
             { (!errorPassword && !errorPasswordLength) &&(
-               <Button type="submit" size="x-large" value="Envoyer" color="form" />
+               <Button type="submit" size="medium" value="Envoyer" color="form" />
             )}
 
   

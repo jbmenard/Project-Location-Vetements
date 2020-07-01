@@ -4,7 +4,17 @@
   .img-inscription {
     display: none;
   }
+  
 }
+@media (min-width : 560px) {
+  .form-button{
+    width: 50%;
+    margin-left: 10em;
+  }
+
+  }
+
+
 @media (min-width : 1028px) {
 
 .inscription {
@@ -12,6 +22,7 @@
     // padding: 3em 0;
     // margin-right: 3rem;
     // margin-left: 2rem;
+    margin-bottom:8em;
     display: flex;
   }
 
@@ -76,7 +87,11 @@ body {
     color: white;
     &-input{
       background-color: red
+      
     }
+    // width: 50%;
+    // margin-left: 10em;
+    
     
   }
   &-infos{
