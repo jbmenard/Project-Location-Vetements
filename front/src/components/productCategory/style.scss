@@ -11,12 +11,25 @@
   .product-category-page {
     margin-bottom: 5em;
   }  
+  .card{
+    margin:.5em 0;
+  }
 }
 
 @media (min-width : 500px) {
   .product-category-page {
     margin-bottom: 15em;
     transform: translate(10px, 120px);
+  }
+  .product-article{
+    width: 60%;
+    margin:0 auto;
+  }
+  .card{
+    margin:.5em;
+  }
+  .card-header-icon{
+    height: 1em;
   }
 }
 
