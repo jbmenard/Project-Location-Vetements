@@ -17,7 +17,8 @@ const mapStateToProps = (state) => ({
   sub_category_id: state.productReducer.sub_category_id,
   toggleRedirection: state.styleReducer.toggleRedirection,
   toggleNavbar: state.styleReducer.toggleNavbar,
-  errorOnProduct: state.productReducer.errorOnProduct,
+  errorOnNameProduct: state.productReducer.errorOnNameProduct,
+  errorOnDescriptionProduct: state.productReducer.errorOnDescriptionProduct,
 });
 
 // grâce à mDTP je fourni une fonction au composant capable de dispatcher une action, émettre une intention
