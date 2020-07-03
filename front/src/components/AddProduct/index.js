@@ -21,6 +21,7 @@ const AddProduct = ({
   toggleNavbar,
   name,
   user,
+  errorOnProduct,
 }) => {
   const handleSubmit = (event, id) => {
     event.preventDefault();
@@ -68,6 +69,9 @@ const AddProduct = ({
     <div className="add-product">
       <h1 className="add-product--title">Ajouter un produit</h1>
       <div className="container-form-image">
+        {errorOnProduct && (
+          <p>Error</p>
+        )}
         <form className="add-product--form" onSubmit={(event) => handleSubmit(event, user.user.id)}>
           <label htmlFor="name">
             Nom du produit *

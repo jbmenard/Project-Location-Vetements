@@ -1,4 +1,7 @@
-import { SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE, GET_ERROR, CHANGE_INPUT_COMMENT_PRODUCT, RESET_COMMENT_MSG } from 'src/actions/product';
+import {
+  SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE, GET_ERROR, CHANGE_INPUT_COMMENT_PRODUCT, RESET_COMMENT_MSG,
+} from 'src/actions/product';
+import { GET_ERROR_ON_PRODUCT } from '../actions/product';
 
 export const initialState = {
   listProducts: [],
@@ -16,6 +19,7 @@ export const initialState = {
   error: false,
   commentProduct: '',
   content: '',
+  errorOnProduct: '',
 };
 
 const productReducer = (state = initialState, action = {}) => {
@@ -29,11 +33,11 @@ const productReducer = (state = initialState, action = {}) => {
       };
     }
     case RESET_COMMENT_MSG: {
-      console.log("je suis dans msg");
+      console.log('je suis dans msg');
       return {
         ...state,
         commentProduct: '',
-      
+
       };
     }
     case ADD_PRODUCT_IN_STATE:
@@ -54,6 +58,11 @@ const productReducer = (state = initialState, action = {}) => {
         ...state,
         commentProduct: action.value,
         content: action.value,
+      };
+    case GET_ERROR_ON_PRODUCT:
+      return {
+        ...state,
+        errorOnProduct: true,
       };
     default:
       return state;

@@ -9,6 +9,7 @@ export const SEND_FORM = 'SEND_FORM';
 export const SAVE_FORM = 'SAVE_FORM';
 export const CHANGE_INPUT_COMMENT_PRODUCT = 'CHANGE_INPUT_COMMENT_PRODUCT';
 export const RESET_COMMENT_MSG = 'RESET_COMMENT_MSG';
+export const GET_ERROR_ON_PRODUCT = 'GET_ERROR_ON_PRODUCT';
 
 export const ResetCommentMsg = () => ({
   type: RESET_COMMENT_MSG,
@@ -61,4 +62,8 @@ export const saveForm = () => ({
 export const changeInputCommentProduct = (value) => ({
   type: CHANGE_INPUT_COMMENT_PRODUCT,
   value,
+});
+
+export const getErrorOnProduct = () => ({
+  type: GET_ERROR_ON_PRODUCT,
 });
