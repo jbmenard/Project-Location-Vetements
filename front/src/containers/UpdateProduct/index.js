@@ -4,10 +4,13 @@ import { withRouter } from 'react-router-dom';
 
 import UpdateProduct from 'src/components/UpdateProduct';
 import { updateProduct, addProductInState } from 'src/actions/product';
+import { toggleRedirectionUpdate } from 'src/actions/style';
 import { getRecipeBySlug } from 'src/selectors/product';
 
 const mapStateToProps = (state, ownProps) => (console.log("ownprops", ownProps),{
   product: getRecipeBySlug(state, ownProps.match.params.slug),
+  user: state.userReducer.user,
+  toggleRedirectionUpdate: state.styleReducer.toggleRedirectionUpdate,
 });
 
 const mapDispatchToProps = (dispatch) => ({

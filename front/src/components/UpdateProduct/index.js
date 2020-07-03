@@ -18,6 +18,8 @@ const UpdateProduct = ({
   onChangeDescription,
   onChangeImage,
   product,
+  toggleRedirectionUpdate,
+  user,
 }) => {
   const handleSubmit = (event, productId) => {
     event.preventDefault();
@@ -60,7 +62,6 @@ const UpdateProduct = ({
     console.log(event.target.files[0]);
     onChangeImage(event.target.files[0], event.target.name);
   };
-  console.log(product);
 
   return (
     <div className="update-product">
@@ -148,6 +149,8 @@ const UpdateProduct = ({
             {/* </NavLink> */}
           </div>
         </form>
+        {toggleRedirectionUpdate
+      && <Redirect to={`/user/${user.user.id}`} />}
       </div>
     </div>
   );

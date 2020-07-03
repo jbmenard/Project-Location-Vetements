@@ -5,7 +5,7 @@ import {
   UPDATE_PRODUCT, DELETE_PRODUCT, SAVE_PRODUCTS, fetchProducts, SEND_FORM,
 } from 'src/actions/product';
 import { SEND_MESSAGE, cleanSearchBar, productNotFoundAction, productFound } from 'src/actions/search';
-import { toggleRedirection } from 'src/actions/style';
+import { toggleRedirection, toggleRedirectionUpdate } from 'src/actions/style';
 
 
 const api = (store) => (next) => (action) => {
@@ -46,6 +46,7 @@ const api = (store) => (next) => (action) => {
         .then((response) => {
           const saveProductsAction = saveProducts(response.data);
           store.dispatch(saveProductsAction);
+          store.dispatch(toggleRedirectionUpdate());
         })
         .catch((error) => {
           console.error(error);
@@ -74,6 +75,7 @@ const api = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response.data);
           store.dispatch(fetchProducts());
+          store.dispatch(toggleRedirectionUpdate());
         })
         .catch((err) => {
           console.trace(err);
