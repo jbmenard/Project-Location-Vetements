@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.scss';
 
 const Slide = ({ photo, text }) => (
   <div className="carousel-item">
@@ -8,7 +9,6 @@ const Slide = ({ photo, text }) => (
     </div>
     <div className="carousel-caption">
       <h3 className="h3-responsive">{text}</h3>
-      {/* <p>PHRASE D'ACCROCHE</p> */}
     </div>
   </div>
 );
