@@ -5,7 +5,7 @@ import Button from 'src/components/Button';
 import Search from 'src/containers/search';
 
 const Navbar = ({
-  errorNotFoundProduct, errorNotFoundUser, toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, connectUser, isLoggin, toggleRedirection,
+  errorNotFoundProduct, errorNotFoundUser, toggleMenu, toggleNavbar, handleLogout, changeValueEmail, changeValuePassword, user, email, password, connectUser, isLoggin, toggleRedirection,
 }) => {
 // const handleClick = () => {
 //   console.log("oui")
@@ -33,7 +33,7 @@ const Navbar = ({
                 <span className="connexion">Connexion</span>
                 {errorNotFoundUser
               && <p className="user-not-found">Aucun utilisateur ne correspond</p>}
-                <input className="liens--input" onChange={changeValueEmail} type="email" name="email" id="email" placeholder="Votre email" />
+                <input className="liens--input" onChange={changeValueEmail} type="email" name="email" id="email" defaultValue={email} placeholder="Votre email" />
               </label>
               <label className="liens--label" htmlFor="password">
 
