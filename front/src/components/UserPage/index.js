@@ -25,12 +25,12 @@ const UserPage = ({
   taMere,
   isLogged,
   fetchUser,
-  fetchProduct
+  fetchProduct,
   // taMere,
 }) => {
   useEffect(() => {
     fetchUser();
-    fetchProduct()
+    fetchProduct();
   }, []);
 
   console.log('user', taMere);
@@ -51,6 +51,7 @@ const UserPage = ({
               Profil
             </h2>
             <div className="user-avatar">
+
               <Avatar size="large" avatar={(taMere.AppUserInfo.avatar !== null) ? taMere.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
               <div className="user-avatar-add">
                 {isLogged
@@ -81,7 +82,7 @@ const UserPage = ({
                       <>
                         <form onSubmit={updateFirstName}>
                           <input className="adduserinfos--input" placeholder={taMere.AppUserInfo.first_name ? taMere.AppUserInfo.first_name : 'Mon nom'} type="text" name="first_name" id="first_name" onChange={onChangeFirstName} />
-                          <input type="submit" value="ok" />
+                          <input className="adduserinfos--button" type="submit" value="ok" />
                         </form>
                       </>
                     )}
@@ -89,7 +90,7 @@ const UserPage = ({
                 <li>
                   {taMere.email || 'Email'}
                 </li>
-                <li onClick={isLogged && checkUser(user.user.email, taMere.email) ? activeInputMobile : ''}>
+                <li className="userinfos-informations-number" onClick={isLogged && checkUser(user.user.email, taMere.email) ? activeInputMobile : ''}>
                   {!toggleInput
                   && taMere.AppUserInfo.mobile ? taMere.AppUserInfo.mobile : 'Mobile'}
                   {isLogged && checkUser(user.user.email, taMere.email) ? <i className="fa fa-edit icon-edit" /> : ''}
@@ -97,7 +98,7 @@ const UserPage = ({
                   && (
                     <form onSubmit={updateMobile}>
                       <input className="adduserinfos--input" placeholder={mobile} type="text" name="mobile" id="mobile" onChange={onChangeMobile} />
-                      <input type="submit" value="ok" />
+                      <input className="adduserinfos--button" type="submit" value="ok" />
                     </form>
                   )}
                 </li>

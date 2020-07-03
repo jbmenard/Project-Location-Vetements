@@ -40,6 +40,20 @@
 // ---------------------------------------------------------------
 
 @media (min-width : 1024px) {
+
+  .userinfos-informations{
+    &-ul{
+      font-size: 1.2em !important;
+    }
+    &-fullname{
+      margin: 1rem;
+    }
+    &-number{
+      margin:1rem;
+    }
+  }
+  
+  
   .userpage {
     width: 80%;
     margin: 0 auto 10em auto;
@@ -67,15 +81,32 @@
 
     &-title {
       text-align: center;
-      font-size: x-large;
-      margin: 6em auto 1em auto;
+      font-size: 2rem;
+      margin: 4em auto 1em auto;
+      padding-bottom: 1.6rem;
+      padding-top: 2rem;
+      background-color: #2F4F4F;
+      width: 80%;
+      color: whitesmoke;
+      
+      box-shadow: 0px 2px 10px lightgray;
+      
+
+    
+
+      
     }
   }
   .user-informations {
     transform: translate(10px, 120px);
     width: 30%;
-     
+    box-shadow: 0px 2px 1px lightgray;
     
+  }
+
+  .image-large{
+    width: 68%;
+    height: 191px;
   }
 
   .user-avatar-add {
@@ -107,8 +138,14 @@
 
   &-title {
     text-align: center;
-    font-size: x-large;
-    margin: 1em auto;
+    font-size: 2rem;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    padding: 2rem;
+    font-family: 'Comic Neue', cursive;
+    background-color: #2F4F4F;
+    color: white;
+ 
   }
 
   &-avatar {
@@ -134,6 +171,9 @@
     &-fullname {
       font-weight: bold;
     }
+    &-number{
+      font-weight: bold;
+    }
 
     & > Button:active {
       background-color: #faf3dd;
@@ -142,6 +182,7 @@
 }
 
 .user-avatar {
+  margin-top: 2rem;
   &-button {
   color: $general-button;
   font-size: 0.7em;
@@ -164,6 +205,22 @@
   }
 }
 
+.adduserinfos{
+  &--input{
+    box-shadow: 0px 2px 8px whitesmoke;
+   padding: 5px;
+  }
+  &--button {
+    background-color: $general-button-opacity;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 20%;
+    color: white;
+    margin-top: 1rem;
+    border: 1px solid white;
+  }
+}
+
 .productlist {
 
   &-cards {
@@ -171,6 +228,10 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 1em;
+  }
+  &-title{
+    font-family: 'Comic Neue', cursive;
+    width: 80%;
   }
 }
 

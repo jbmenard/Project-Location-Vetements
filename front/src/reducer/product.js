@@ -1,4 +1,7 @@
-import { SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE, GET_ERROR, CHANGE_INPUT_COMMENT_PRODUCT, RESET_COMMENT_MSG } from 'src/actions/product';
+import {
+  SAVE_PRODUCTS, ADD_PRODUCT_IN_STATE, GET_ERROR, CHANGE_INPUT_COMMENT_PRODUCT, RESET_COMMENT_MSG,
+} from 'src/actions/product';
+
 
 export const initialState = {
   listProducts: [],
@@ -16,6 +19,8 @@ export const initialState = {
   error: false,
   commentProduct: '',
   content: '',
+  errorOnNameProduct: false,
+  errorOnDescriptionProduct: false,
 };
 
 const productReducer = (state = initialState, action = {}) => {
@@ -29,19 +34,56 @@ const productReducer = (state = initialState, action = {}) => {
       };
     }
     case RESET_COMMENT_MSG: {
-      console.log("je suis dans msg");
+      console.log('je suis dans msg');
       return {
         ...state,
         commentProduct: '',
-      
+
       };
     }
     case ADD_PRODUCT_IN_STATE:
       console.log(action.value, action.name);
+      console.log(action.value, action.name);
+      if (action.name === 'name') {
+        if (action.value.length <= 1) {
+          return {
+            ...state,
+            [action.name]: action.value,
+            errorOnNameProduct: true,
+          };
+        }
+
+        return {
+          ...state,
+          [action.name]: action.value,
+          errorOnNameProduct: false,
+
+        };
+      }
+      if (action.name === 'description') {
+        if (action.value.length <= 50) {
+          return {
+            ...state,
+            [action.name]: action.value,
+            errorOnDescriptionProduct: true,
+          };
+        }
+        return {
+          ...state,
+          [action.name]: action.value,
+          errorOnDescriptionProduct: false,
+        };
+      }
       return {
         ...state,
         [action.name]: action.value,
+        errorOnDescriptionProduct: false,
+        errorOnNameProduct: false,
+
       };
+      
+     
+     
 
     case GET_ERROR:
       return {
@@ -55,6 +97,8 @@ const productReducer = (state = initialState, action = {}) => {
         commentProduct: action.value,
         content: action.value,
       };
+   
+
     default:
       return state;
   }

@@ -3,8 +3,8 @@ import React from 'react';
 import Button from 'src/components/Button';
 import './style.scss';
 import { Redirect } from 'react-router-dom';
-import Clothes from '../../assets/images/clothes.jpg';
 import { object } from 'prop-types';
+import Clothes from '../../assets/images/clothes.jpg';
 
 const AddProduct = ({
   createProduct,
@@ -21,6 +21,8 @@ const AddProduct = ({
   toggleNavbar,
   name,
   user,
+  errorOnNameProduct,
+  errorOnDescriptionProduct,
 }) => {
   const handleSubmit = (event, id) => {
     event.preventDefault();
@@ -68,10 +70,16 @@ const AddProduct = ({
     <div className="add-product">
       <h1 className="add-product--title">Ajouter un produit</h1>
       <div className="container-form-image">
+
         <form className="add-product--form" onSubmit={(event) => handleSubmit(event, user.user.id)}>
           <label htmlFor="name">
             Nom du produit *
-            <input className="add-product--input" placeholder="ex: Veste de ski" type="text" name="name" id="name" onChange={handleChangeName} />
+            <input className={`${errorOnNameProduct ? 'add-product--input--error' : 'add-product--input'}`} placeholder="ex: Veste de ski" type="text" name="name" id="name" onChange={handleChangeName} />
+            {errorOnNameProduct && (
+
+            <p className="error-text">Champ obligatoire</p>
+            )}
+
           </label>
           <label htmlFor="sub_category_id">
             Catégories
@@ -133,7 +141,11 @@ const AddProduct = ({
           </label>
           <label htmlFor="description">
             Description *
-            <input onChange={handleChangeDescription} placeholder="Informations complémentaires" className="add-product--input" type="textarea" name="description" id="description" />
+            <input onChange={handleChangeDescription} placeholder="Informations complémentaires" className={`${errorOnDescriptionProduct ? 'add-product--input--error' : 'add-product--input'}`} 
+            type="textarea" name="description" id="description" />
+            {errorOnDescriptionProduct && (
+              <p className="error-text">Veuillez renseigner plus de 50 caractères</p>
+            )}
           </label>
           <label htmlFor="price">
             Prix *
@@ -157,9 +169,8 @@ const AddProduct = ({
       {toggleRedirection
       && <Redirect to={`/user/${user.user.id}`} />}
     </div>
-    
+
   );
 };
 
 export default AddProduct;
-
