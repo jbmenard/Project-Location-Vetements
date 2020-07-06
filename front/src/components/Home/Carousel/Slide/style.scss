@@ -3,15 +3,19 @@
 }
 
 .carousel-caption {
+  position: absolute;
   padding: 1em;
-  bottom: 100px;
-  left: 550px;
-  background-color: rgba(180, 180, 180, 0.5);
+  bottom: 300px;
+  left: 1400px;
+  // background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
-  height: 6em;
+  font-family: 'Darker Grotesque', sans-serif;
+  // height: 6em;
   width: 20em;
 }
 
 .h3-responsive {
-  font-size: 1.2em;
+  // background-color: rgba(180, 180, 180, 0.5);
+  // border-radius: 10px;
+  font-size: 2em;
 }
