@@ -20,7 +20,7 @@ const Comment = ({
   return (
     <div className="comment">
       <h4 className="comment-formtitle">Commentaires</h4>
-      {product
+      {product.comments.length
         ? product.comments.map((comment) => (
           <Commentaire comment={comment} />
 

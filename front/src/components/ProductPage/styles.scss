@@ -110,9 +110,9 @@
   
     &--photo {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 35%;
+      width: 47%;
+      border: solid 2px;
+      margin: auto;
     }
   
     &-header {
@@ -129,8 +129,9 @@
   
     &-user {
       display: flex;
-      margin: 2em 0 1em 0em;
+      margin: 0em 0 1em 0em;
       border-bottom: solid 1px #ccc;
+      padding: 0.5em;
   
       &--photo {
         width: 10%; 
@@ -157,6 +158,7 @@
       border-top: 1px solid #ccc;
       padding: 1em 0 0 4em;
       text-align: right;
+      margin-top: 1em;
   
       &--title {
         font-weight: 700;
