@@ -26,10 +26,14 @@ const CardDesign = ({
 
     return false;
   };
+
+  const capitalizeString = (string) => {
+    return string[0].toUpperCase() + string.slice(1);
+  }
   return (
     <div className="card">
       <header className="card-header">
-        <p className="card-header-price">{object.price}€</p>
+        <p className="card-header-price">{capitalizeString(object.name)}</p>
         <section className="card-header-icon">
           { isLogged && checkUser(user.user.id, object.app_user_id)
           && (
@@ -50,10 +54,10 @@ const CardDesign = ({
         </section>
       </header>
       <section>
-        <img className="card-body-image" src="https://img5.onthesnow.com/image/sm/52/caract%C3%A9ristiques_dune_bonne_tenue_de_ski_1_521068.jpg" alt="ski" />
+        <img className="card-body-image" src={object.image} alt="ski" />
       </section>
-      <div className="card-footer">
-        <section className="card-footer--button">
+      <div className="card-footernone">
+        <section className="card-footernone--buttondescrip">
           <NavLink
             to={{
               pathname: getUrlByName(object.name),

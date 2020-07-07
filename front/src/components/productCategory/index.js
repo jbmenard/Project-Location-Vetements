@@ -1,15 +1,16 @@
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 import CardDesign from 'src/containers/CardDesign';
 
 import './style.scss';
 
-const ProductCategory = ({ loading, error, listProducts}) => {
-console.log(listProducts);
+const ProductCategory = ({ loading, error, listProducts }) => {
+  console.log(listProducts);
+  
 
   return (
     <>
       <section className="product-category-page">
-        <div className="product-event">
+        {/* <div className="product-event">
           <label htmlFor="subCategory" className="label-item">
             Catégorie :
             <select name="subCategory" id="subCategory" className="label-select">
@@ -28,7 +29,7 @@ console.log(listProducts);
               <option value="maroquinerie">maroquinerie</option>
             </select>
           </label>
-        </div>
+        </div> */}
         <>
           {!loading && error && (
             <p className="loading-error">Une erreur s'est produite.Veuillez réessayer plus tard.</p>
