@@ -43,8 +43,12 @@
     flex-direction : row !important;
     transition: none !important;
     transform: none !important;
-    border: none !important;
+    // border: none !important;
     padding-left: 15rem;
+    border-bottom: solid 0.2px #2c5753;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
     
     width: 100%;
     font-size: 0.8rem;

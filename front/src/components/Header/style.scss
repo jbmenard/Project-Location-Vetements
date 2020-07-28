@@ -2,7 +2,7 @@
 @media (min-width :1024px) {
   .header {
     position: fixed !important;
-     z-index: none;
+    top: 8px;
      
      
      
@@ -12,9 +12,9 @@
        
      }
      &-img {
-       margin:1.51rem !important;
+      //  margin:1.51rem !important;
        width: 12em !important;
-       margin-bottom: 1.6rem !important;
+      //  margin-bottom: 1.6rem !important;
      }
      &--open {
       transform: translate(0%) !important;
