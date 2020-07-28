@@ -5,7 +5,6 @@ import './style.scss';
 
 const ProductCategory = ({ loading, error, listProducts }) => {
   console.log(listProducts);
-  
 
   return (
     <>
@@ -36,14 +35,19 @@ const ProductCategory = ({ loading, error, listProducts }) => {
           )}
           {
             !loading && !error && (
-            <article className="product-article">
-              {
+              <>
+                <h2 className="productlist-title">
+                  Notre catalogue
+                </h2>
+                <article className="product-article">
+                  {
               listProducts.map((list) => (
                 <CardDesign object={list} />
 
               ))
             }
-            </article>
+                </article>
+              </>
             )
           }
           {loading && (

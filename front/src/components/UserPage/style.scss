@@ -16,6 +16,13 @@
     margin: 1em auto;
     padding-top: 1em;
     border-top: 1px solid #e9ebed;
+  };
+
+  .user {
+    &-title {
+      width: 88%;
+      margin: auto;
+    }
   }
 
   .user-avatar-add {
@@ -56,7 +63,7 @@
   
   .userpage {
     width: 80%;
-    margin: 0 auto 10em auto;
+    margin: 1em auto 10em auto;
     display: flex;
     flex-wrap: flex;
   }

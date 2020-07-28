@@ -19,7 +19,7 @@ const ProductPage = (props) => {
   return (
     <div className="productpage">
       <section className="productpage-user">
-        <Avatar size="large" className="productpage-user--photo" avatar={props.product.owner ? props.product.owner.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
+        <Avatar size="medium" className="productpage-user--photo" avatar={props.product.owner ? props.product.owner.AppUserInfo.avatar : 'http://www.clker.com/cliparts/T/d/j/M/D/A/silueta-negra-md.png'} />
         <div className="productpage-user--infos">
           <p className="productpage-user--name">
             {/* // ! pour les vérif comparer app_user_id avec l'id du user si connecté */}

@@ -91,7 +91,7 @@ const api = (store) => (next) => (action) => {
         withCredentials: true,
       })
         .then((response) => {
-          console.log(response.data);
+          store.dispatch(fetchProducts());
         })
         .catch((err) => {
           console.trace(err);
